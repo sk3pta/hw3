@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/augustus/CLionProjects/hw3/Student.cpp">
+			<Option target="hw3_"/>
+		</Unit>
+		<Unit filename="/home/augustus/CLionProjects/hw3/Student.h">
+			<Option target="hw3_"/>
+		</Unit>
 		<Unit filename="/home/augustus/CLionProjects/hw3/main.cpp">
 			<Option target="hw3_"/>
 		</Unit>
