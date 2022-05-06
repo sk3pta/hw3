@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/augustus/CLionProjects/hw3/Student.cpp
+Student.h
+/home/augustus/CLionProjects/hw3/Student.h
+
+/home/augustus/CLionProjects/hw3/Student.h
+headers.h
+/home/augustus/CLionProjects/hw3/headers.h
+map
+-
+
+/home/augustus/CLionProjects/hw3/headers.h
+string
+-
+iostream
+-
+fstream
+-
+
