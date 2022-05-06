@@ -38,7 +38,7 @@ public:
 
     //-------------------------------------------------------------------------------------//
 
-    friend std::ostream operator<<(std::ostream &out, const Student &student);
+    friend std::ostream &operator<<(std::ostream &out, const Student &student);
 };
 
 

@@ -27,20 +27,22 @@ void Student::remove_grades(std::string subject) {
 
 
 
-std::ostream operator<<(std::ostream &out, const Student &student) {
+std::ostream &operator<<(std::ostream &out, const Student &student) {
     out << "Student : " <<student.name << " " << student.middle_name << " " << student.last_name << std::endl;
     out << "Group : " << student.group_name << "\nCourse : " << student.course << std::endl;
     out << "Grades : \n";
+
     for (const auto& element : student.grades) {
         out << element.first << " " << element.second << std::endl;
     }
     out << std::endl;
+    return out;
 }
 
 double Student::average_all() {
     double average = 0.0;
     double subjects_amount = 0.0;
-    for (auto element : this->grades) {
+    for (const auto& element : this->grades) {
         average += element.second;
         subjects_amount +=1;
     }
