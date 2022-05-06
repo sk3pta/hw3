@@ -37,3 +37,16 @@ std::ostream operator<<(std::ostream &out, const Student &student) {
     out << std::endl;
 }
 
+double Student::average_all() {
+    double average = 0.0;
+    double subjects_amount = 0.0;
+    for (auto element : this->grades) {
+        average += element.second;
+        subjects_amount +=1;
+    }
+    return average / subjects_amount;
+}
+
+
+
+

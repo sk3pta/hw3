@@ -6,6 +6,7 @@ CMakeFiles/hw3_.dir/Student.cpp.o: \
  ../Student.h \
  ../headers.h
 CMakeFiles/hw3_.dir/main.cpp.o: \
+ ../Group.h \
  ../Student.h \
  ../headers.h \
  ../main.cpp

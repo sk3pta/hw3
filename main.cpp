@@ -1,6 +1,6 @@
 #include "headers.h"
 #include "Student.h"
-
+#include "Group.h"
 
 int main() {
 
@@ -13,12 +13,18 @@ int main() {
 
     std::cout << "TESTATAD";
 
-    test_student.add_grades("physics",2);
+
+
     std::cout << "testtdts";
     test_student.add_grades("physics",5);
     std::cout << test_student;
     std::cout << "\n new";
     test_student.remove_grades("maths");
     std::cout << "\n test";
+
+    test_student.add_grades("physics",5);
+    test_student.add_grades("meth",4);
+
+    std::cout << test_student.average_all();
 
 }
