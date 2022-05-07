@@ -129,6 +129,30 @@ hw3_/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/build
 .PHONY : hw3_/fast
 
+Group.o: Group.cpp.o
+.PHONY : Group.o
+
+# target to build an object file
+Group.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/Group.cpp.o
+.PHONY : Group.cpp.o
+
+Group.i: Group.cpp.i
+.PHONY : Group.i
+
+# target to preprocess a source file
+Group.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/Group.cpp.i
+.PHONY : Group.cpp.i
+
+Group.s: Group.cpp.s
+.PHONY : Group.s
+
+# target to generate assembly for a file
+Group.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/Group.cpp.s
+.PHONY : Group.cpp.s
+
 Student.o: Student.cpp.o
 .PHONY : Student.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hw3_"
+	@echo "... Group.o"
+	@echo "... Group.i"
+	@echo "... Group.s"
 	@echo "... Student.o"
 	@echo "... Student.i"
 	@echo "... Student.s"

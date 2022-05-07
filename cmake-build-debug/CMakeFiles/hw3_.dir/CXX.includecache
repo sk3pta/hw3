@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
+/home/augustus/CLionProjects/hw3/Group.cpp
+Group.h
+/home/augustus/CLionProjects/hw3/Group.h
+
 /home/augustus/CLionProjects/hw3/Group.h
 headers.h
 /home/augustus/CLionProjects/hw3/headers.h
-
-/home/augustus/CLionProjects/hw3/Student.cpp
 Student.h
 /home/augustus/CLionProjects/hw3/Student.h
 
@@ -26,6 +28,8 @@ string
 iostream
 -
 fstream
+-
+vector
 -
 
 /home/augustus/CLionProjects/hw3/main.cpp

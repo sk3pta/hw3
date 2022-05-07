@@ -2,10 +2,15 @@
 #include "Student.h"
 #include "Group.h"
 
+
 int main() {
 
+    Group test("IU8-21",20);
     Student test_student("Alik", "Murtazaev", "Murtazaevich", "IU8-22", 1, {{"maths", 5}
     });
+    std::vector<Student> iu8_students;
+    iu8_students.push_back(test_student);
+    Group iu8("IU8-22",1);
     std::cout << test_student;
 
     test_student.add_grades("physics",5);
