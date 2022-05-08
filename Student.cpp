@@ -15,14 +15,18 @@ Student::Student(std::string name, std::string middle_name, std::string last_nam
 
 }
 
-void Student::add_grades(std::string subject, size_t grade) {
-    if (this->grades.find(subject) == grades.end())
-        this->grades.insert({subject, grade});
-    else
-        this->grades[subject] = grade;
+void Student::add_grades(const std::map<std::string, size_t> &new_grades) {
+
+    for (const auto &grade: new_grades) {
+
+        if (this->grades.find(grade.first) == grades.end())
+            this->grades.insert(grade);
+        else
+            this->grades[grade.first] = grade.second;
+    }
 }
 
-void Student::remove_grades(std::string subject) {
+void Student::remove_grades(const std::string &subject) {
     this->grades.erase(subject);
 
 }
@@ -60,12 +64,12 @@ Student::Student(const Student &student) {
 }
 
 Student::Student(Student &&student) noexcept {
-    std::swap(this->name,student.name);
+    std::swap(this->name, student.name);
     std::swap(this->middle_name, student.middle_name);
-    std::swap(this->last_name,student.last_name);
-    std::swap(this->group_name,student.group_name);
-    std::swap(this->course,student.course);
-    std::swap(this->grades,student.grades);
+    std::swap(this->last_name, student.last_name);
+    std::swap(this->group_name, student.group_name);
+    std::swap(this->course, student.course);
+    std::swap(this->grades, student.grades);
 }
 
 Student &Student::operator=(const Student &student) {
@@ -80,14 +84,18 @@ Student &Student::operator=(const Student &student) {
 }
 
 Student &Student::operator=(Student &&student) {
-    std::swap(this->name,student.name);
+    std::swap(this->name, student.name);
     std::swap(this->middle_name, student.middle_name);
-    std::swap(this->last_name,student.last_name);
-    std::swap(this->group_name,student.group_name);
-    std::swap(this->course,student.course);
-    std::swap(this->grades,student.grades);
+    std::swap(this->last_name, student.last_name);
+    std::swap(this->group_name, student.group_name);
+    std::swap(this->course, student.course);
+    std::swap(this->grades, student.grades);
 
     return *this;
+}
+
+std::map<std::string, unsigned int> Student::get_grades() {
+    return this->grades;
 }
 
 

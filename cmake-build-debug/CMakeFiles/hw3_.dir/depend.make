@@ -10,8 +10,8 @@ CMakeFiles/hw3_.dir/Student.cpp.o: \
  ../Student.cpp \
  ../Student.h \
  ../headers.h
-CMakeFiles/hw3_.dir/main.cpp.o: \
+CMakeFiles/hw3_.dir/tests.cpp.o: \
  ../Group.h \
  ../Student.h \
  ../headers.h \
- ../main.cpp
+ ../tests.cpp

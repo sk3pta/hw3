@@ -177,29 +177,29 @@ Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/Student.cpp.s
 .PHONY : Student.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+tests.o: tests.cpp.o
+.PHONY : tests.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/main.cpp.o
-.PHONY : main.cpp.o
+tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/tests.cpp.o
+.PHONY : tests.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+tests.i: tests.cpp.i
+.PHONY : tests.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/main.cpp.i
-.PHONY : main.cpp.i
+tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/tests.cpp.i
+.PHONY : tests.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+tests.s: tests.cpp.s
+.PHONY : tests.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/main.cpp.s
-.PHONY : main.cpp.s
+tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/tests.cpp.s
+.PHONY : tests.cpp.s
 
 # Help Target
 help:
@@ -216,9 +216,9 @@ help:
 	@echo "... Student.o"
 	@echo "... Student.i"
 	@echo "... Student.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... tests.o"
+	@echo "... tests.i"
+	@echo "... tests.s"
 .PHONY : help
 
 

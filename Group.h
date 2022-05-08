@@ -11,10 +11,15 @@ private:
 
 
 public:
-    Group(std::string name,size_t students_amount = 0);
+    explicit Group(std::string name,size_t students_amount = 0);
 
     Group(std::string,size_t students_amount,
           std::vector<Student> students);
+
+
+    //===================================================================//
+
+
 };
 
 

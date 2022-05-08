@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/augustus/CLionProjects/hw3/Group.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/Group.cpp.o"
   "/home/augustus/CLionProjects/hw3/Student.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/Student.cpp.o"
-  "/home/augustus/CLionProjects/hw3/main.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/main.cpp.o"
+  "/home/augustus/CLionProjects/hw3/tests.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -66,18 +66,18 @@ include CMakeFiles/hw3_.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/hw3_.dir/flags.make
 
-CMakeFiles/hw3_.dir/main.cpp.o: CMakeFiles/hw3_.dir/flags.make
-CMakeFiles/hw3_.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hw3_.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw3_.dir/main.cpp.o -c /home/augustus/CLionProjects/hw3/main.cpp
+CMakeFiles/hw3_.dir/tests.cpp.o: CMakeFiles/hw3_.dir/flags.make
+CMakeFiles/hw3_.dir/tests.cpp.o: ../tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hw3_.dir/tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hw3_.dir/tests.cpp.o -c /home/augustus/CLionProjects/hw3/tests.cpp
 
-CMakeFiles/hw3_.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw3_.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/augustus/CLionProjects/hw3/main.cpp > CMakeFiles/hw3_.dir/main.cpp.i
+CMakeFiles/hw3_.dir/tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw3_.dir/tests.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/augustus/CLionProjects/hw3/tests.cpp > CMakeFiles/hw3_.dir/tests.cpp.i
 
-CMakeFiles/hw3_.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw3_.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/augustus/CLionProjects/hw3/main.cpp -o CMakeFiles/hw3_.dir/main.cpp.s
+CMakeFiles/hw3_.dir/tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw3_.dir/tests.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/augustus/CLionProjects/hw3/tests.cpp -o CMakeFiles/hw3_.dir/tests.cpp.s
 
 CMakeFiles/hw3_.dir/Student.cpp.o: CMakeFiles/hw3_.dir/flags.make
 CMakeFiles/hw3_.dir/Student.cpp.o: ../Student.cpp
@@ -107,14 +107,14 @@ CMakeFiles/hw3_.dir/Group.cpp.s: cmake_force
 
 # Object files for target hw3_
 hw3__OBJECTS = \
-"CMakeFiles/hw3_.dir/main.cpp.o" \
+"CMakeFiles/hw3_.dir/tests.cpp.o" \
 "CMakeFiles/hw3_.dir/Student.cpp.o" \
 "CMakeFiles/hw3_.dir/Group.cpp.o"
 
 # External object files for target hw3_
 hw3__EXTERNAL_OBJECTS =
 
-hw3_: CMakeFiles/hw3_.dir/main.cpp.o
+hw3_: CMakeFiles/hw3_.dir/tests.cpp.o
 hw3_: CMakeFiles/hw3_.dir/Student.cpp.o
 hw3_: CMakeFiles/hw3_.dir/Group.cpp.o
 hw3_: CMakeFiles/hw3_.dir/build.make

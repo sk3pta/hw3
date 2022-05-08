@@ -37,11 +37,13 @@ public:
 
     //--------------------------------------------------------------------------------------//
 
-    void add_grades(std::string subject, size_t grade);
+    void add_grades(const std::map<std::string,size_t>&);
 
-    void remove_grades(std::string subject);
+    void remove_grades(const std::string& subject);
 
     double average_all();
+
+    std::map<std::string, unsigned int> get_grades();
 
     //-------------------------------------------------------------------------------------//
 

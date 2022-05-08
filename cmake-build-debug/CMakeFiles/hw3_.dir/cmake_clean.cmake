@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hw3_.dir/Group.cpp.o"
   "CMakeFiles/hw3_.dir/Student.cpp.o"
-  "CMakeFiles/hw3_.dir/main.cpp.o"
+  "CMakeFiles/hw3_.dir/tests.cpp.o"
   "hw3_"
   "hw3_.pdb"
 )

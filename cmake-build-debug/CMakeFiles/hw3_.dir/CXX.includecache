@@ -16,10 +16,6 @@ headers.h
 Student.h
 /home/augustus/CLionProjects/hw3/Student.h
 
-/home/augustus/CLionProjects/hw3/Student.cpp
-Student.h
-/home/augustus/CLionProjects/hw3/Student.h
-
 /home/augustus/CLionProjects/hw3/Student.h
 headers.h
 /home/augustus/CLionProjects/hw3/headers.h
@@ -36,7 +32,7 @@ fstream
 vector
 -
 
-/home/augustus/CLionProjects/hw3/main.cpp
+/home/augustus/CLionProjects/hw3/tests.cpp
 headers.h
 /home/augustus/CLionProjects/hw3/headers.h
 Student.h
