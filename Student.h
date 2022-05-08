@@ -14,11 +14,13 @@ private:
 
 
     std::string group_name;
-    size_t course;
+    size_t course{};
 
     std::map<std::string, unsigned int> grades;
 
 public:
+
+    Student() = default;
 
 
     Student(std::string name, std::string middle_name, std::string last_name,
@@ -27,6 +29,11 @@ public:
     Student(std::string name, std::string middle_name, std::string last_name,
             std::string group_name, size_t course, std::map<std::string, unsigned int> grades);
 
+    Student(const Student &student);
+
+    Student(Student &&student) noexcept;
+
+    ~Student() = default;
 
     //--------------------------------------------------------------------------------------//
 
@@ -38,7 +45,12 @@ public:
 
     //-------------------------------------------------------------------------------------//
 
+    Student &operator=(const Student &student);
+
+    Student &operator=(Student &&student);
+
     friend std::ostream &operator<<(std::ostream &out, const Student &student);
+
 };
 
 

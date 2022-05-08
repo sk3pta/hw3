@@ -50,6 +50,46 @@ double Student::average_all() {
     return average / subjects_amount;
 }
 
+Student::Student(const Student &student) {
+    this->name = student.name;
+    this->middle_name = student.middle_name;
+    this->last_name = student.last_name;
+    this->group_name = student.group_name;
+    this->course = student.course;
+    this->grades = student.grades;
+}
+
+Student::Student(Student &&student) noexcept {
+    std::swap(this->name,student.name);
+    std::swap(this->middle_name, student.middle_name);
+    std::swap(this->last_name,student.last_name);
+    std::swap(this->group_name,student.group_name);
+    std::swap(this->course,student.course);
+    std::swap(this->grades,student.grades);
+}
+
+Student &Student::operator=(const Student &student) {
+    this->name = student.name;
+    this->middle_name = student.middle_name;
+    this->last_name = student.last_name;
+    this->group_name = student.group_name;
+    this->course = student.course;
+    this->grades = student.grades;
+
+    return *this;
+}
+
+Student &Student::operator=(Student &&student) {
+    std::swap(this->name,student.name);
+    std::swap(this->middle_name, student.middle_name);
+    std::swap(this->last_name,student.last_name);
+    std::swap(this->group_name,student.group_name);
+    std::swap(this->course,student.course);
+    std::swap(this->grades,student.grades);
+
+    return *this;
+}
+
 
 
 
