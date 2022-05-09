@@ -37,7 +37,7 @@ const Student &Group::getStudent(unsigned int student_id)  {
 
 }
 std::ostream& operator <<(std::ostream& out, const Group group) {
-    out << "Group: " << group.name << std::endl;
+    out << "Group: wow " << group.name << std::endl;
     for (int i = 0; i < group.students_amount; i++) {
         out << group.students[i] << std::endl;
 

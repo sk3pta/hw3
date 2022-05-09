@@ -5,6 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <random>
+#include <ctime>
+
 
 
 #endif //HW3__HEADERS_H

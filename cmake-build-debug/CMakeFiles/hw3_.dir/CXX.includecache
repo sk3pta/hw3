@@ -27,6 +27,10 @@ fstream
 -
 vector
 -
+random
+-
+ctime
+-
 
 /home/augustus/CLionProjects/hw3/tests.cpp
 headers.h
