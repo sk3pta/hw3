@@ -3,7 +3,7 @@
 
 Group::Group(std::string name, size_t students_amount)
 {
-
+    this->students_amount = students_amount;
     this->students = {};
     this-> name = name;
     this->students.resize(students_amount);
@@ -12,7 +12,7 @@ Group::Group(std::string name, size_t students_amount)
 Group::Group(std::string name, size_t students_amount, std::vector<Student> students) 
 {
 
-
+    this->students_amount = students_amount;
     this->students.resize(students_amount);
     this->students = students;
     this->name = name;
@@ -36,7 +36,7 @@ const Student &Group::getStudent(unsigned int student_id)  {
     }
 
 }
-std::ostream& operator <<(std::ostream& out, const Group group) {
+std::ostream& operator <<(std::ostream& out, const Group& group) {
     out << "Group: " << group.name << std::endl;
     for (int i = 0; i < group.students_amount; i++) {
         out << group.students[i] << std::endl;

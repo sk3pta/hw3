@@ -26,17 +26,13 @@ int main() {
 
     Group iu8_22("iu8-22");
 
-    std::vector<Student> test_vector;
+    std::vector<Student> test_vector = {};
     test_vector.push_back(alik);
     test_vector.push_back(malik);
-
+    std::cout << test_vector.size() << "size " << std::endl;
     Group iu8_33("iu8-33",test_vector.size(),test_vector);
     std::cout << "after adding to a group";
-    std::cout << alik;
-    std::cout << malik;
-    std::cout << "";
+    std::cout << "\n";
     std::cout << iu8_33 << std::endl;
-
-    auto alik_id = alik.getStudentId();
 
 }
