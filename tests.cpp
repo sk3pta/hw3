@@ -5,7 +5,7 @@
 
 int main() {
 
-    srandom(static_cast<int>(time(nullptr)));
+    srand(static_cast<int>(time(nullptr)));
 
     Student alik("Alik","Murtazaevich","Murtazaev",1);
 

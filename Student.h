@@ -19,7 +19,7 @@ private:
 
     std::map<std::string, unsigned int> grades;
     size_t getRandomId() {
-        return random();
+        return rand();
     }
 public:
 
