@@ -1,21 +1,21 @@
 #include "Student.h"
 
 Student::Student(std::string name, std::string middle_name, std::string last_name,
-                 std::string group_name, size_t course) : name(name), middle_name(middle_name),
-                                                          last_name(last_name), group_name(group_name), course(course) {
+                 size_t course) : name(name), middle_name(middle_name),
+                                  last_name(last_name), course(course) {
     this->grades = {};
 }
 
-Student::Student(std::string name, std::string middle_name, std::string last_name, std::string group_name,
+Student::Student(std::string name, std::string middle_name, std::string last_name,
                  size_t course,
                  std::map<std::string, unsigned int> grades) : name(name), middle_name(middle_name),
-                                                               last_name(last_name), group_name(group_name),
+                                                               last_name(last_name),
                                                                course(course),
                                                                grades(grades) {
 
 }
 
-void Student::add_grades(const std::map<std::string, size_t> &new_grades) {
+void Student::addGrades(const std::map<std::string, size_t> &new_grades) {
 
     for (const auto &grade: new_grades) {
 
@@ -26,7 +26,7 @@ void Student::add_grades(const std::map<std::string, size_t> &new_grades) {
     }
 }
 
-void Student::remove_grades(const std::string &subject) {
+void Student::removeGrades(const std::string &subject) {
     this->grades.erase(subject);
 
 }
@@ -44,7 +44,7 @@ std::ostream &operator<<(std::ostream &out, const Student &student) {
     return out;
 }
 
-double Student::average_all() {
+double Student::averageAll() {
     double average = 0.0;
     double subjects_amount = 0.0;
     for (const auto &element: this->grades) {
@@ -97,6 +97,18 @@ Student &Student::operator=(Student &&student) {
 std::map<std::string, unsigned int> Student::get_grades() {
     return this->grades;
 }
+
+void Student::setGroup(const std::string &groupname) {
+
+    this->group_name = groupname;
+
+}
+
+std::string Student::getGroup() {
+    return this->group_name;
+}
+
+
 
 
 

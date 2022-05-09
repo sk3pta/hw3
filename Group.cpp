@@ -11,10 +11,13 @@ Group::Group(std::string, size_t students_amount, std::vector<Student> students)
         name(name), students_amount(students_amount), students(students) {
 
 
-
     this->students.resize(students_amount);
+    this->students = students;
 
-    for (size_t x = 0; x < students.size(); ++x) {
-
+    for (auto &student: students) {
+        student.setGroup(this->name);
     }
 }
+
+
+

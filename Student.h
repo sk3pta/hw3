@@ -23,11 +23,10 @@ public:
     Student() = default;
 
 
-    Student(std::string name, std::string middle_name, std::string last_name,
-            std::string group_name, size_t course);
+    Student(std::string name, std::string middle_name, std::string last_name, size_t course);
 
     Student(std::string name, std::string middle_name, std::string last_name,
-            std::string group_name, size_t course, std::map<std::string, unsigned int> grades);
+            size_t course, std::map<std::string, unsigned int> grades);
 
     Student(const Student &student);
 
@@ -37,11 +36,17 @@ public:
 
     //--------------------------------------------------------------------------------------//
 
-    void add_grades(const std::map<std::string,size_t>&);
 
-    void remove_grades(const std::string& subject);
 
-    double average_all();
+    void addGrades(const std::map<std::string, size_t> &);
+
+    void removeGrades(const std::string &subject);
+
+    void setGroup(const std::string & groupname);
+
+    std::string getGroup();
+
+    double averageAll();
 
     std::map<std::string, unsigned int> get_grades();
 
