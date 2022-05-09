@@ -20,6 +20,8 @@ public:
     //===================================================================//
 
     void addStudent(const Student &student);
+
+    const Student &getStudent(unsigned int student_id);
 };
 
 

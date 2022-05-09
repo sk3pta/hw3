@@ -26,5 +26,14 @@ void Group::addStudent(const Student &student) {
     this->students.push_back(new_student);
 }
 
+const Student &Group::getStudent(unsigned int student_id)  {
+
+    for (const auto &student : this->students) {
+        if (student.getStudentId() == student_id)
+            return student;
+    }
+
+}
+
 
 

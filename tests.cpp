@@ -5,6 +5,8 @@
 
 int main() {
 
+    srandom(static_cast<int>(time(nullptr)));
+
     Student alik("Alik","Murtazaevich","Murtazaev",1);
 
     Student malik("Alek","Nonamovich","Balls",
@@ -32,5 +34,8 @@ int main() {
     std::cout << alik;
     std::cout << malik;
     std::cout << "";
+
+
+    auto alik_id = alik.getStudentId();
 
 }
