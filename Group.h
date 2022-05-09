@@ -19,7 +19,7 @@ public:
 
     //===================================================================//
 
-    Student getStudentByName(const std::string &student_name);
+    void addStudent(const Student &student);
 };
 
 

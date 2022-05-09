@@ -8,6 +8,7 @@
 class Student {
 private:
 
+    unsigned int student_id;
     std::string name;
     std::string middle_name;
     std::string last_name;
@@ -17,7 +18,9 @@ private:
     size_t course{};
 
     std::map<std::string, unsigned int> grades;
-
+    size_t getRandomId() {
+        return random();
+    }
 public:
 
     Student() = default;
@@ -43,6 +46,8 @@ public:
     void removeGrades(const std::string &subject);
 
     void setGroup(const std::string & groupname);
+
+    unsigned int getStudentId() const;
 
     std::string getGroup();
 

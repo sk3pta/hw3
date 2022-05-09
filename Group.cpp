@@ -19,5 +19,12 @@ Group::Group(std::string, size_t students_amount, std::vector<Student> students)
     }
 }
 
+void Group::addStudent(const Student &student) {
+
+    Student new_student = student;
+    new_student.setGroup(this->name);
+    this->students.push_back(new_student);
+}
+
 
 
