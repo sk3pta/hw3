@@ -3,6 +3,7 @@
 #include "Student.h"
 #include "Group.h"
 
+
 int main() {
 
     srand(static_cast<int>(time(nullptr)));
@@ -34,7 +35,7 @@ int main() {
     std::cout << alik;
     std::cout << malik;
     std::cout << "";
-
+    std::cout << iu8_33 << std::endl;
 
     auto alik_id = alik.getStudentId();
 

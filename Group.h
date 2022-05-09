@@ -3,6 +3,7 @@
 
 #include "headers.h"
 #include "Student.h"
+
 class Group {
 private:
     std::string name;
@@ -22,6 +23,7 @@ public:
     void addStudent(const Student &student);
 
     const Student &getStudent(unsigned int student_id);
+    friend std::ostream& operator <<(std::ostream& out, const Group group);
 };
 
 
