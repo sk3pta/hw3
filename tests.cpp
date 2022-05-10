@@ -2,30 +2,25 @@
 #include "headers.h"
 #include "Student.h"
 #include "Group.h"
-
+#include "ID.h"
 
 int main() {
 
-    srand(static_cast<int>(time(nullptr)));
 
-    Student alik("Alik","Murtazaevich","Murtazaev",1);
+    ID mainIdManager(1);
 
-    Student malik("Alek","Nonamovich","Balls",
-                  2,{{"Math",5}, {"Physics",4},
-                     {"AL",5}});
+    Student alik("Alik", "Murtazaevich", "Murtazaev", 1);
 
-    Group iu10("ИУ10-22");
+    Student malik("Alek", "Nonamovich", "Balls",
+                  2, {{"Math",    5},
+                      {"Physics", 4},
+                      {"AL",      5}});
 
+    Group iu10("ИУ10-22",&mainIdManager,0);
+    std::cout << "GROUP ID TEST" << "\n" << iu10 << std::endl;
     iu10.addStudent(alik);
 
     std::cout << iu10 << std::endl;
-
-    iu10 = iu10 + malik;
-
-    std::cout << "Testing + operator " << iu10 << std::endl;
-
-
-
 
 /*
     //Testing add_grades  and get_grades method

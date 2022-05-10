@@ -9,6 +9,10 @@
 /home/augustus/CLionProjects/hw3/Group.cpp
 Group.h
 /home/augustus/CLionProjects/hw3/Group.h
+headers.h
+/home/augustus/CLionProjects/hw3/headers.h
+ID.h
+/home/augustus/CLionProjects/hw3/ID.h
 fstream
 -
 
@@ -17,6 +21,12 @@ headers.h
 /home/augustus/CLionProjects/hw3/headers.h
 Student.h
 /home/augustus/CLionProjects/hw3/Student.h
+ID.h
+/home/augustus/CLionProjects/hw3/ID.h
+
+/home/augustus/CLionProjects/hw3/ID.h
+headers.h
+/home/augustus/CLionProjects/hw3/headers.h
 
 /home/augustus/CLionProjects/hw3/Student.h
 headers.h
@@ -36,5 +46,7 @@ vector
 random
 -
 ctime
+-
+algorithm
 -
 

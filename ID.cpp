@@ -1,0 +1,23 @@
+#include "ID.h"
+
+
+ID::ID(int) {
+    srand(time(nullptr));
+    this->id_vector = {};
+}
+
+ID::ID(const std::vector<unsigned int> &id_vector) {
+    srand(time(nullptr));
+    this->id_vector = id_vector;
+}
+
+
+unsigned int ID::getId() {
+    unsigned int new_id = random();
+    while (std::find(id_vector.begin(), id_vector.end(), new_id) != id_vector.end())
+        new_id = random();
+    this->id_vector.push_back(new_id);
+
+    return new_id;
+}
+

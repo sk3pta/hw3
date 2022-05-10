@@ -3,21 +3,27 @@
 
 #include "headers.h"
 #include "Student.h"
+#include "ID.h"
 
 class Group {
 private:
+
+
     std::string name;
     size_t students_amount;
     std::vector<Student> students;
 
 
 public:
-    explicit Group(std::string name, size_t students_amount = 0);
+    unsigned int group_id;
+
+    Group(std::string name, ID *id_manager, size_t students_amount);
 
     Group(std::string, size_t students_amount,
-          std::vector<Student> students);
+          std::vector<Student> students, ID *id_manager);
 
 
+    ~Group() = default;
     //===================================================================//
 
     void addStudent(const Student &student);
@@ -29,7 +35,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &out, const Group &group);
 
-    friend Group &operator+(Group &group,const Student &student);
+    friend Group &operator+(Group &group, const Student &student);
 
 };
 

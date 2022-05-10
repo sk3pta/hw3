@@ -4,7 +4,12 @@
 CMakeFiles/hw3_.dir/Group.cpp.o: \
  ../Group.cpp \
  ../Group.h \
+ ../ID.h \
  ../Student.h \
+ ../headers.h
+CMakeFiles/hw3_.dir/ID.cpp.o: \
+ ../ID.cpp \
+ ../ID.h \
  ../headers.h
 CMakeFiles/hw3_.dir/Student.cpp.o: \
  ../Student.cpp \
@@ -12,6 +17,7 @@ CMakeFiles/hw3_.dir/Student.cpp.o: \
  ../headers.h
 CMakeFiles/hw3_.dir/tests.cpp.o: \
  ../Group.h \
+ ../ID.h \
  ../Student.h \
  ../headers.h \
  ../tests.cpp
