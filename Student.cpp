@@ -2,7 +2,7 @@
 
 Student::Student(std::string name, std::string middle_name, std::string last_name,
                  size_t course) : name(name), middle_name(middle_name),
-                                  last_name(last_name), course(course), student_id(getRandomId()) {
+                                  last_name(last_name), course(course) {
     this->grades = {};
 }
 
@@ -11,7 +11,7 @@ Student::Student(std::string name, std::string middle_name, std::string last_nam
                  std::map<std::string, unsigned int> grades) : name(name), middle_name(middle_name),
                                                                last_name(last_name),
                                                                course(course),
-                                                               grades(grades), student_id(getRandomId()) {
+                                                               grades(grades) {
 
 }
 
@@ -33,7 +33,7 @@ void Student::removeGrades(const std::string &subject) {
 
 
 std::ostream &operator<<(std::ostream &out, const Student &student) {
-    out << "StudentID : " << student.student_id << std::endl;
+    //out << "StudentID : " << student.student_id << std::endl;
     out << "Student : " << student.name << " " << student.middle_name << " " << student.last_name << std::endl;
     out << "Group : " << student.group_name << "\nCourse : " << student.course << std::endl;
     out << "Grades : \n";

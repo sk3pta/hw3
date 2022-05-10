@@ -153,6 +153,30 @@ Group.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/Group.cpp.s
 .PHONY : Group.cpp.s
 
+ID.o: ID.cpp.o
+.PHONY : ID.o
+
+# target to build an object file
+ID.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/ID.cpp.o
+.PHONY : ID.cpp.o
+
+ID.i: ID.cpp.i
+.PHONY : ID.i
+
+# target to preprocess a source file
+ID.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/ID.cpp.i
+.PHONY : ID.cpp.i
+
+ID.s: ID.cpp.s
+.PHONY : ID.s
+
+# target to generate assembly for a file
+ID.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/ID.cpp.s
+.PHONY : ID.cpp.s
+
 Student.o: Student.cpp.o
 .PHONY : Student.o
 
@@ -213,6 +237,9 @@ help:
 	@echo "... Group.o"
 	@echo "... Group.i"
 	@echo "... Group.s"
+	@echo "... ID.o"
+	@echo "... ID.i"
+	@echo "... ID.s"
 	@echo "... Student.o"
 	@echo "... Student.i"
 	@echo "... Student.s"

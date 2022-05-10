@@ -18,9 +18,6 @@ private:
     size_t course{};
 
     std::map<std::string, unsigned int> grades;
-    size_t getRandomId() {
-        return rand();
-    }
 public:
 
     Student() = default;
