@@ -25,6 +25,7 @@ void Group::addStudent(const Student &student) {
 
     Student new_student = student;
     new_student.setGroup(this->name);
+    this->students_amount += 1;
     this->students.push_back(new_student);
 }
 
@@ -46,6 +47,12 @@ std::ostream& operator <<(std::ostream& out, const Group& group) {
 
 
 
+}
+
+Group &operator+(Group &group, const Student &student) {
+    group.students_amount += 1;
+    group.students.push_back(student);
+    return group;
 }
 
 

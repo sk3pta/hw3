@@ -14,7 +14,20 @@ int main() {
                   2,{{"Math",5}, {"Physics",4},
                      {"AL",5}});
 
+    Group iu10("ИУ10-22");
 
+    iu10.addStudent(alik);
+
+    std::cout << iu10 << std::endl;
+
+    iu10 = iu10 + malik;
+
+    std::cout << "Testing + operator " << iu10 << std::endl;
+
+
+
+
+/*
     //Testing add_grades  and get_grades method
 
     alik.addGrades({{"Math",5},{"Physics",3},{"AL",5}});
@@ -34,5 +47,7 @@ int main() {
     std::cout << "after adding to a group";
     std::cout << "\n";
     std::cout << iu8_33 << std::endl;
+
+    */
 
 }
