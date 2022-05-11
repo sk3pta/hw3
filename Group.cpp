@@ -5,20 +5,20 @@
 #include <map>
 #include <utility>
 
-Group::Group(std::string name, ID *id_manager, size_t students_amount = 0) {
-    this->group_id = id_manager->getId();
+Group::Group(ID *id_manager, std::string name,  size_t students_amount = 0) {
+    this->group_id = id_manager->getGroupId();
     this->students_amount = students_amount;
     this->students = {};
     this->name = std::move(name);
 }
 
-Group::Group(std::string name, ID *id_manager, size_t students_amount, const std::list<unsigned int>& students) {
-    this->group_id = id_manager->getId();
+Group::Group(ID *id_manager, std::string name,  size_t students_amount, const std::list<Student>& students) {
+    this->group_id = id_manager->getGroupId();
     this->students_amount = students_amount;
     this->name = std::move(name);
     for (auto student: students) {
         student.setGroup(this->name);
-        this->students.push_back(student.getStudentId());
+        this->students.push_back(student);
     }
 }
 

@@ -17,7 +17,7 @@ int main() {
     Student jack("Jack", &mainIdManager,"Captain","The Sparrow",1);
     jack.addGrades({{"Math",5},{"Physics",5}});
 
-    Group iu8_22("ИУ8-22",&mainIdManager,2,{alik,jack});
+    Group iu8_22(&mainIdManager,"ИУ8-22",2,{alik,jack});
 
     std::cout << iu8_22;
 
