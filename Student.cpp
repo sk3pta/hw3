@@ -21,6 +21,7 @@ void Student::addGrades(const std::map<std::string, size_t> &new_grades) {
 
         if (this->grades.find(grade.first) == grades.end())
             this->grades.insert(grade);
+
         else
             this->grades[grade.first] = grade.second;
     }

@@ -1,7 +1,7 @@
 #include "ID.h"
 
 
-ID::ID(int) {
+ID::ID() {
     srand(time(nullptr));
     this->id_vector = {};
 }

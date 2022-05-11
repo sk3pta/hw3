@@ -7,7 +7,7 @@ class ID {
 private:
     std::vector<unsigned int> id_vector;
 public:
-    ID(int);
+    ID();
 
     explicit ID(const std::vector<unsigned int>& id_vector);
 

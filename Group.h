@@ -11,7 +11,7 @@ private:
 
     std::string name;
     size_t students_amount;
-    std::map<unsigned int , Student> students;
+    std::list<Student> students;
 
 
 public:
@@ -19,8 +19,8 @@ public:
 
     Group(std::string name, ID *id_manager, size_t students_amount);
 
-    Group(std::string, size_t students_amount,
-          std::map<unsigned int, Student> students, ID *id_manager);
+    Group(std::string, ID *id_manager, size_t students_amount,
+          const std::list<Student> &students);
 
 
     ~Group() = default;
@@ -36,7 +36,8 @@ public:
     friend std::ostream &operator<<(std::ostream &out, const Group &group);
 
     friend Group &operator+(Group &group, const Student &student);
-    friend Group& operator-(Group& group, const Student& student);
+
+    friend Group &operator-(Group &group, const Student &student);
 
 };
 

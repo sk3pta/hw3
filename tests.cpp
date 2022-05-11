@@ -6,24 +6,22 @@
 int main() {
 
 
-    ID mainIdManager(1);
+    ID mainIdManager;
 
-    Student alik("Alik", "Murtazaevich", "Murtazaev", 1);
+    Student alik("Alik", "Murtazaev", "Murtazaevich", 1, {
+            {"Physics",     3},
+            {"Mathematics", 5},
+            {"AL",          5}}
+    );
 
-    Student malik("Alek", "Nonamovich", "Balls",
-                  2, {{"Math",    5},
-                      {"Physics", 4},
-                      {"AL",      5}});
+    Student jack("Jack","Captain","The Sparrow",1);
+    jack.addGrades({{"Math",5},{"Physics",5}});
 
-    Group iu10("IU10-22",&mainIdManager,0);
-    std::cout << "GROUP ID TEST" << "\n" << iu10 << std::endl;
-    iu10.addStudent(alik);
-    std::cout << "check how works operator +" << std::endl;
-    iu10 + alik;
+    Group iu8_22("ИУ8-22",&mainIdManager,2,{alik,jack});
 
-    std::cout << iu10 << std::endl;
+    std::cout << iu8_22;
 
-/*
+    /*
     //Testing add_grades  and get_grades method
 
     alik.addGrades({{"Math",5},{"Physics",3},{"AL",5}});
