@@ -45,6 +45,8 @@ public:
 
     void setGroup(const std::string & groupname);
 
+    Student Studentbyid(unsigned int student_id);
+
     unsigned int getStudentId() const;
 
     std::string getGroup();
