@@ -8,13 +8,13 @@ int main() {
 
     ID mainIdManager;
 
-    Student alik("Alik", "Murtazaev", "Murtazaevich", 1, {
+    Student alik("Alik", &mainIdManager, "Murtazaev", "Murtazaevich", 1, {
             {"Physics",     3},
             {"Mathematics", 5},
             {"AL",          5}}
     );
 
-    Student jack("Jack","Captain","The Sparrow",1);
+    Student jack("Jack", &mainIdManager,"Captain","The Sparrow",1);
     jack.addGrades({{"Math",5},{"Physics",5}});
 
     Group iu8_22("ИУ8-22",&mainIdManager,2,{alik,jack});
