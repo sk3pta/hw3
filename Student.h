@@ -4,6 +4,7 @@
 
 #include "headers.h"
 #include <map>
+#include "ID.h"
 
 class Student {
 private:
@@ -23,9 +24,9 @@ public:
     Student() = default;
 
 
-    Student(std::string name, std::string middle_name, std::string last_name, size_t course);
+    Student(std::string name, ID *id_manager, std::string middle_name, std::string last_name, size_t course);
 
-    Student(std::string name, std::string middle_name, std::string last_name,
+    Student(std::string name, ID *id_manager, std::string middle_name, std::string last_name,
             size_t course, std::map<std::string, unsigned int> grades);
 
     Student(const Student &student);
