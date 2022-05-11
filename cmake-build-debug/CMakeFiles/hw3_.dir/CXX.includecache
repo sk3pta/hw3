@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/augustus/CLionProjects/hw3/Group.cpp
-Group.h
-/home/augustus/CLionProjects/hw3/Group.h
-headers.h
-/home/augustus/CLionProjects/hw3/headers.h
-ID.h
-/home/augustus/CLionProjects/hw3/ID.h
-fstream
--
-
 /home/augustus/CLionProjects/hw3/Group.h
 headers.h
 /home/augustus/CLionProjects/hw3/headers.h
@@ -49,4 +39,14 @@ ctime
 -
 algorithm
 -
+
+/home/augustus/CLionProjects/hw3/tests.cpp
+headers.h
+/home/augustus/CLionProjects/hw3/headers.h
+Student.h
+/home/augustus/CLionProjects/hw3/Student.h
+Group.h
+/home/augustus/CLionProjects/hw3/Group.h
+ID.h
+/home/augustus/CLionProjects/hw3/ID.h
 

@@ -1,4 +1,3 @@
-
 #include "headers.h"
 #include "Student.h"
 #include "Group.h"
@@ -16,9 +15,11 @@ int main() {
                       {"Physics", 4},
                       {"AL",      5}});
 
-    Group iu10("ИУ10-22",&mainIdManager,0);
+    Group iu10("IU10-22",&mainIdManager,0);
     std::cout << "GROUP ID TEST" << "\n" << iu10 << std::endl;
     iu10.addStudent(alik);
+    std::cout << "check how works operator +" << std::endl;
+    iu10 + alik;
 
     std::cout << iu10 << std::endl;
 
