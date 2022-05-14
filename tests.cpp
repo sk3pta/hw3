@@ -15,11 +15,13 @@ int main() {
     );
 
     Student jack("Jack", &mainIdManager,"Captain","The Sparrow",1);
-    jack.addGrades({{"Math",5},{"Physics",5}});
-
-    Group iu8_22(&mainIdManager,"ИУ8-22",2,{alik,jack});
-
+    jack.addGrades({{"Math",5},{"Physics",5},{"AL",5} });
+    std::vector < std::string > subjects = { "Math","Physics","AL" };
+    std::list <Student> students = {alik,jack};
+    Group iu8_22(&mainIdManager,"ИУ8-22",2,students, subjects);
     std::cout << iu8_22;
+    std::cout << "test good marks " << std::endl;
+    Nice_Grades(std::cout,iu8_22);
 
     /*
     //Testing add_grades  and get_grades method
