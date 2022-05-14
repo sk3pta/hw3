@@ -19,9 +19,26 @@ int main() {
     std::vector < std::string > subjects = { "Math","Physics","AL" };
     std::list <Student> students = {alik,jack};
     Group iu8_22(&mainIdManager,"ИУ8-22",2,students, subjects);
+    auto bylastname = iu8_22.findByLastName("Murtazaevich");
+    auto byname = iu8_22.findByName("Jack");
+    auto bycourse = iu8_22.findByCourse(1);
+
+    for (auto element: bycourse) {
+        std::cout << element;
+    }
+
+    Student max("Maximus", &mainIdManager, "Gladiator", "Murtazaevich", 1, {
+            {"Physics",     3},
+            {"Mathematics", 5},
+            {"AL",          5}}
+    );
+
+    iu8_22 = iu8_22 +  max;
+
     std::cout << iu8_22;
-    std::cout << "test good marks " << std::endl;
-    Nice_Grades(std::cout,iu8_22);
+
+    //std::cout << "test good marks " << std::endl;
+    //Nice_Grades(std::cout,iu8_22);
 
     /*
     //Testing add_grades  and get_grades method

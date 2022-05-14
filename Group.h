@@ -29,7 +29,16 @@ public:
 
     void addStudent(const Student &student);
 
-    const Student &getStudent(unsigned int student_id);
+    std::vector<Student> findByLastName(const std::string &_lastname);
+
+    std::vector<Student> findByName(const std::string &_name);
+
+    std::vector<Student> findByCourse(size_t _course);
+
+    std::vector<Student> findBy;
+
+
+    const Student &getStudentbyId(unsigned int student_id);
     //===================================================================//
 
 
