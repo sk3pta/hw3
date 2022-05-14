@@ -7,27 +7,30 @@
 #include "ID.h"
 
 class Student {
+
+
 private:
 
     unsigned int student_id;
+
+
+    std::map<std::string, unsigned int> grades;
+public:
     std::string name;
     std::string middle_name;
     std::string last_name;
 
 
     std::string group_name;
-    size_t course{};
-
-    std::map<std::string, unsigned int> grades;
-public:
+    unsigned int course;
 
     Student() = default;
 
 
-    Student(std::string name, ID *id_manager, std::string middle_name, std::string last_name, size_t course);
+    Student(std::string name, ID *id_manager, std::string middle_name, std::string last_name, unsigned int course);
 
     Student(std::string name, ID *id_manager, std::string middle_name, std::string last_name,
-            size_t course, std::map<std::string, unsigned int> grades);
+            unsigned int course, std::map<std::string, unsigned int> grades);
 
     Student(const Student &student);
 
@@ -46,11 +49,9 @@ public:
     void setGroup(const std::string & groupname);
  
 
-    Student Studentbyid(unsigned int student_id);
-
     unsigned int getStudentId() const;
 
-    std::string getGroup();
+    std::string getGroup() const;
 
     double averageAll();
 

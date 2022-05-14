@@ -1,7 +1,8 @@
 #include "Student.h"
 
 Student::Student(std::string name, ID *id_manager, std::string middle_name,  std::string last_name,
-                 size_t course){
+                 unsigned int course){
+    this->course = course;
     this->name = name;
     this->middle_name = middle_name;
     this->last_name = last_name;
@@ -11,8 +12,9 @@ Student::Student(std::string name, ID *id_manager, std::string middle_name,  std
 }
 
 Student::Student(std::string name,ID *id_manager, std::string middle_name, std::string last_name,
-                 size_t course,
+                 unsigned int course,
                  std::map<std::string, unsigned int> grades) {
+    this->course = course;
     this->name = name;
     this->middle_name = middle_name;
     this->last_name = last_name;
@@ -117,7 +119,7 @@ void Student::setGroup(const std::string &groupname) {
 
 }
 
-std::string Student::getGroup() {
+std::string Student::getGroup() const {
     return this->group_name;
 }
 
