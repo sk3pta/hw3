@@ -15,7 +15,7 @@ int main() {
     );
 
     Student jack("Jack", &mainIdManager,"Captain","The Sparrow",1);
-    jack.addGrades({{"Math",5},{"Physics",5},{"AL",5} });
+    jack.addGrades({{"Math",3},{"Physics",5},{"AL",5} });
     std::vector < std::string > subjects = { "Math","Physics","AL" };
     std::list <Student> students = {alik,jack};
     Group iu8_22(&mainIdManager,"ИУ8-22",2,students, subjects);
