@@ -5,7 +5,8 @@
 #include "headers.h"
 class ID {
 private:
-    std::vector<unsigned int> id_vector;
+    std::vector<unsigned int> student_ids;
+    std::vector<unsigned int> group_ids;
 public:
     ID();
 
@@ -13,9 +14,11 @@ public:
 
 
 
-    void addId(unsigned int id);
+    void addStudentId(unsigned int id);
 
-    unsigned int getId();
+    unsigned int getStudentId();
+
+    unsigned int getGroupId();
 
     ~ID() = default;
 

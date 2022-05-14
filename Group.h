@@ -13,13 +13,14 @@ private:
     size_t students_amount;
     std::list<Student> students;
 
+    std::vector<std::string> subjects;
 
 public:
     unsigned int group_id;
 
-    Group(std::string name, ID *id_manager, size_t students_amount);
+    Group(ID *id_manager, std::string name,  size_t students_amount);
 
-    Group(std::string, ID *id_manager, size_t students_amount,
+    Group(ID *id_manager, std::string,  size_t students_amount,
           const std::list<Student> &students);
 
 

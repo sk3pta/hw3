@@ -6,7 +6,7 @@ Student::Student(std::string name, ID *id_manager, std::string middle_name,  std
     this->middle_name = middle_name;
     this->last_name = last_name;
     this->name = name;
-    this->student_id = id_manager->getId();
+    this->student_id = id_manager->getStudentId();
     this->grades = {};
 }
 
@@ -17,7 +17,7 @@ Student::Student(std::string name,ID *id_manager, std::string middle_name, std::
     this->middle_name = middle_name;
     this->last_name = last_name;
     this->name = name;
-    this->student_id = id_manager->getId();
+    this->student_id = id_manager->getStudentId();
     this->grades = grades;
 
 }
