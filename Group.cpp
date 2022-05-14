@@ -5,12 +5,12 @@
 #include <map>
 #include <utility>
 
-Group::Group(ID* id_manager, std::string name, size_t students_amount = 0, const std::vector<std::string> subjects) {
+Group::Group(ID* id_manager, std::string name, size_t students_amount = 0, const std::vector<std::string> subjects = {}) {
     this->group_id = id_manager->getGroupId();
     this->students_amount = students_amount;
-    this->students = {};
     this->name = std::move(name);
-    this->subjects = {};
+    this->subjects = subjects;
+    this->students = {};
 }
 
 
@@ -54,20 +54,15 @@ std::ostream &Nice_Grades(std::ostream& out, const Group& group)
 {
     out << "Students wtih good marks in  " << group.name << std::endl;
     for (auto student : group.students) {
+        std::map<std::string, unsigned int> grades = student.get_grades();
+        int good_grades = 0;
         for (auto subject : group.subjects) {
-            std::map<std::string, unsigned int> grades =  student.get_grades();
-            bool good_grades = false;
-            for (int i = 0; i < grades.size(); i++) {
-                if (grades[group.subjects[i]] > 3) {
-                    good_grades = true;
-                }
-                else {
-                    good_grades = false;
-                }
+            if (grades[subject] > 3) {
+                good_grades +=1;
             }
-            if (good_grades == true) {
-                out << student << std::endl;
-            }
+        }
+        if (good_grades == group.subjects.size()-1 ){
+            out << student << std::endl;
         }
     }
     return out;
