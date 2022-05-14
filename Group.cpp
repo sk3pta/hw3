@@ -5,17 +5,20 @@
 #include <map>
 #include <utility>
 
-Group::Group(ID *id_manager, std::string name,  size_t students_amount = 0) {
+Group::Group(ID* id_manager, std::string name, size_t students_amount = 0, const std::vector<std::string> subjects = {}) {
     this->group_id = id_manager->getGroupId();
     this->students_amount = students_amount;
-    this->students = {};
     this->name = std::move(name);
+    this->subjects = subjects;
+    this->students = {};
 }
 
-Group::Group(ID *id_manager, std::string name,  size_t students_amount, const std::list<Student>& students) {
+
+Group::Group(ID *id_manager, std::string name,  size_t students_amount, const std::list<Student>& students, const std::vector<std::string> subjects) {
     this->group_id = id_manager->getGroupId();
     this->students_amount = students_amount;
     this->name = std::move(name);
+    this->subjects = subjects;
     for (auto student: students) {
         student.setGroup(this->name);
         this->students.push_back(student);
@@ -47,6 +50,24 @@ std::ostream &operator<<(std::ostream &out, const Group &group) {
 
 }
 
+std::ostream &Nice_Grades(std::ostream& out, const Group& group)
+{
+    out << "Students wtih good marks in  " << group.name << std::endl;
+    for (auto student : group.students) {
+        std::map<std::string, unsigned int> grades = student.get_grades();
+        int good_grades = 0;
+        for (auto subject : group.subjects) {
+            if (grades[subject] > 3) {
+                good_grades +=1;
+            }
+        }
+        if (good_grades == group.subjects.size()-1 ){
+            out << student << std::endl;
+        }
+    }
+    return out;
+}
+
 Group &operator+(Group &group, const Student &student) {
     group.students.push_back(student);
     group.students_amount += 1;
@@ -56,9 +77,4 @@ Group &operator+(Group &group, const Student &student) {
 Group &operator-(Group &group, const Student &student) {
     //
     return group;
-}
-
-std::ostream Nice_Grades(std::ostream& out, const Group& group)
-{
-    
 }

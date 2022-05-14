@@ -44,6 +44,7 @@ public:
     void removeGrades(const std::string &subject);
 
     void setGroup(const std::string & groupname);
+ 
 
     Student Studentbyid(unsigned int student_id);
 
