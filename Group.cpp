@@ -57,8 +57,3 @@ Group &operator-(Group &group, const Student &student) {
     //
     return group;
 }
-
-std::ostream Nice_Grades(std::ostream& out, const Group& group)
-{
-    
-}
