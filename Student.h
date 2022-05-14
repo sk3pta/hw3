@@ -4,6 +4,7 @@
 
 #include "headers.h"
 #include <map>
+#include "ID.h"
 
 class Student {
 private:
@@ -18,17 +19,14 @@ private:
     size_t course{};
 
     std::map<std::string, unsigned int> grades;
-    size_t getRandomId() {
-        return random();
-    }
 public:
 
     Student() = default;
 
 
-    Student(std::string name, std::string middle_name, std::string last_name, size_t course);
+    Student(std::string name, ID *id_manager, std::string middle_name, std::string last_name, size_t course);
 
-    Student(std::string name, std::string middle_name, std::string last_name,
+    Student(std::string name, ID *id_manager, std::string middle_name, std::string last_name,
             size_t course, std::map<std::string, unsigned int> grades);
 
     Student(const Student &student);
@@ -46,6 +44,8 @@ public:
     void removeGrades(const std::string &subject);
 
     void setGroup(const std::string & groupname);
+
+    Student Studentbyid(unsigned int student_id);
 
     unsigned int getStudentId() const;
 

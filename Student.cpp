@@ -1,17 +1,24 @@
 #include "Student.h"
 
-Student::Student(std::string name, std::string middle_name, std::string last_name,
-                 size_t course) : name(name), middle_name(middle_name),
-                                  last_name(last_name), course(course), student_id(getRandomId()) {
+Student::Student(std::string name, ID *id_manager, std::string middle_name,  std::string last_name,
+                 size_t course){
+    this->name = name;
+    this->middle_name = middle_name;
+    this->last_name = last_name;
+    this->name = name;
+    this->student_id = id_manager->getStudentId();
     this->grades = {};
 }
 
-Student::Student(std::string name, std::string middle_name, std::string last_name,
+Student::Student(std::string name,ID *id_manager, std::string middle_name, std::string last_name,
                  size_t course,
-                 std::map<std::string, unsigned int> grades) : name(name), middle_name(middle_name),
-                                                               last_name(last_name),
-                                                               course(course),
-                                                               grades(grades), student_id(getRandomId()) {
+                 std::map<std::string, unsigned int> grades) {
+    this->name = name;
+    this->middle_name = middle_name;
+    this->last_name = last_name;
+    this->name = name;
+    this->student_id = id_manager->getStudentId();
+    this->grades = grades;
 
 }
 
@@ -21,6 +28,7 @@ void Student::addGrades(const std::map<std::string, size_t> &new_grades) {
 
         if (this->grades.find(grade.first) == grades.end())
             this->grades.insert(grade);
+
         else
             this->grades[grade.first] = grade.second;
     }
@@ -62,6 +70,7 @@ Student::Student(const Student &student) {
     this->group_name = student.group_name;
     this->course = student.course;
     this->grades = student.grades;
+    this->student_id = student.student_id;
 }
 
 Student::Student(Student &&student) noexcept {
@@ -71,6 +80,7 @@ Student::Student(Student &&student) noexcept {
     std::swap(this->group_name, student.group_name);
     std::swap(this->course, student.course);
     std::swap(this->grades, student.grades);
+    std::swap(this->student_id, student.student_id);
 }
 
 Student &Student::operator=(const Student &student) {
@@ -80,6 +90,7 @@ Student &Student::operator=(const Student &student) {
     this->group_name = student.group_name;
     this->course = student.course;
     this->grades = student.grades;
+    this->student_id = student.student_id;
 
     return *this;
 }
@@ -91,6 +102,7 @@ Student &Student::operator=(Student &&student) {
     std::swap(this->group_name, student.group_name);
     std::swap(this->course, student.course);
     std::swap(this->grades, student.grades);
+    std::swap(this->student_id, student.student_id);
 
     return *this;
 }

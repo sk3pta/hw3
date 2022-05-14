@@ -7,6 +7,8 @@
 #include <vector>
 #include <random>
 #include <ctime>
+#include <algorithm>
+#include <list>
 
 
 
