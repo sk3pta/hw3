@@ -3,6 +3,7 @@
 #include "Group.h"
 #include "ID.h"
 #include <fstream>
+
 int main() {
 
 
@@ -25,83 +26,27 @@ int main() {
     std::list<Student> students = {alik, jack};
     Group iu8_22(&mainIdManager, "IU8-22", 1, 2, students, subjects);
 
+    std::ofstream output("/home/augustus/CLionProjects/hw3/student.json");
+    saveToJson(output,jack);
 
-/*
-    std::cout << "Init group \n";
-    std::cout << iu8_22;
-    std::cout << "/==============================/ \n";
+    output.close();
+    std::ofstream output_gr("/home/augustus/CLionProjects/hw3/group.json");
+    saveToJson(output_gr,iu8_22);
 
+    std::cout << "TESTING READING STUDENT FROM JSON FILE " << std::endl;
+    std::ifstream input("/home/augustus/CLionProjects/hw3/student.json");
+    Student me;
+    loadFromJson(input,me);
 
-    std::cout << "Group ++" << std::endl;
-    std::cout << ++iu8_22 << std::endl;
-    std::cout << "/=============================/" << std::endl;
+    std::cout << "\n\n\n\n" << std::endl;
 
-    std::vector<Group> group_vec;
-    group_vec.push_back(iu8_22);
+    std::ofstream output2("/home/augustus/CLionProjects/hw3/group.json");
+    saveToJson(output2,iu8_22);
+    output2.close();
+    std::ifstream input2("/home/augustus/CLionProjects/hw3/group.json");
 
-    for (auto gr: group_vec) {
-        std::cout << gr << std::endl;
-    }
-*/
-
-    std::ofstream output_file("student.json");
-    std::ofstream output_file1("student_check.txt");
-
-    //
-    output_file1 << alik;
-    /*
-
-    auto bylastname = iu8_22.findByLastName("Фдшум");
-    auto byname = iu8_22.findByName("Jack");
-    auto bycourse = iu8_22.findByCourse(1);
-
-    for (auto element: bycourse) {
-        std::cout << element;
-    }
-
-    Student max("Maximus", &mainIdManager, "Aa", "AArname", 1, {
-            {"Physics",     3},
-            {"Mathematics", 5},
-            {"AL",          5}}
-    );
-
-    iu8_22 = iu8_22 +  max;
-    std::cout << "tests after +" << std::endl;
-    std::cout << iu8_22;
-    iu8_22 = iu8_22 - max;
-    std::cout << "tests after -" << std::endl;
-    std::cout << iu8_22;
-    std::cout << "test of sort" << std::endl;
-    iu8_22.Sorted_at_all();
-    std::cout << iu8_22;
-
-
-    //std::cout << "test good marks " << std::endl;
-    //Nice_Grades(std::cout,iu8_22);
-
-
-     */
-    /*
-    //Testing add_grades  and get_grades method
-
-    alik.addGrades({{"Math",5},{"Physics",3},{"AL",5}});
-    std::cout << alik;
-
-    alik.addGrades({{"Physics",5}});
-    std::cout << alik;
-
-
-    Group iu8_22("iu8-22");
-
-    std::vector<Student> test_vector = {};
-    test_vector.push_back(alik);
-    test_vector.push_back(malik);
-    std::cout << test_vector.size() << "size " << std::endl;
-    Group iu8_33("iu8-33",test_vector.size(),test_vector);
-    std::cout << "after adding to a group";
-    std::cout << "\n";
-    std::cout << iu8_33 << std::endl;
-
-    */
-
+    Group iu8_33;
+    loadFromJson(input2,iu8_33);
+    output2.close();
+    std::cout << "TESTING READING GROUP \n\n\n" << iu8_33;
 }

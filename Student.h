@@ -38,6 +38,7 @@ public:
 
     //--------------------------------------------------------------------------------------//
 
+    unsigned int getID() const;
 
 
     void addGrades(const std::map<std::string, size_t> &);
@@ -54,6 +55,7 @@ public:
 
     void changeCourse(unsigned int _course);
 
+    void setID (unsigned int _id);
 
     double averageAll();
 
@@ -69,7 +71,11 @@ public:
     Student &operator=(Student &&student);
 
     friend std::ostream &operator<<(std::ostream &out, const Student &student);
-    friend std::ostream& Save_to_Json(std::ostream& out, const Student& student);
+    friend std::ostream& saveToJson(std::ostream& out, const Student& student);
+
+    friend void loadFromJson(std::istream& inp, Student &student);
+
+
 
 
 };

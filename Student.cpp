@@ -147,13 +147,12 @@ std::ostream &operator<<(std::ostream &out, const Student &student) {
 
 }
 
-std::ostream& Save_to_Json(std::ostream& out, const Student& student)
+std::ostream& saveToJson(std::ostream& out, const Student& student)
 {
     using namespace nlohmann;
     json jstud;
 
     jstud["ID"] = student.student_id;
-
     jstud["name"] = student.name;
     jstud["middle_name"] = student.middle_name;
     jstud["last_name"] = student.last_name;
@@ -170,6 +169,32 @@ std::ostream& Save_to_Json(std::ostream& out, const Student& student)
 
 std::map<std::string, unsigned int> Student::getGrades() {
     return this->grades;
+}
+
+unsigned int Student::getID() const {
+    return this->student_id;
+}
+
+void loadFromJson(std::istream &inp, Student &student) {
+    using namespace nlohmann;
+    json jstud;
+    inp >> jstud;
+
+    student.student_id = jstud["ID"];
+    student.course = jstud["course"];
+    student.group_name = jstud["group_name"];
+    student.name = jstud["name"];
+    student.middle_name = jstud["middle_name"];
+    student.last_name = jstud["last_name"];
+
+    student.grades = jstud["grades"];
+
+    std::cout << student;
+
+}
+
+void Student::setID(unsigned int _id) {
+    student_id = _id;
 }
 
 
