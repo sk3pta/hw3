@@ -36,6 +36,12 @@ int main() {
     std::cout << ++iu8_22 << std::endl;
     std::cout << "/=============================/" << std::endl;
 
+    std::vector<Group> group_vec;
+    group_vec.push_back(iu8_22);
+
+    for (auto gr: group_vec) {
+        std::cout << gr << std::endl;
+    }
 
     /*
 

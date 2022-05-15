@@ -24,6 +24,11 @@ public:
           const std::list<Student> &students, const std::vector<std::string>& subjects);
 
 
+    Group(const Group &group);
+
+
+    Group(Group &&group) noexcept ;
+
     ~Group() = default;
     //===================================================================//
 
@@ -43,6 +48,11 @@ public:
 
     const Student &getStudentbyId(unsigned int student_id);
     //===================================================================//
+
+    Group &operator=(const Group &group);
+
+    Group &operator=(Group &&group) noexcept ;
+
 
 
     friend std::ostream &operator<<(std::ostream &out, const Group &group);
