@@ -102,7 +102,7 @@ void Group::Sorted_at_all() {
                     if (student1.name == student2.name) {
                         if (student1.getStudentId() == student2.getStudentId()) {
                         }
-                        return student1.getStudentId() < student2.getStudentId();
+                        return student1.getStudentId() > student2.getStudentId();
                     }
                     return student1.name > student2.name;
                 }
@@ -243,16 +243,15 @@ Group &operator++(Group &group) {
 //==========================================================
 
 std::ostream &operator<<(std::ostream &out, const Group &group) {
-    /*
     out << "Group: " << group.name << " with ID : " << group.group_id << std::endl;
     for (const auto &student: group.students) {
         std::cout << student;
     }
-
     return out;
+}
 
-     */
-
+std::ostream& Save_to_json(std::ostream& out, const Group& group)
+{
     using namespace nlohmann;
 
     json jgroup;
@@ -262,7 +261,7 @@ std::ostream &operator<<(std::ostream &out, const Group &group) {
     for (size_t x = 0; x < group.subjects.size(); ++x) {
         jgroup["subject"][x] = group.subjects[x];
     }
-
+    return out;
 }
 
 

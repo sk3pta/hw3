@@ -44,10 +44,11 @@ int main() {
     }
 */
 
-    std::ofstream output_file("/home/augustus/CLionProjects/hw3/student.json");
+    std::ofstream output_file("student.json");
+    std::ofstream output_file1("student_check.txt");
 
     //
-    output_file << alik;
+    output_file1 << alik;
     /*
 
     auto bylastname = iu8_22.findByLastName("Фдшум");
