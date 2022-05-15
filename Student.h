@@ -12,18 +12,16 @@ class Student {
 private:
 
     unsigned int student_id;
-
-
     std::map<std::string, unsigned int> grades;
+
+
+
 public:
     std::string name;
     std::string middle_name;
     std::string last_name;
-
-
     std::string group_name;
     unsigned int course;
-
     Student() = default;
 
 
@@ -43,6 +41,8 @@ public:
 
 
     void addGrades(const std::map<std::string, size_t> &);
+
+    std::map<std::string, unsigned int> getGrades();
 
     void removeGrades(const std::string &subject);
 
@@ -70,7 +70,9 @@ public:
 
     friend std::ostream &operator<<(std::ostream &out, const Student &student);
 
+
 };
 
 
 #endif //HW3__STUDENT_H
+

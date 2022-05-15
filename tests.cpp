@@ -2,7 +2,7 @@
 #include "Student.h"
 #include "Group.h"
 #include "ID.h"
-
+#include <fstream>
 int main() {
 
 
@@ -26,7 +26,7 @@ int main() {
     Group iu8_22(&mainIdManager, "IU8-22", 1, 2, students, subjects);
 
 
-
+/*
     std::cout << "Init group \n";
     std::cout << iu8_22;
     std::cout << "/==============================/ \n";
@@ -42,7 +42,12 @@ int main() {
     for (auto gr: group_vec) {
         std::cout << gr << std::endl;
     }
+*/
 
+    std::ofstream output_file("/home/augustus/CLionProjects/hw3/student.json");
+
+    //
+    output_file << alik;
     /*
 
     auto bylastname = iu8_22.findByLastName("Фдшум");
