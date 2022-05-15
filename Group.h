@@ -18,11 +18,16 @@ private:
 public:
     unsigned int group_id;
 
-    Group(ID *id_manager, std::string name, unsigned int course,  size_t students_amount, std::vector<std::string> subjects);
+    Group(ID *id_manager, std::string name, unsigned int course,  size_t students_amount, const std::vector<std::string>& subjects);
      
     Group(ID *id_manager, std::string name, unsigned int course,  size_t students_amount,
-          const std::list<Student> &students, std::vector<std::string> subjects);
+          const std::list<Student> &students, const std::vector<std::string>& subjects);
 
+
+    Group(const Group &group);
+
+
+    Group(Group &&group) noexcept ;
 
     ~Group() = default;
     //===================================================================//
@@ -43,6 +48,11 @@ public:
 
     const Student &getStudentbyId(unsigned int student_id);
     //===================================================================//
+
+    Group &operator=(const Group &group);
+
+    Group &operator=(Group &&group) noexcept ;
+
 
 
     friend std::ostream &operator<<(std::ostream &out, const Group &group);

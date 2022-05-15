@@ -46,17 +46,22 @@ public:
 
     void removeGrades(const std::string &subject);
 
-    void setGroup(const std::string & groupname);
- 
+    void changeName(const std::string &_name);
 
-    unsigned int getStudentId() const;
+    void changeLastName(const std::string &_lastname);
 
-    std::string getGroup() const;
+    void changeMiddlieName(const std::string &_middlename);
+
+    void changeCourse(unsigned int _course);
+
 
     double averageAll();
 
     std::map<std::string, unsigned int> get_grades();
 
+    std::string getGroup() const;
+
+    unsigned int getStudentId() const;
     //-------------------------------------------------------------------------------------//
 
     Student &operator=(const Student &student);
