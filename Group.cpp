@@ -137,16 +137,6 @@ const Student &Group::getStudentbyId(unsigned int student_id) {
     }
 }
 
-std::ostream &operator<<(std::ostream &out, const Group &group) {
-    out << "Group: " << group.name << " with ID : " << group.group_id << std::endl;
-    for (const auto &student: group.students) {
-        std::cout << student;
-    }
-
-    return out;
-
-
-}
 
 std::ostream &Nice_Grades(std::ostream &out, const Group &group) {
     out << "Students wtih good marks in  " << group.name << std::endl;
@@ -249,6 +239,31 @@ Group &operator++(Group &group) {
     return group;
 }
 
+
+//==========================================================
+
+std::ostream &operator<<(std::ostream &out, const Group &group) {
+    /*
+    out << "Group: " << group.name << " with ID : " << group.group_id << std::endl;
+    for (const auto &student: group.students) {
+        std::cout << student;
+    }
+
+    return out;
+
+     */
+
+    using namespace nlohmann;
+
+    json jgroup;
+    jgroup["id"] = group.group_id;
+    jgroup["name"] = group.name;
+    jgroup["course"] = group.course;
+    for (size_t x = 0; x < group.subjects.size(); ++x) {
+        jgroup["subject"][x] = group.subjects[x];
+    }
+
+}
 
 
 
