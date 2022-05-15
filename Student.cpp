@@ -133,8 +133,7 @@ Student &Student::operator=(Student &&student) {
 
 //======================================
 std::ostream &operator<<(std::ostream &out, const Student &student) {
-    /*
-    std::ostream &operator<<(std::ostream &out, const Student &student) {
+   
     out << "StudentID : " << student.student_id << std::endl;
     out << "Student : " << student.name << " " << student.middle_name << " " << student.last_name << std::endl;
     out << "Group : " << student.group_name << "\nCourse : " << student.course << std::endl;
@@ -144,21 +143,23 @@ std::ostream &operator<<(std::ostream &out, const Student &student) {
         out << element.first << " " << element.second << std::endl;
     }
     out << std::endl;
-    return out; } */
+    return out;  
 
+}
 
-
+std::ostream& Save_to_Json(std::ostream& out, const Student& student)
+{
     using namespace nlohmann;
     json jstud;
 
-    jstud["ID"] =            student.student_id;
+    jstud["ID"] = student.student_id;
 
     jstud["name"] = student.name;
     jstud["middle_name"] = student.middle_name;
     jstud["last_name"] = student.last_name;
     jstud["course"] = student.course;
     jstud["group_name"] = student.group_name;
-    for (const auto& item: student.grades) {
+    for (const auto& item : student.grades) {
         jstud["grades"][item.first] = item.second;
     }
     //jstud.push_back(student.grades);

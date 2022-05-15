@@ -56,6 +56,7 @@ public:
 
 
     friend std::ostream &operator<<(std::ostream &out, const Group &group);
+    friend std::ostream& Save_to_json(std::ostream& out, const Group& group);
     friend std::ostream &Nice_Grades(std::ostream& out, const Group& group);
     friend std::ostream& Bad_Grades(std::ostream& out, const Group& group);
     friend Group &operator+(Group &group, const Student &student);

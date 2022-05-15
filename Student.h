@@ -69,6 +69,7 @@ public:
     Student &operator=(Student &&student);
 
     friend std::ostream &operator<<(std::ostream &out, const Student &student);
+    friend std::ostream& Save_to_Json(std::ostream& out, const Student& student);
 
 
 };
