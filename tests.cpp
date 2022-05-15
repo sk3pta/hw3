@@ -8,17 +8,37 @@ int main() {
 
     ID mainIdManager;
 
+
     Student alik("Alik", &mainIdManager, "Ab", "AArname", 1, {
             {"Physics",     3},
             {"Mathematics", 5},
             {"AL",          5}}
     );
 
-    Student jack("Jack", &mainIdManager,"Ac","AArname",1);
-    jack.addGrades({{"Math",3},{"Physics",5},{"AL",5} });
-    std::vector < std::string > subjects = { "Math","Physics","AL" };
-    std::list <Student> students = {alik,jack};
-    Group iu8_22(&mainIdManager,"IU8-22",1,2,students, subjects);
+    Student jack("Jack", &mainIdManager, "Ac", "AArname", 1);
+    jack.addGrades({{"Math",    3},
+                    {"Physics", 5},
+                    {"AL",      5}});
+
+
+    std::vector<std::string> subjects = {"Math", "Physics", "AL"};
+    std::list<Student> students = {alik, jack};
+    Group iu8_22(&mainIdManager, "IU8-22", 1, 2, students, subjects);
+
+
+
+    std::cout << "Init group \n";
+    std::cout << iu8_22;
+    std::cout << "/==============================/ \n";
+
+
+    std::cout << "Group ++" << std::endl;
+    std::cout << ++iu8_22 << std::endl;
+    std::cout << "/=============================/" << std::endl;
+
+
+    /*
+
     auto bylastname = iu8_22.findByLastName("Фдшум");
     auto byname = iu8_22.findByName("Jack");
     auto bycourse = iu8_22.findByCourse(1);
@@ -47,6 +67,8 @@ int main() {
     //std::cout << "test good marks " << std::endl;
     //Nice_Grades(std::cout,iu8_22);
 
+
+     */
     /*
     //Testing add_grades  and get_grades method
 
