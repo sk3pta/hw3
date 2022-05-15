@@ -12,15 +12,15 @@ private:
     std::string name;
     size_t students_amount;
     std::list<Student> students;
-
+    unsigned int course;
     std::vector<std::string> subjects;
 
 public:
     unsigned int group_id;
 
-    Group(ID *id_manager, std::string name,  size_t students_amount, std::vector<std::string> subjects);
-
-    Group(ID *id_manager, std::string,  size_t students_amount,
+    Group(ID *id_manager, std::string name, unsigned int course,  size_t students_amount, std::vector<std::string> subjects);
+     
+    Group(ID *id_manager, std::string name, unsigned int course,  size_t students_amount,
           const std::list<Student> &students, std::vector<std::string> subjects);
 
 
@@ -28,6 +28,9 @@ public:
     //===================================================================//
 
     void addStudent(const Student &student);
+    void Sorted_at_all();
+
+    void Sorted_by_name();
 
     std::vector<Student> findByLastName(const std::string &_lastname);
 
@@ -44,9 +47,10 @@ public:
 
     friend std::ostream &operator<<(std::ostream &out, const Group &group);
     friend std::ostream &Nice_Grades(std::ostream& out, const Group& group);
+    friend std::ostream& Bad_Grades(std::ostream& out, const Group& group);
     friend Group &operator+(Group &group, const Student &student);
-
     friend Group &operator-(Group &group, const Student &student);
+    friend Group& operator++(Group& group); // course +1
 
 };
 

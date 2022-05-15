@@ -8,18 +8,18 @@ int main() {
 
     ID mainIdManager;
 
-    Student alik("Alik", &mainIdManager, "Murtazaev", "Murtazaevich", 1, {
+    Student alik("Alik", &mainIdManager, "Ab", "AArname", 1, {
             {"Physics",     3},
             {"Mathematics", 5},
             {"AL",          5}}
     );
 
-    Student jack("Jack", &mainIdManager,"Captain","The Sparrow",1);
+    Student jack("Jack", &mainIdManager,"Ac","AArname",1);
     jack.addGrades({{"Math",3},{"Physics",5},{"AL",5} });
     std::vector < std::string > subjects = { "Math","Physics","AL" };
     std::list <Student> students = {alik,jack};
-    Group iu8_22(&mainIdManager,"ИУ8-22",2,students, subjects);
-    auto bylastname = iu8_22.findByLastName("Murtazaevich");
+    Group iu8_22(&mainIdManager,"IU8-22",1,2,students, subjects);
+    auto bylastname = iu8_22.findByLastName("Фдшум");
     auto byname = iu8_22.findByName("Jack");
     auto bycourse = iu8_22.findByCourse(1);
 
@@ -27,15 +27,22 @@ int main() {
         std::cout << element;
     }
 
-    Student max("Maximus", &mainIdManager, "Gladiator", "Murtazaevich", 1, {
+    Student max("Maximus", &mainIdManager, "Aa", "AArname", 1, {
             {"Physics",     3},
             {"Mathematics", 5},
             {"AL",          5}}
     );
 
     iu8_22 = iu8_22 +  max;
-
+    std::cout << "tests after +" << std::endl;
     std::cout << iu8_22;
+    iu8_22 = iu8_22 - max;
+    std::cout << "tests after -" << std::endl;
+    std::cout << iu8_22;
+    std::cout << "test of sort" << std::endl;
+    iu8_22.Sorted_at_all();
+    std::cout << iu8_22;
+
 
     //std::cout << "test good marks " << std::endl;
     //Nice_Grades(std::cout,iu8_22);
