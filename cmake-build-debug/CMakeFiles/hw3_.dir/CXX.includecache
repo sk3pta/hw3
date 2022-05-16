@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/augustus/CLionProjects/hw3/Group.h
+headers.h
+/home/augustus/CLionProjects/hw3/headers.h
+Student.h
+/home/augustus/CLionProjects/hw3/Student.h
+ID.h
+/home/augustus/CLionProjects/hw3/ID.h
+
 /home/augustus/CLionProjects/hw3/ID.h
 headers.h
 /home/augustus/CLionProjects/hw3/headers.h
-
-/home/augustus/CLionProjects/hw3/Student.cpp
-Student.h
-/home/augustus/CLionProjects/hw3/Student.h
 
 /home/augustus/CLionProjects/hw3/Student.h
 headers.h
@@ -404,5 +408,17 @@ utility
 vector
 -
 string_view
+-
+
+/home/augustus/CLionProjects/hw3/tests.cpp
+headers.h
+/home/augustus/CLionProjects/hw3/headers.h
+Student.h
+/home/augustus/CLionProjects/hw3/Student.h
+Group.h
+/home/augustus/CLionProjects/hw3/Group.h
+ID.h
+/home/augustus/CLionProjects/hw3/ID.h
+fstream
 -
 

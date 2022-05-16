@@ -17,22 +17,25 @@ private:
 
 public:
     unsigned int group_id;
+    Group();
 
-    Group(ID *id_manager, std::string name, unsigned int course,  size_t students_amount, const std::vector<std::string>& subjects);
-     
-    Group(ID *id_manager, std::string name, unsigned int course,  size_t students_amount,
-          const std::list<Student> &students, const std::vector<std::string>& subjects);
+    Group(ID *id_manager, std::string name, unsigned int course, size_t students_amount,
+          const std::vector<std::string> &subjects);
+
+    Group(ID *id_manager, std::string name, unsigned int course, size_t students_amount,
+          const std::list<Student> &students, const std::vector<std::string> &subjects);
 
 
     Group(const Group &group);
 
 
-    Group(Group &&group) noexcept ;
+    Group(Group &&group) noexcept;
 
     ~Group() = default;
     //===================================================================//
 
     void addStudent(const Student &student);
+
     void Sorted_at_all();
 
     void Sorted_by_name();
@@ -51,19 +54,24 @@ public:
 
     Group &operator=(const Group &group);
 
-    Group &operator=(Group &&group) noexcept ;
-
+    Group &operator=(Group &&group) noexcept;
 
 
     friend std::ostream &operator<<(std::ostream &out, const Group &group);
-    friend std::ostream& Save_to_json(std::ostream& out, const Group& group);
-    friend std::ostream &Nice_Grades(std::ostream& out, const Group& group);
-    friend std::ostream& Bad_Grades(std::ostream& out, const Group& group);
+
+    friend std::ostream &saveToJson(std::ostream &out, const Group &group);
+
+    friend std::ostream &Nice_Grades(std::ostream &out, const Group &group);
+
+    friend std::ostream &Bad_Grades(std::ostream &out, const Group &group);
+
     friend Group &operator+(Group &group, const Student &student);
+
     friend Group &operator-(Group &group, const Student &student);
-    friend Group& operator++(Group& group); // course +1
+
+    friend Group &operator++(Group &group); // course +1
+
+    friend void loadFromJson(std::ifstream &inp, Group &group);
 
 };
-
-
 #endif //HW3__GROUP_H

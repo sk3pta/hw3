@@ -3,7 +3,10 @@
 #include "ID.h"
 #include <fstream>
 #include <map>
-#include <utility>
+
+Group::Group() {
+
+}
 
 Group::Group(ID *id_manager, std::string name, unsigned int course, size_t students_amount = 0,
              const std::vector<std::string> &subjects = {}) {
@@ -45,9 +48,9 @@ Group::Group(const Group &group) {
 Group::Group(Group &&group) noexcept {
     std::swap(this->group_id, group.group_id);
     std::swap(this->students_amount, group.students_amount);
-    std::swap(this->name,group.name);
-    std::swap(this->course,group.course);
-    std::swap(this->subjects,group.subjects);
+    std::swap(this->name, group.name);
+    std::swap(this->course, group.course);
+    std::swap(this->subjects, group.subjects);
     for (auto student: group.students) {
         student.group_name = this->name;
         this->students.push_back(student);
@@ -67,12 +70,13 @@ Group &Group::operator=(const Group &group) {
 
     return *this;
 }
+
 Group &Group::operator=(Group &&group) noexcept {
     std::swap(this->group_id, group.group_id);
     std::swap(this->students_amount, group.students_amount);
-    std::swap(this->name,group.name);
-    std::swap(this->course,group.course);
-    std::swap(this->subjects,group.subjects);
+    std::swap(this->name, group.name);
+    std::swap(this->course, group.course);
+    std::swap(this->subjects, group.subjects);
     for (auto student: group.students) {
         student.group_name = this->name;
         this->students.push_back(student);
@@ -80,7 +84,6 @@ Group &Group::operator=(Group &&group) noexcept {
 
     return *this;
 }
-
 
 
 void Group::addStudent(const Student &student) {
@@ -250,19 +253,69 @@ std::ostream &operator<<(std::ostream &out, const Group &group) {
     return out;
 }
 
-std::ostream& Save_to_json(std::ostream& out, const Group& group)
-{
+std::ostream &saveToJson(std::ostream &out, const Group &group) {
     using namespace nlohmann;
 
     json jgroup;
+
     jgroup["id"] = group.group_id;
     jgroup["name"] = group.name;
     jgroup["course"] = group.course;
     for (size_t x = 0; x < group.subjects.size(); ++x) {
-        jgroup["subject"][x] = group.subjects[x];
+        jgroup["subjects"][x] = group.subjects[x];
     }
+
+    size_t x = 0;
+    for (auto student: group.students) {
+
+        jgroup["students"][x]["ID"] = student.getID();
+        jgroup["students"][x]["name"] = student.name;
+        jgroup["students"][x]["middle_name"] = student.middle_name;
+        jgroup["students"][x]["last_name"] = student.last_name;
+        jgroup["students"][x]["course"] = student.course;
+        jgroup["students"][x]["group_name"] = student.group_name;
+        for (const auto &item: student.getGrades()) {
+            jgroup["students"][x]["grades"][item.first] = item.second;
+        }
+        ++x;
+    }
+
+
+    out << jgroup;
     return out;
 }
+
+void loadFromJson(std::ifstream &inp, Group &group) {
+    using namespace nlohmann;
+    json jgroup;
+    inp >> jgroup;
+
+    group.group_id = jgroup["id"];
+    group.name = jgroup["name"];
+    group.course = jgroup["course"];
+
+    for (size_t x = 0; x < group.subjects.size(); ++x) {
+        group.subjects[x] = jgroup["subjects"][x];
+    }
+
+    for (const auto &student: jgroup["students"]) {
+        Student _student;
+        _student.name = student["name"];
+        _student.middle_name = student["middle_name"];
+        _student.last_name = student["last_name"];
+        _student.group_name = student["group_name"];
+        _student.course = student["course"];
+        auto _grades = student["grades"];
+        _student.addGrades(_grades);
+        _student.setID(student["ID"]);
+        group.students.push_back(_student);
+    }
+
+    //group.students = jgroup["students"];
+
+}
+
+
 
 
 
