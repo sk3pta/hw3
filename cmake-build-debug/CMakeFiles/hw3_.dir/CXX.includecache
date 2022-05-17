@@ -26,6 +26,10 @@ map
 ID.h
 /home/augustus/CLionProjects/hw3/ID.h
 
+/home/augustus/CLionProjects/hw3/datamanager.h
+Group.h
+/home/augustus/CLionProjects/hw3/Group.h
+
 /home/augustus/CLionProjects/hw3/headers.h
 string
 -
@@ -45,6 +49,8 @@ list
 -
 json.hpp
 /home/augustus/CLionProjects/hw3/json.hpp
+
+/home/augustus/CLionProjects/hw3/interface.h
 
 /home/augustus/CLionProjects/hw3/json.hpp
 algorithm
@@ -410,15 +416,15 @@ vector
 string_view
 -
 
-/home/augustus/CLionProjects/hw3/tests.cpp
+/home/augustus/CLionProjects/hw3/main.cpp
 headers.h
 /home/augustus/CLionProjects/hw3/headers.h
 Student.h
 /home/augustus/CLionProjects/hw3/Student.h
 Group.h
 /home/augustus/CLionProjects/hw3/Group.h
-ID.h
-/home/augustus/CLionProjects/hw3/ID.h
-fstream
--
+datamanager.h
+/home/augustus/CLionProjects/hw3/datamanager.h
+interface.h
+/home/augustus/CLionProjects/hw3/interface.h
 

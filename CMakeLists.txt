@@ -3,4 +3,4 @@ project(hw3_)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(hw3_ tests.cpp Student.cpp Group.cpp ID.cpp)
+add_executable(hw3_ main.cpp Student.cpp Group.cpp ID.cpp interface.cpp datamanager.h)

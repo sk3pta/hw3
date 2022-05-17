@@ -201,29 +201,53 @@ Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/Student.cpp.s
 .PHONY : Student.cpp.s
 
-tests.o: tests.cpp.o
-.PHONY : tests.o
+interface.o: interface.cpp.o
+.PHONY : interface.o
 
 # target to build an object file
-tests.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/tests.cpp.o
-.PHONY : tests.cpp.o
+interface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/interface.cpp.o
+.PHONY : interface.cpp.o
 
-tests.i: tests.cpp.i
-.PHONY : tests.i
+interface.i: interface.cpp.i
+.PHONY : interface.i
 
 # target to preprocess a source file
-tests.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/tests.cpp.i
-.PHONY : tests.cpp.i
+interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/interface.cpp.i
+.PHONY : interface.cpp.i
 
-tests.s: tests.cpp.s
-.PHONY : tests.s
+interface.s: interface.cpp.s
+.PHONY : interface.s
 
 # target to generate assembly for a file
-tests.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/tests.cpp.s
-.PHONY : tests.cpp.s
+interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/interface.cpp.s
+.PHONY : interface.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw3_.dir/build.make CMakeFiles/hw3_.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -243,9 +267,12 @@ help:
 	@echo "... Student.o"
 	@echo "... Student.i"
 	@echo "... Student.s"
-	@echo "... tests.o"
-	@echo "... tests.i"
-	@echo "... tests.s"
+	@echo "... interface.o"
+	@echo "... interface.i"
+	@echo "... interface.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
