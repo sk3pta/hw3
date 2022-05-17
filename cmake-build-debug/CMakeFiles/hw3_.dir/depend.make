@@ -19,10 +19,17 @@ CMakeFiles/hw3_.dir/Student.cpp.o: \
  ../Student.h \
  ../headers.h \
  ../json.hpp
-CMakeFiles/hw3_.dir/tests.cpp.o: \
+CMakeFiles/hw3_.dir/interface.cpp.o: \
+ ../headers.h \
+ ../interface.cpp \
+ ../interface.h \
+ ../json.hpp
+CMakeFiles/hw3_.dir/main.cpp.o: \
  ../Group.h \
  ../ID.h \
  ../Student.h \
+ ../datamanager.h \
  ../headers.h \
+ ../interface.h \
  ../json.hpp \
- ../tests.cpp
+ ../main.cpp

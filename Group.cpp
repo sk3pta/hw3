@@ -8,8 +8,8 @@ Group::Group() {
 
 }
 
-Group::Group(ID *id_manager, std::string name, unsigned int course, size_t students_amount = 0,
-             const std::vector<std::string> &subjects = {}) {
+Group::Group(ID *id_manager, std::string name, unsigned int course,
+             const std::vector<std::string> &subjects = {},size_t students_amount = 0) {
     this->group_id = id_manager->getGroupId();
     this->students_amount = students_amount;
     this->name = std::move(name);

@@ -100,7 +100,16 @@
 		<Unit filename="/home/augustus/CLionProjects/hw3/Student.h">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="/home/augustus/CLionProjects/hw3/tests.cpp">
+		<Unit filename="/home/augustus/CLionProjects/hw3/datamanager.h">
+			<Option target="hw3_"/>
+		</Unit>
+		<Unit filename="/home/augustus/CLionProjects/hw3/interface.cpp">
+			<Option target="hw3_"/>
+		</Unit>
+		<Unit filename="/home/augustus/CLionProjects/hw3/interface.h">
+			<Option target="hw3_"/>
+		</Unit>
+		<Unit filename="/home/augustus/CLionProjects/hw3/main.cpp">
 			<Option target="hw3_"/>
 		</Unit>
 		<Unit filename="/home/augustus/CLionProjects/hw3/CMakeLists.txt">

@@ -19,8 +19,8 @@ public:
     unsigned int group_id;
     Group();
 
-    Group(ID *id_manager, std::string name, unsigned int course, size_t students_amount,
-          const std::vector<std::string> &subjects);
+    Group(ID *id_manager, std::string name, unsigned int course,
+          const std::vector<std::string> &subjects, size_t students_amount);
 
     Group(ID *id_manager, std::string name, unsigned int course, size_t students_amount,
           const std::list<Student> &students, const std::vector<std::string> &subjects);

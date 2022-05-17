@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/hw3_.dir/tests.cpp.o CMakeFiles/hw3_.dir/Student.cpp.o CMakeFiles/hw3_.dir/Group.cpp.o CMakeFiles/hw3_.dir/ID.cpp.o -o hw3_ 
+/usr/bin/c++ -g CMakeFiles/hw3_.dir/main.cpp.o CMakeFiles/hw3_.dir/Student.cpp.o CMakeFiles/hw3_.dir/Group.cpp.o CMakeFiles/hw3_.dir/ID.cpp.o CMakeFiles/hw3_.dir/interface.cpp.o -o hw3_ 
