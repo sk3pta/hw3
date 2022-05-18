@@ -3,24 +3,26 @@
 #include "headers.h"
 
 LOBBY lobby() {
-    std::cout << "-------------HELLO THERE-------------" << std::endl;
-    std::cout << "YOU HAVE MANY OPTIONS OF INTERACTION" << std::endl;
-    std::cout << " 1 to add group" << std::endl;
-    std::cout << " 2 to add student" << std::endl;
-    std::cout << " 99 to print all groups" << std::endl;
+    for(;;) {
+        std::cout << "-------------HELLO THERE-------------" << std::endl;
+        std::cout << "YOU HAVE MANY OPTIONS OF INTERACTION" << std::endl;
+        std::cout << " 1 to add group" << std::endl;
+        std::cout << " 2 to add student" << std::endl;
+        std::cout << " 99 to print all groups" << std::endl;
 
-    size_t input;
-    
-    std::cin >> input;
-    std::cin.ignore();
-    
-    switch(input) {
-        case 1:
-            return LOBBY::ADD_GROUP;
-        case 2:
-            return LOBBY::ADD_STUDENT;
-        case 99:
-            return LOBBY::PRINT_GROUPS;
+        size_t input;
+
+        input = input_size_t();
+        std::cout << std::endl;
+
+        switch (input) {
+            case 1:
+                return LOBBY::ADD_GROUP;
+            case 2:
+                return LOBBY::ADD_STUDENT;
+            case 99:
+                return LOBBY::PRINT_GROUPS;
+        }
     }
 }
 std::string input_string()
@@ -29,7 +31,7 @@ std::string input_string()
     {
         try
         {
-            std::string str;
+            std::string str = "";
             std::getline(std::cin, str);
 
             if (str == "")

@@ -251,7 +251,7 @@ std::ostream &operator<<(std::ostream &out, const Group &group) {
     out << "Group: " << group.name << " with ID : " << group.group_id << std::endl;
     out << "Subjects in this group" << std::endl;
     for(auto i: group.subjects){
-        out << i << "";
+        out << i << std::endl;
     }
     for (const auto &student: group.students) {
         std::cout << student;

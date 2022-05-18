@@ -8,8 +8,7 @@
 int main() {
 ID id_manager;
 DataManager dataManager;
-std::map<Group, unsigned int> groups_ids;
-std::map<Student, unsigned int> student_ids;
+
 
 
     for(;;) {
@@ -26,6 +25,7 @@ std::map<Student, unsigned int> student_ids;
                 course = input_size_t();
                 std::cout << "Subjects : \n" << std::endl;
                 do {
+                    std::cout << "\n Name of the subject \n" << std::endl;
                     subject_name = input_string();
                     if(subject_name != "0") {
                         subjects.push_back(subject_name);
@@ -33,7 +33,8 @@ std::map<Student, unsigned int> student_ids;
                 }
                 while (subject_name != "0");
                 dataManager.addGroup(&id_manager,group_name,course,subjects);
-                std::cout << " WOw Group is created !" << std::endl;
+                std::cout << " WOw Group is created with id!" <<dataManager.groups[dataManager.groups.size()-1].getGroupbyId() << std::endl;
+                break;
             }
             case LOBBY::ADD_STUDENT:{
                 std::cout<< "\n >> Add Student : \n" << std::endl;
@@ -44,7 +45,6 @@ std::map<Student, unsigned int> student_ids;
                 std::string middle_name;
                 std::string last_name;
                 unsigned int course;
-                std::cout<< "\n >>  : \n" << std::endl;
                 std::map<std::string, unsigned int> grades;
                 std::cout << "First name: " << std::endl;
                 name = input_string();
@@ -57,9 +57,11 @@ std::map<Student, unsigned int> student_ids;
                 std::cout << "Subjects : \n" << std::endl;
                 std::string subject_name;
                 do {
+                    std::cout << "name of the subject: \n" << std::endl;
                     subject_name = input_string();
                     if(subject_name != "0") {
                         std::size_t mark;
+                        std::cout << "your mark: \n" << std::endl;
                         mark = input_size_t();
                         grades[subject_name] = mark;
                     }
