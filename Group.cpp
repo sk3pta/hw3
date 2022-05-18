@@ -139,7 +139,7 @@ const Student &Group::getStudentbyId(unsigned int student_id) {
         if (student.getStudentId() == student_id) return student;
     }
 }
-size_t Group::getGroupbyId(){
+size_t Group::getGroupbyId() const{
     return group_id;
 }
 
@@ -319,8 +319,11 @@ void loadFromJson(std::ifstream &inp, Group &group) {
 
     //group.students = jgroup["students"];
 
+
 }
 
+std::vector<std::string> Group::getSubjects() {
+    return this->subjects;}
 
 
 

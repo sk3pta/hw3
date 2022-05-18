@@ -28,6 +28,11 @@ public:
         groups_ids[group_id]+student;
     }
 
+    Group getGroupUsingID(unsigned int id) {
+        for (const auto& group : groups_ids) {
+            if (group.first == id) return group.second;
+        }
+    }
 };
 
 
