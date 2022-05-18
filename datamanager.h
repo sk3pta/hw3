@@ -28,7 +28,8 @@ public:
         for (auto & grp : groups ) {
             if (grp.group_id == group_id) {
                 Student student(name, id_manager, middle_name, last_name, course, grades);
-                grp.addStudent(student);
+                students_ids.insert({student.getID(),student});
+                grp.addStudent(students_ids.rbegin()->second);
             }
         }
     }

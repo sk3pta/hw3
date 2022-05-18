@@ -35,9 +35,17 @@ enum class STUDENT_PROFILE{
 enum class GROUP_PROFILE{
     GR_EDIT_COURSE = 0,
     GR_EDIT_NAME =1,
-    GR_DELETE = 2
+    GR_EDIT_ALL = 2,
+    GR_DELETE = 3
+};
+enum class SORT{
+    SORT_BY_ALL = 0,
+    SORT_BY_NAME = 1
 };
 LOBBY lobby();
+STUDENT_PROFILE editing_students();
+GROUP_PROFILE editing_groups();
+SORT sorting();
 std::string input_string();
 std::size_t input_size_t();
 

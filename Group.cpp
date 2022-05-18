@@ -86,11 +86,13 @@ Group &Group::operator=(Group &&group) noexcept {
 }
 
 
-void Group::addStudent(const Student &student) {
+void Group::addStudent( Student &student) {
 
     Student new_student = student;
     new_student.group_name = this->name;
     new_student.course = this->course;
+    student.group_name = this->name;
+    student.course = this->course;
     this->students_amount += 1;
     this->students.push_back(new_student);
 }

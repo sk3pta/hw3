@@ -34,7 +34,7 @@ public:
     ~Group() = default;
     //===================================================================//
 
-    void addStudent(const Student &student);
+    void addStudent( Student &student);
 
     void Sorted_at_all();
 
