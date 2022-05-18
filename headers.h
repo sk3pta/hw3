@@ -1,7 +1,7 @@
 
 #ifndef HW3__HEADERS_H
 #define HW3__HEADERS_H
-#include <string>
+#include <cstring>
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -9,6 +9,7 @@
 #include <ctime>
 #include <algorithm>
 #include <list>
+#include <exception>
 #include "json.hpp"
 
 

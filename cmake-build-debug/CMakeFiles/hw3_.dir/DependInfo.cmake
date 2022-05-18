@@ -4,24 +4,15 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/augustus/CLionProjects/hw3/Group.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/Group.cpp.o"
-  "/home/augustus/CLionProjects/hw3/ID.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/ID.cpp.o"
-  "/home/augustus/CLionProjects/hw3/Student.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/Student.cpp.o"
-  "/home/augustus/CLionProjects/hw3/interface.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/interface.cpp.o"
-  "/home/augustus/CLionProjects/hw3/main.cpp" "/home/augustus/CLionProjects/hw3/cmake-build-debug/CMakeFiles/hw3_.dir/main.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Group.cpp" "CMakeFiles/hw3_.dir/Group.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/Group.cpp.obj.d"
+  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/ID.cpp" "CMakeFiles/hw3_.dir/ID.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/ID.cpp.obj.d"
+  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Student.cpp" "CMakeFiles/hw3_.dir/Student.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/Student.cpp.obj.d"
+  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/interface.cpp" "CMakeFiles/hw3_.dir/interface.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/interface.cpp.obj.d"
+  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/main.cpp" "CMakeFiles/hw3_.dir/main.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links.

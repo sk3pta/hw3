@@ -139,7 +139,9 @@ const Student &Group::getStudentbyId(unsigned int student_id) {
         if (student.getStudentId() == student_id) return student;
     }
 }
-
+size_t Group::getGroupbyId(){
+    return group_id;
+}
 
 std::ostream &Nice_Grades(std::ostream &out, const Group &group) {
     out << "Students wtih good marks in  " << group.name << std::endl;
@@ -247,6 +249,10 @@ Group &operator++(Group &group) {
 
 std::ostream &operator<<(std::ostream &out, const Group &group) {
     out << "Group: " << group.name << " with ID : " << group.group_id << std::endl;
+    out << "Subjects in this group" << std::endl;
+    for(auto i: group.subjects){
+        out << i << "";
+    }
     for (const auto &student: group.students) {
         std::cout << student;
     }

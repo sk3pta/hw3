@@ -50,6 +50,7 @@ public:
 
 
     const Student &getStudentbyId(unsigned int student_id);
+    size_t getGroupbyId();
     //===================================================================//
 
     Group &operator=(const Group &group);

@@ -26,24 +26,26 @@ int main() {
     std::list<Student> students = {alik, jack};
     Group iu8_22(&mainIdManager, "IU8-22", 1, 2, students, subjects);
 
-    std::ofstream output("/home/augustus/CLionProjects/hw3/student.json");
+    //std::ofstream output("/home/augustus/CLionProjects/hw3/student.json");
+    std::ofstream output("C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/3_h/hw3-marginoon/student.json");
     saveToJson(output,jack);
 
     output.close();
-    std::ofstream output_gr("/home/augustus/CLionProjects/hw3/group.json");
+    std::ofstream output_gr("C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/3_h/hw3-marginoon/group.json");
     saveToJson(output_gr,iu8_22);
 
     std::cout << "TESTING READING STUDENT FROM JSON FILE " << std::endl;
-    std::ifstream input("/home/augustus/CLionProjects/hw3/student.json");
+    std::ifstream input("C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/3_h/hw3-marginoon/student.json");
     Student me;
     loadFromJson(input,me);
-
+    std:: cout <<" i was there " << std::endl;
     std::cout << "\n\n\n\n" << std::endl;
 
-    std::ofstream output2("/home/augustus/CLionProjects/hw3/group.json");
+    std::ofstream output2("C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/3_h/hw3-marginoon/group.json");
     saveToJson(output2,iu8_22);
+    std::cout << "check what is in iu8-22 \n\n\n" << iu8_22;
     output2.close();
-    std::ifstream input2("/home/augustus/CLionProjects/hw3/group.json");
+    std::ifstream input2("C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/3_h/hw3-marginoon/group.json");
 
     Group iu8_33;
     loadFromJson(input2,iu8_33);
