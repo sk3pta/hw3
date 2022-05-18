@@ -82,7 +82,7 @@ DataManager dataManager;
 
 
 
-                //if (dataManager.groups_ids.find(id_group) != dataManager.groups_ids.end()) {
+                if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end())
                 {
                     dataManager.addStudent(name,&id_manager,middle_name,last_name,course,grades,id_group);
 
