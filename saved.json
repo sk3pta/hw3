@@ -1,0 +1,23 @@
+{
+  "2996662131": {
+    "course": 1,
+    "id": 2996662131,
+    "name": "name",
+    "students": [
+      {
+        "ID": 22608061,
+        "course": 1,
+        "grades": {
+          "A": 5
+        },
+        "group_name": "name",
+        "last_name": "sa",
+        "middle_name": "sa",
+        "name": "asd"
+      }
+    ],
+    "subjects": [
+      "A"
+    ]
+  }
+}

@@ -1,12 +1,15 @@
 #include "headers.h"
-
-
+#include <thread>
+#include <future>
 #include "Student.h"
 #include "Group.h"
 #include "datamanager.h"
 #include "interface.h"
 
 int main() {
+
+
+    std::thread *thr = nullptr;
     ID id_manager;
     DataManager dataManager;
 
@@ -102,7 +105,7 @@ int main() {
             }
 
 
-            case LOBBY::EDIT_STUDENTS:
+            case LOBBY::EDIT_STUDENTS: {
                 switch (editing_students()) {
                     case STUDENT_PROFILE::ST_EDIT_NAME: {
                         std::cout << ">>CHANGE STUDENT NAME :" << std::endl;
@@ -132,6 +135,44 @@ int main() {
                                   << std::endl;
                     }
                 }
+            }
+
+            case LOBBY::ST_W_G_M: {
+                std::cout << "Enter id of the group" << std::endl;
+                unsigned int id_group;
+                auto group = dataManager.getGroupUsingID(id_group);
+                Nice_Grades(std::cout, group);
+                break;
+            }
+            case LOBBY::ST_W_B_M: {
+                std::cout << "Enter id of the group" << std::endl;
+                unsigned int id_group;
+                auto group = dataManager.getGroupUsingID(id_group);
+                Bad_Grades(std::cout, group);
+                break;
+            }
+
+            case LOBBY::SAVE:
+            {
+                std::ofstream out("saved.json",std::ios::app);
+
+                //thr = new std::thread(&DataManager::saveEverything,&out);
+                //std::future<void> save = std::async(&dataManager.saveEverything,&out);
+
+
+                dataManager.saveEverything(out);
+                break;
+            }
+
+            case LOBBY::DOWNLOAD:
+
+            {
+
+                std::ifstream inp("saved.json");
+
+                dataManager.LoadEverything(inp);
+            }
+
         }
 
     }

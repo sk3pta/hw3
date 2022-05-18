@@ -38,6 +38,32 @@ public:
 
     void Sorted_at_all();
 
+
+    std::string getName() {
+        return this->name;
+    }
+
+    auto getCourse() {
+        return this->course;
+    }
+
+
+    auto getStudents() {
+        return this->students;
+    }
+
+    void setName(std::string name) {
+        this->name = name;
+    };
+
+    void setCourse(unsigned int course) {
+        this->course = course;
+    }
+
+    void addSubjects(std::vector<std::string> subs) {
+        this->subjects = subs;
+    }
+
     void Sorted_by_name();
 
     std::vector<Student> findByLastName(const std::string &_lastname);

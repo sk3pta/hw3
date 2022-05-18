@@ -266,22 +266,22 @@ std::ostream &saveToJson(std::ostream &out, const Group &group) {
 
     json jgroup;
 
-    jgroup["id"] = group.group_id;
-    jgroup["name"] = group.name;
-    jgroup["course"] = group.course;
+    jgroup[std::to_string(group.group_id)]["id"] = group.group_id;
+    jgroup[std::to_string(group.group_id)]["name"] = group.name;
+    jgroup[std::to_string(group.group_id)]["course"] = group.course;
     for (size_t x = 0; x < group.subjects.size(); ++x) {
-        jgroup["subjects"][x] = group.subjects[x];
+        jgroup[std::to_string(group.group_id)]["subjects"][x] = group.subjects[x];
     }
 
     size_t x = 0;
     for (auto student: group.students) {
 
-        jgroup["students"][x]["ID"] = student.getID();
-        jgroup["students"][x]["name"] = student.name;
-        jgroup["students"][x]["middle_name"] = student.middle_name;
-        jgroup["students"][x]["last_name"] = student.last_name;
-        jgroup["students"][x]["course"] = student.course;
-        jgroup["students"][x]["group_name"] = student.group_name;
+        jgroup[std::to_string(group.group_id)]["students"][x]["ID"] = student.getID();
+        jgroup[std::to_string(group.group_id)]["students"][x]["name"] = student.name;
+        jgroup[std::to_string(group.group_id)]["students"][x]["middle_name"] = student.middle_name;
+        jgroup[std::to_string(group.group_id)]["students"][x]["last_name"] = student.last_name;
+        jgroup[std::to_string(group.group_id)]["students"][x]["course"] = student.course;
+        jgroup[std::to_string(group.group_id)]["students"][x]["group_name"] = student.group_name;
         for (const auto &item: student.getGrades()) {
             jgroup["students"][x]["grades"][item.first] = item.second;
         }
