@@ -48,9 +48,10 @@ public:
 
     std::vector<Student> findBy;
 
+    std::vector<std::string> getSubjects();
 
     const Student &getStudentbyId(unsigned int student_id);
-    size_t getGroupbyId();
+    size_t getGroupbyId() const;
     //===================================================================//
 
     Group &operator=(const Group &group);

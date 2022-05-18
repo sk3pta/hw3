@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Group.cpp" "CMakeFiles/hw3_.dir/Group.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/Group.cpp.obj.d"
-  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/ID.cpp" "CMakeFiles/hw3_.dir/ID.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/ID.cpp.obj.d"
-  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Student.cpp" "CMakeFiles/hw3_.dir/Student.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/Student.cpp.obj.d"
-  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/interface.cpp" "CMakeFiles/hw3_.dir/interface.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/interface.cpp.obj.d"
-  "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/main.cpp" "CMakeFiles/hw3_.dir/main.cpp.obj" "gcc" "CMakeFiles/hw3_.dir/main.cpp.obj.d"
+  "/home/augustus/CLionProjects/hw3/Group.cpp" "CMakeFiles/hw3_.dir/Group.cpp.o" "gcc" "CMakeFiles/hw3_.dir/Group.cpp.o.d"
+  "/home/augustus/CLionProjects/hw3/ID.cpp" "CMakeFiles/hw3_.dir/ID.cpp.o" "gcc" "CMakeFiles/hw3_.dir/ID.cpp.o.d"
+  "/home/augustus/CLionProjects/hw3/Student.cpp" "CMakeFiles/hw3_.dir/Student.cpp.o" "gcc" "CMakeFiles/hw3_.dir/Student.cpp.o.d"
+  "/home/augustus/CLionProjects/hw3/interface.cpp" "CMakeFiles/hw3_.dir/interface.cpp.o" "gcc" "CMakeFiles/hw3_.dir/interface.cpp.o.d"
+  "/home/augustus/CLionProjects/hw3/main.cpp" "CMakeFiles/hw3_.dir/main.cpp.o" "gcc" "CMakeFiles/hw3_.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.

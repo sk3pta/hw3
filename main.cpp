@@ -54,8 +54,18 @@ DataManager dataManager;
                 last_name = input_string();
                 std::cout << "Course : \n" << std::endl;
                 course = input_size_t();
-                std::cout << "Subjects : \n" << std::endl;
-                std::string subject_name;
+
+                auto group = dataManager.getGroupUsingID(id_group);
+                for (const auto& subj : group.getSubjects()) {
+                    grades.insert({subj,0});
+
+                }
+                for (auto subj : grades) {
+                    std::cout << "Your mark for the subject : " << subj.first;
+                    std::size_t mark = input_size_t();
+                    subj.second = mark;
+                }
+                /*
                 do {
                     std::cout << "name of the subject: \n" << std::endl;
                     subject_name = input_string();
@@ -67,11 +77,22 @@ DataManager dataManager;
                     }
                 }
                 while (subject_name != "0");
+                 */
+
+
+
+
                 if (dataManager.groups_ids.find(id_group) != dataManager.groups_ids.end()) {
                     dataManager.addStudent(name,&id_manager,middle_name,last_name,course,grades,id_group);
+
                 }
-                std::cout << " WOw Group is created !" << std::endl;
+                std::cout << " WOw student is created !" << std::endl;
+                break;
             }
+
+
+
+
             case LOBBY::PRINT_GROUPS:
             {
                 for (auto group : dataManager.groups) {
