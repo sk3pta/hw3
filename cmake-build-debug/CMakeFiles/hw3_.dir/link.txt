@@ -1,1 +1,3 @@
-/usr/bin/c++ -g CMakeFiles/hw3_.dir/main.cpp.o CMakeFiles/hw3_.dir/Student.cpp.o CMakeFiles/hw3_.dir/Group.cpp.o CMakeFiles/hw3_.dir/ID.cpp.o CMakeFiles/hw3_.dir/interface.cpp.o -o hw3_ 
+"C:\Program Files\JetBrains\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\hw3_.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\hw3_.dir/objects.a @CMakeFiles\hw3_.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\hw3_.dir/objects.a -Wl,--no-whole-archive -o hw3_.exe -Wl,--out-implib,libhw3_.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hw3_.dir\linklibs.rsp
