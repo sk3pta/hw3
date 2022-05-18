@@ -60,8 +60,8 @@ DataManager dataManager;
                     grades.insert({subj,0});
 
                 }
-                for (auto subj : grades) {
-                    std::cout << "Your mark for the subject : " << subj.first;
+                for (auto &subj : grades) {
+                    std::cout << "Your mark for the subject : " << subj.first << std::endl;
                     std::size_t mark = input_size_t();
                     subj.second = mark;
                 }
