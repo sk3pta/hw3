@@ -55,6 +55,17 @@ public:
         for (auto &group: groups) {
             if (group.group_id == id) return group;
         }
+
+    }
+
+
+
+    bool ifExist(unsigned int id) {
+        for (auto &group: groups) {
+            if (group.group_id == id) return true;
+        }
+        return false;
+
     }
 
 
@@ -97,32 +108,34 @@ public:
         for (auto &jgroup: jinp) {
             Group group;
             group.group_id = jgroup["id"];
-            group.setName(jgroup["name"]);
-            group.setCourse(jgroup["course"]);
 
-            std::vector<std::string> subj;
-            for (auto & x : jgroup["subjects"]) {
-                subj.push_back(x);
-                //group.subjects[x] = jgroup["subjects"][x];
+            if ( !ifExist(group.group_id)) {
+                group.setName(jgroup["name"]);
+                group.setCourse(jgroup["course"]);
+
+                std::vector<std::string> subj;
+                for (auto &x: jgroup["subjects"]) {
+                    subj.push_back(x);
+                    //group.subjects[x] = jgroup["subjects"][x];
+                }
+                //subj = jgroup["subjects"];
+                group.addSubjects(subj);
+
+                for (const auto &student: jgroup["students"]) {
+                    Student _student;
+                    _student.name = student["name"];
+                    _student.middle_name = student["middle_name"];
+                    _student.last_name = student["last_name"];
+                    _student.group_name = student["group_name"];
+                    _student.course = student["course"];
+                    auto _grades = student["grades"];
+                    _student.addGrades(_grades);
+                    _student.setID(student["ID"]);
+                    group.addStudent(_student);
+                    this->students_ids.insert({_student.getID(), _student});
+                }
+                this->groups.push_back(group);
             }
-            //subj = jgroup["subjects"];
-            group.addSubjects(subj);
-
-            for (const auto &student: jgroup["students"]) {
-                Student _student;
-                _student.name = student["name"];
-                _student.middle_name = student["middle_name"];
-                _student.last_name = student["last_name"];
-                _student.group_name = student["group_name"];
-                _student.course = student["course"];
-                auto _grades = student["grades"];
-                _student.addGrades(_grades);
-                _student.setID(student["ID"]);
-                group.addStudent(_student);
-                this->students_ids.insert({_student.getID(),_student});
-            }
-            this->groups.push_back(group);
-
         }
     };
 
