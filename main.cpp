@@ -136,10 +136,10 @@ int main() {
                     }
                 }
             }
-
             case LOBBY::ST_W_G_M: {
                 std::cout << "Enter id of the group" << std::endl;
                 unsigned int id_group;
+                id_group = input_size_t();
                 auto group = dataManager.getGroupUsingID(id_group);
                 Nice_Grades(std::cout, group);
                 break;
@@ -147,6 +147,7 @@ int main() {
             case LOBBY::ST_W_B_M: {
                 std::cout << "Enter id of the group" << std::endl;
                 unsigned int id_group;
+                id_group = input_size_t();
                 auto group = dataManager.getGroupUsingID(id_group);
                 Bad_Grades(std::cout, group);
                 break;
@@ -154,23 +155,31 @@ int main() {
 
             case LOBBY::SAVE:
             {
-                std::ofstream out("saved.json",std::ios::app);
+                std::cout << "Name of the File " << std::endl;
+                std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
+                std::string input = input_string();
+                std::ofstream out(str +input,std::ios::app);
 
                 //thr = new std::thread(&DataManager::saveEverything,&out);
                 //std::future<void> save = std::async(&dataManager.saveEverything,&out);
 
 
                 dataManager.saveEverything(out);
+                std::cout << "Save was done!" << std::endl;
                 break;
             }
 
             case LOBBY::DOWNLOAD:
 
             {
-
-                std::ifstream inp("saved.json");
+                std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
+                std::cout << "Name of the File " << std::endl;
+                std::string input = input_string();
+                std::ifstream inp(str +input);
 
                 dataManager.LoadEverything(inp);
+                std::cout << "Download was done!" << std::endl;
+                break;
             }
 
         }

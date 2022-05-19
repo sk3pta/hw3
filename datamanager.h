@@ -135,6 +135,7 @@ public:
                     this->students_ids.insert({_student.getID(), _student});
                 }
                 this->groups.push_back(group);
+                groups_ids[group.group_id] = group;
             }
         }
     };
