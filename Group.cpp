@@ -155,7 +155,7 @@ std::ostream &Nice_Grades(std::ostream &out, const Group &group) {
                 good_grades += 1;
             }
         }
-        if (good_grades == group.subjects.size() - 1) {
+        if (good_grades == group.subjects.size()) {
             out << student << std::endl;
         }
     }
