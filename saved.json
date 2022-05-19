@@ -1,23 +1,31 @@
 {
-  "3311614314": {
+  "3083142207": {
     "course": 1,
-    "id": 3311614314,
+    "id": 3083142207,
     "name": "Name",
     "students": [
       {
-        "ID": 23883084,
+        "ID": 51482197,
         "course": 1,
         "grades": {
-          "math": 5
+          "a": 5
         },
         "group_name": "Name",
-        "last_name": "dasds",
-        "middle_name": "asdaw",
-        "name": "nameof"
+        "last_name": "afad",
+        "middle_name": "adfm",
+        "name": "Name1"
       }
     ],
     "subjects": [
-      "math"
+      "a"
+    ]
+  },
+  "4231030080": {
+    "course": 1,
+    "id": 4231030080,
+    "name": "Test2",
+    "subjects": [
+      "asd"
     ]
   }
 }
