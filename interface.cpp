@@ -9,7 +9,15 @@ LOBBY lobby() {
             std::cout << "YOU HAVE MANY OPTIONS OF INTERACTION" << std::endl;
             std::cout << " 1 to add group" << std::endl;
             std::cout << " 2 to add student" << std::endl;
-            std::cout << " 99 to print all groups" << std::endl;
+            std::cout << " 3 to save" << std::endl;
+            std::cout << " 4 to download" << std::endl;
+            std::cout << " 5 to print_groups" << std::endl;
+            std::cout << " 6 to print students with good marks" << std::endl;
+            std::cout << " 7 to  print students with bad marks" << std::endl;
+            std::cout << " 8 to sort students" << std::endl;
+            std::cout << " 9 to edit groups" << std::endl;
+            std::cout << " 10 to edit students" << std::endl;
+            std::cout << " 99 to exit" << std::endl;
 
             size_t input;
 
@@ -51,19 +59,21 @@ LOBBY lobby() {
 STUDENT_PROFILE editing_students(){
     for(;;){
         try{
-            input = input_size_t();
+            auto input = input_size_t();
             std::cout << std::endl;
             switch(input){
                 case 0:
-                    return ST_EDIT_ALL;
+                    return STUDENT_PROFILE::ST_EDIT_ALL;
                 case 1:
-                    return ST_EDIT_MARKS;
+                    return STUDENT_PROFILE::ST_EDIT_MARKS;
                 case 2:
-                    return ST_EDIT_NAME;
+                    return STUDENT_PROFILE::ST_EDIT_NAME;
                 case 3:
-                    return ST_EDIT_COURSE;
+                    return STUDENT_PROFILE::ST_EDIT_COURSE;
                 case 4:
-                    return ST_DELETE;
+                    return STUDENT_PROFILE::ST_DELETE;
+                default:
+                    throw std::exception();
             }
         }
         catch(std::exception& ex){
@@ -71,19 +81,41 @@ STUDENT_PROFILE editing_students(){
         }
     }
 }
-STUDENT_PROFILE editing_groups(){
+GROUP_PROFILE editing_groups(){
     for(;;){
         try{
-            input = input_size_t();
+            auto input = input_size_t();
             std::cout << std::endl;
             switch(input){
                 case 0:
-                    return GR_EDIT_COURSE;
+                    return GROUP_PROFILE::GR_EDIT_COURSE;
                 case 1:
-                    return GR_EDIT_NAME;
+                    return GROUP_PROFILE::GR_EDIT_NAME;
                 case 2:
-                    return GR_DELETE;
-
+                    return GROUP_PROFILE::GR_EDIT_ALL;
+                case 3:
+                    return GROUP_PROFILE::GR_DELETE;
+                default:
+                    throw std::exception();
+            }
+        }
+        catch(std::exception& ex){
+            std::cout << "Repeat input" << std::endl;
+        }
+    }
+}
+SORT sorting(){
+    for(;;){
+        try{
+            auto input = input_size_t();
+            std::cout << std::endl;
+            switch(input){
+                case 0:
+                    return SORT::SORT_BY_ALL;
+                case 1:
+                    return SORT::SORT_BY_NAME;
+                default:
+                    throw std::exception();
             }
         }
         catch(std::exception& ex){

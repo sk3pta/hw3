@@ -8,111 +8,111 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug"/>
+				<Option working_dir="/home/augustus/CLionProjects/hw3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hw3_">
-				<Option output="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/hw3_.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug"/>
+				<Option output="/home/augustus/CLionProjects/hw3/cmake-build-debug/hw3_" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/augustus/CLionProjects/hw3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw3_"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw3_"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hw3_/fast">
-				<Option output="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/hw3_.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug"/>
+				<Option output="/home/augustus/CLionProjects/hw3/cmake-build-debug/hw3_" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/augustus/CLionProjects/hw3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2022.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/../../../../include/c++/11.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/../../../../include/c++/11.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/../../../../include/c++/11.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/11.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw3_/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw3_/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug"/>
+				<Option working_dir="/home/augustus/CLionProjects/hw3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug"/>
+				<Option working_dir="/home/augustus/CLionProjects/hw3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/home/augustus/CLionProjects/hw3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Group.cpp">
+		<Unit filename="/home/augustus/CLionProjects/hw3/Group.cpp">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Group.h">
+		<Unit filename="/home/augustus/CLionProjects/hw3/Group.h">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/ID.cpp">
+		<Unit filename="/home/augustus/CLionProjects/hw3/ID.cpp">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/ID.h">
+		<Unit filename="/home/augustus/CLionProjects/hw3/ID.h">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Student.cpp">
+		<Unit filename="/home/augustus/CLionProjects/hw3/Student.cpp">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/Student.h">
+		<Unit filename="/home/augustus/CLionProjects/hw3/Student.h">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/datamanager.h">
+		<Unit filename="/home/augustus/CLionProjects/hw3/datamanager.h">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/interface.cpp">
+		<Unit filename="/home/augustus/CLionProjects/hw3/interface.cpp">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/interface.h">
+		<Unit filename="/home/augustus/CLionProjects/hw3/interface.h">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/main.cpp">
+		<Unit filename="/home/augustus/CLionProjects/hw3/main.cpp">
 			<Option target="hw3_"/>
 		</Unit>
-		<Unit filename="C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/CMakeLists.txt">
+		<Unit filename="/home/augustus/CLionProjects/hw3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
