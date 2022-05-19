@@ -136,6 +136,8 @@ public:
                 }
                 this->groups.push_back(group);
                 groups_ids[group.group_id] = group;
+                std::cout << group.group_id << std::endl;
+                std::cout << groups[0] << std::endl;
             }
         }
     };
