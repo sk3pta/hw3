@@ -246,7 +246,7 @@ int main() {
                     case GROUP_PROFILE::GR_EDIT_NAME:{
                         std::cout << "CHANGE GROUP NAME : " << std::endl;
                         std::string _name;
-                        unsigned int id\
+                        unsigned int id;
                         std::cout << ">>ID of a group : " << std::endl;
                         unsigned int group_id = input_size_t();
                         std::cout << "NEW NAME : " << std::endl;
