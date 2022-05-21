@@ -1,31 +1,25 @@
 {
-  "3083142207": {
-    "course": 1,
-    "id": 3083142207,
-    "name": "Name",
+  "2828048816": {
+    "course": 12,
+    "id": 2828048816,
+    "name": "iu8",
     "students": [
       {
-        "ID": 51482197,
-        "course": 1,
+        "ID": 34976881,
+        "course": 12,
         "grades": {
-          "a": 5
+          "math": 5,
+          "phys": 5
         },
-        "group_name": "Name",
-        "last_name": "afad",
-        "middle_name": "adfm",
-        "name": "Name1"
+        "group_name": "iu8",
+        "last_name": "lnmae",
+        "middle_name": "sname",
+        "name": "name"
       }
     ],
     "subjects": [
-      "a"
-    ]
-  },
-  "4231030080": {
-    "course": 1,
-    "id": 4231030080,
-    "name": "Test2",
-    "subjects": [
-      "asd"
+      "phys",
+      "math"
     ]
   }
 }

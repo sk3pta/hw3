@@ -51,7 +51,7 @@ public:
     }
 
 
-    auto getStudents() {
+    auto & getStudents() {
         return this->students;
     }
 

@@ -1,1 +1,13 @@
-{"ID":1980867,"course":1,"grades":{"AL":5,"Math":3,"Physics":5},"group_name":"","last_name":"AArname","middle_name":"Ac","name":"Jack"}
+{
+  "ID": 1980867,
+  "course": 1,
+  "grades": {
+    "AL": 5,
+    "Math": 3,
+    "Physics": 5
+  },
+  "group_name": "",
+  "last_name": "AArname",
+  "middle_name": "Ac",
+  "name": "Jack"
+}

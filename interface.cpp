@@ -18,6 +18,11 @@ LOBBY lobby() {
             std::cout << " 10 to edit students" << std::endl;
             std::cout << " 99 to exit" << std::endl;
 
+            std::cout << "CURRENT DATABASE : " << std::endl;
+            LOBBY::CONDITION;
+
+
+
             size_t input;
 
             input = input_size_t();
@@ -152,7 +157,7 @@ std::string input_string()
         }
     }
 }
-size_t input_size_t()
+unsigned int input_size_t()
 {
     for (;;)
     {
@@ -162,7 +167,7 @@ size_t input_size_t()
             if (std::cin >> num && num >= 0)
             {
                 std::cin.ignore(std::numeric_limits<char>::max(), '\n');
-                return (size_t)num;
+                return num;
             }
             else
                 throw std::exception();
