@@ -55,7 +55,6 @@ public:
         for (auto &group: groups) {
             if (group.group_id == id) return group;
         }
-
     }
 
 
