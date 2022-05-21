@@ -100,8 +100,8 @@ int main() {
 
 
                 if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
-                    dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
 
+                    dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
                 }
                 std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
                           << std::endl;
@@ -246,7 +246,6 @@ int main() {
                     case GROUP_PROFILE::GR_EDIT_NAME:{
                         std::cout << "CHANGE GROUP NAME : " << std::endl;
                         std::string _name;
-                        unsigned int id;
                         std::cout << ">>ID of a group : " << std::endl;
                         unsigned int group_id = input_size_t();
                         std::cout << "NEW NAME : " << std::endl;
@@ -259,6 +258,42 @@ int main() {
                         }
                         break;
 
+                    }
+
+
+                    case GROUP_PROFILE::GR_EDIT_ALL:{
+                        std::cout << "CHANGE GROUP INFO: " << std::endl;
+
+
+                        unsigned int group_id;
+                        std::cout << ">> ID of a group : " << std::endl;
+                        group_id = input_size_t();
+
+                        std::cout <<" Course " << std::endl;
+                        size_t course;
+                        course = input_size_t();
+
+
+                        std::string _name;
+                        std::cout << "NEW NAME : " << std::endl;
+                        _name = input_string();
+
+
+                        Group * group = &(dataManager.getGroupUsingID(group_id));
+                        group->setName(_name);
+                        group->setCourse(course);
+
+                        for (auto & stud : group->getStudents() ){
+                            stud.group_name = group->getName();
+                            stud.course = group->getCourse();
+                        }
+                        break;
+
+
+                        group->setCourse(course);
+                        for (auto & stud : group->getStudents() ){
+                            stud.course = group->getCourse();
+                        }
                     }
 
 
