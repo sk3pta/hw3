@@ -5,7 +5,6 @@
 LOBBY lobby() {
     for(;;) {
         try {
-            std::cout << "-------------HELLO THERE-------------" << std::endl;
             std::cout << "YOU HAVE MANY OPTIONS OF INTERACTION" << std::endl;
             std::cout << " 1 to add group" << std::endl;
             std::cout << " 2 to add student" << std::endl;
@@ -59,13 +58,16 @@ LOBBY lobby() {
 STUDENT_PROFILE editing_students(){
     for(;;){
         try{
-            auto input = input_size_t();
+            std::cout << "INTERACTION WITH STUDENT PROFILE" << std::endl;
+            std::cout << " 0 to edit all parametrs" << std::endl;
+            std::cout << " 2 to edit name" << std::endl;
+            std::cout << " 3 to edit course" << std::endl;
+            std::cout << " 4 to delete student" << std::endl;
+            size_t input = input_size_t();
             std::cout << std::endl;
             switch(input){
                 case 0:
                     return STUDENT_PROFILE::ST_EDIT_ALL;
-                case 1:
-                    return STUDENT_PROFILE::ST_EDIT_MARKS;
                 case 2:
                     return STUDENT_PROFILE::ST_EDIT_NAME;
                 case 3:
@@ -84,7 +86,12 @@ STUDENT_PROFILE editing_students(){
 GROUP_PROFILE editing_groups(){
     for(;;){
         try{
-            auto input = input_size_t();
+            std::cout << "INTERACTION WITH GROUP PROFILE" << std::endl;
+            std::cout << " 0 to edit  course" << std::endl;
+            std::cout << " 1 to edit only name" << std::endl;
+            std::cout << " 2 to edit all" << std::endl;
+            std::cout << " 3 to delete group" << std::endl;
+            size_t input = input_size_t();
             std::cout << std::endl;
             switch(input){
                 case 0:
@@ -107,7 +114,10 @@ GROUP_PROFILE editing_groups(){
 SORT sorting(){
     for(;;){
         try{
-            auto input = input_size_t();
+            std::cout << "INTERACTION WITH SORTING" << std::endl;
+            std::cout << " 0 to sort by all" << std::endl;
+            std::cout << " 1 to sort by name" << std::endl;
+            size_t input = input_size_t();
             std::cout << std::endl;
             switch(input){
                 case 0:

@@ -96,6 +96,9 @@ void Group::addStudent( Student &student) {
     this->students_amount += 1;
     this->students.push_back(new_student);
 }
+void deleteStudent(Student &student){
+
+}
 
 void Group::Sorted_at_all() {
     students.sort([](Student &student1, Student &student2) {
@@ -136,8 +139,8 @@ void Group::Sorted_by_name() {
     });
 }
 
-const Student &Group::getStudentbyId(unsigned int student_id) {
-    for (const auto &student: this->students) {
+Student &Group::getStudentbyId(unsigned int student_id) {
+    for (auto &student: this->students) {
         if (student.getStudentId() == student_id) return student;
     }
 }
