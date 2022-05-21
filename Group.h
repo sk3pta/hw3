@@ -38,8 +38,9 @@ public:
 
     void deleteStudent(Student &student);
 
-    void Sorted_at_all();
+    void editName(Student &student);
 
+    void Sorted_at_all();
 
     std::string getName() {
         return this->name;

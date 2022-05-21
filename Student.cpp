@@ -58,13 +58,16 @@ void Student::addGrades(const std::map<std::string, size_t> &new_grades) {
     }
 }
 
-void Student::editname( std::string name1, std::string middle_name1 , std::string last_name1){
+void Student::editname( std::string &name1, std::string &middle_name1 , std::string &last_name1){
     this->name = name1;
     this->middle_name = middle_name1;
     this->last_name = last_name1;
 
 }
 
+void Student::editcourse(size_t course1){
+    this->course = course1;
+}
 void Student::removeGrades(const std::string &subject) {
     this->grades.erase(subject);
 }

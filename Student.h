@@ -43,7 +43,9 @@ public:
 
     void addGrades(const std::map<std::string, size_t> &);
 
-    void editname( std::string name1,  std::string middle_name1 , std::string last_name1);
+    void editname( std::string &name1,  std::string &middle_name1 , std::string &last_name1);
+
+    void editcourse(size_t course);
 
     std::map<std::string, unsigned int> getGrades();
 
