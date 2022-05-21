@@ -226,7 +226,7 @@ int main() {
                 switch(editing_groups()){
                     case GROUP_PROFILE::GR_EDIT_COURSE:{
                         std::cout << "CHANGE GROUP COURSE: " << std::endl;
-                        size_t group_id;
+                        unsigned int group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
                         std::cout <<" Course " << std::endl;
@@ -242,6 +242,27 @@ int main() {
                         }
                         break;
                     }
+
+                    case GROUP_PROFILE::GR_EDIT_NAME:{
+                        std::cout << "CHANGE GROUP NAME : " << std::endl;
+                        std::string _name;
+                        unsigned int id\
+                        std::cout << ">>ID of a group : " << std::endl;
+                        unsigned int group_id = input_size_t();
+                        std::cout << "NEW NAME : " << std::endl;
+                        _name = input_string();
+                        Group * group = &(dataManager.getGroupUsingID(group_id));
+                        group->setName(_name);
+
+                        for (auto & stud : group->getStudents() ){
+                            stud.group_name = group->getName();
+                        }
+                        break;
+
+                    }
+
+
+
                 }
                 break;
             }
