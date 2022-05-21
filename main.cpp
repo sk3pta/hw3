@@ -126,15 +126,56 @@ int main() {
                         auto group = dataManager.getGroupUsingID(group_id);
 
                         auto student = group.getStudentbyId(student_id);
-                        student.name = new_name;
-                        student.last_name = new_last_name;
-                        student.middle_name = new_middle_name;
+                        student.editname(new_name, new_middle_name, new_last_name);
 
 
                         std::cout << "Student with id " << student_id << " has successfule changed his name "
                                   << std::endl;
+                        std::cout << student << std::endl;
+                        break;
+                    }
+                    case STUDENT_PROFILE::ST_EDIT_COURSE:{
+                        std::cout << ">>CHANGE STUDENT NAME :" << std::endl;
+                        size_t student_id;
+                        size_t group_id;
+                        std::cout << ">> ID of a group : " << std::endl;
+                        group_id = input_size_t();
+                        std::cout << ">> ID of a student : " << std::endl;
+                        student_id = input_size_t();
+                        std::cout <<" Course " << std::endl;
+                        size_t course;
+                        course = input_size_t();
+                        auto group = dataManager.getGroupUsingID(group_id);
+                        auto student = group.getStudentbyId(student_id);
+                        student.course = course;
+                        std::cout << "Student with id " << student_id << " has successfuly changed his name "
+                                  << std::endl;
+                        std::cout << student << std::endl;
+                        break;
+                    }
+                    case STUDENT_PROFILE::ST_DELETE:{
+                        std::cout << ">>CHANGE STUDENT NAME :" << std::endl;
+                        size_t student_id;
+                        size_t group_id;
+                        std::cout << ">> ID of a group : " << std::endl;
+                        group_id = input_size_t();
+                        std::cout << ">> ID of a student : " << std::endl;
+                        student_id = input_size_t();
+                        auto group = dataManager.getGroupUsingID(group_id);
+                        auto student = group.getStudentbyId(student_id);
+                        for(auto i = group.getStudents().begin(); i != group.getStudents().end(); i++){
+                            std::cout << *i << std::endl;
+                            std::cout << i->getStudentId() << std::endl;
+                            if (i->getStudentId() == student_id ){
+                                group = group - *i;
+                                std::cout << "wow" << std::endl;
+                            }
+                        }
+                        break;
                     }
                 }
+                std::cout << "\n    \n" <<std::endl;
+                break;
             }
             case LOBBY::ST_W_G_M: {
                 std::cout << "Enter id of the group" << std::endl;

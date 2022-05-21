@@ -27,7 +27,6 @@ enum class LOBBY {
 };
 enum class STUDENT_PROFILE{
     ST_EDIT_ALL =0,
-    ST_EDIT_MARKS = 1,
     ST_EDIT_NAME = 2,
     ST_EDIT_COURSE = 3,
     ST_DELETE = 4

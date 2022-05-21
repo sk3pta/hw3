@@ -23,7 +23,7 @@ public:
           const std::vector<std::string> &subjects, size_t students_amount);
 
     Group(ID *id_manager, std::string name, unsigned int course, size_t students_amount,
-          const std::list<Student> &students, const std::vector<std::string> &subjects);
+           const std::list<Student> &students, const std::vector<std::string> &subjects);
 
 
     Group(const Group &group);
@@ -35,6 +35,8 @@ public:
     //===================================================================//
 
     void addStudent( Student &student);
+
+    void deleteStudent(Student &student);
 
     void Sorted_at_all();
 
@@ -76,7 +78,7 @@ public:
 
     std::vector<std::string> getSubjects();
 
-    const Student &getStudentbyId(unsigned int student_id);
+    Student &getStudentbyId(unsigned int student_id);
     size_t getGroupbyId() const;
     //===================================================================//
 
