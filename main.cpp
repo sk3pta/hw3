@@ -349,13 +349,12 @@ int main() {
                         std::cout << "Name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto& stud: dataManager.students_ids) {
+                        for (const auto &stud: dataManager.students_ids) {
                             if (stud.second.name == _name) {
                                 std::cout << stud.second << std::endl;
                                 count += 1;
                             }
                         }
-
 
 
                         std::cout << count << " students were found " << std::endl;
@@ -366,7 +365,7 @@ int main() {
                         std::cout << "Middle name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto& stud: dataManager.students_ids) {
+                        for (const auto &stud: dataManager.students_ids) {
                             if (stud.second.middle_name == _name) {
                                 std::cout << stud.second << std::endl;
                                 count += 1;
@@ -382,7 +381,7 @@ int main() {
                         std::cout << "Last name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto& stud: dataManager.students_ids) {
+                        for (const auto &stud: dataManager.students_ids) {
                             if (stud.second.last_name == _name) {
                                 std::cout << stud.second << std::endl;
                                 count += 1;
@@ -397,7 +396,7 @@ int main() {
                         std::cout << "Course ? " << std::endl;
                         auto _course = input_size_t();
                         size_t count = 0;
-                        for (const auto& stud: dataManager.students_ids) {
+                        for (const auto &stud: dataManager.students_ids) {
                             if (stud.second.course == _course) {
                                 std::cout << stud.second << std::endl;
                                 count += 1;
@@ -413,7 +412,7 @@ int main() {
                         std::cout << "Group name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto& stud: dataManager.students_ids) {
+                        for (const auto &stud: dataManager.students_ids) {
                             if (stud.second.group_name == _name) {
                                 std::cout << stud.second << std::endl;
                                 count += 1;
@@ -428,7 +427,7 @@ int main() {
                         std::cout << "ID ? " << std::endl;
                         auto _id = input_size_t();
                         size_t count = 0;
-                        for (const auto& stud: dataManager.students_ids) {
+                        for (const auto &stud: dataManager.students_ids) {
                             if (stud.second.getID() == _id) {
                                 std::cout << stud.second << std::endl;
                                 count += 1;
@@ -440,6 +439,56 @@ int main() {
                     }
 
                 }
+                break;
+            }
+
+
+            case LOBBY::FIND_GROUP: {
+                switch (find_group()) {
+                    case FIND_GROUP::BY_NAME: {
+                        std::cout << "Name ? " << std::endl;
+                        auto _name = input_string();
+
+                        size_t count = 0;
+                        for (auto &group: dataManager.groups) {
+                            if (group.getName() == _name) {
+                                std::cout << group << std::endl;
+                                count += 1;
+                            }
+                        }
+                        break;
+                    }
+
+                    case FIND_GROUP::BY_COURSE: {
+                        std::cout << "Course ? " << std::endl;
+                        auto _course = input_size_t();
+
+                        size_t count = 0;
+                        for (auto &group: dataManager.groups) {
+                            if (group.getCourse() == _course) {
+                                std::cout << group << std::endl;
+                                count += 1;
+                            }
+                        }
+                        break;
+                    }
+
+                    case FIND_GROUP::BY_ID: {
+                        std::cout << "ID ? " << std::endl;
+                        auto _id = input_size_t();
+
+                        size_t count = 0;
+                        for (auto &group: dataManager.groups) {
+                            if (group.group_id == _id) {
+                                std::cout << group << std::endl;
+                                count += 1;
+                            }
+                        }
+                        break;
+                    }
+
+                }
+
                 break;
             }
 

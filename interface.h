@@ -30,6 +30,13 @@ enum class LOBBY {
 
 
 
+enum class FIND_GROUP{
+    BY_NAME = 1,
+    BY_COURSE = 2,
+    BY_ID = 3
+};
+
+
 enum class FIND_STUDENT{
     BY_NAME = 1,
     BY_MNAME = 2,
@@ -61,6 +68,7 @@ LOBBY lobby();
 STUDENT_PROFILE editing_students();
 GROUP_PROFILE editing_groups();
 FIND_STUDENT find_student();
+FIND_GROUP find_group();
 SORT sorting();
 std::string input_string();
 unsigned int input_size_t();

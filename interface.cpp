@@ -68,6 +68,41 @@ LOBBY lobby() {
     }
 }
 
+
+FIND_GROUP find_group() {
+    for (;;) {
+        try {
+            std::cout << "Find group by : " << std::endl;
+
+            std::cout << "1 to find it by name " << std::endl;
+            std::cout << "2 to find it by course " << std::endl;
+            std::cout << "3 to find it by ID " << std::endl;
+
+            auto input = input_size_t();
+            switch (input) {
+                case 1: {
+                    return FIND_GROUP::BY_NAME;
+                }
+                case 2:
+                    return FIND_GROUP::BY_COURSE;
+                case 3:
+                    return FIND_GROUP::BY_ID;
+
+                default:
+                    throw std::exception();
+            }
+        }
+
+
+        catch(std::exception& ex){
+            std::cout << "Repeat input" << std::endl;
+        }
+
+
+    }
+}
+
+
 FIND_STUDENT find_student() {
     for(;;) {
         try {
