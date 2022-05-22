@@ -61,7 +61,7 @@ int main() {
                 std::string name;
                 std::string middle_name;
                 std::string last_name;
-                unsigned int course;
+                //unsigned int course;
                 std::map<std::string, unsigned int> grades;
                 std::cout << "First name: " << std::endl;
                 name = input_string();
@@ -101,7 +101,7 @@ int main() {
 
                 //if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
                 if (!dataManager.ifExist(id_group))
-                    dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
+                    dataManager.addStudent(name, &id_manager, middle_name, last_name, 0, grades, id_group);
 
                 //std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
                  //         << std::endl;
