@@ -1,0 +1,25 @@
+{
+  "3388326230": {
+    "course": 5,
+    "id": 3388326230,
+    "name": "iu8-33",
+    "students": [
+      {
+        "ID": 35310713,
+        "course": 5,
+        "grades": {
+          "AL": 5,
+          "Math": 4
+        },
+        "group_name": "iu8-33",
+        "last_name": "Murtazaevich",
+        "middle_name": "Murtazaev",
+        "name": "ALik"
+      }
+    ],
+    "subjects": [
+      "Math",
+      "AL"
+    ]
+  }
+}

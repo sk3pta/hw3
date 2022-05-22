@@ -5,9 +5,13 @@
 
 class DataManager {
 public:
-    std::vector<Group> groups;
+    //std::vector<Group> groups;
+
     std::map<unsigned int, Group> groups_ids;
     std::map<unsigned int, Student> students_ids;
+
+    std::list<Group> groups;
+
 
     DataManager() { groups = {}; };
 
@@ -22,7 +26,8 @@ public:
         Group group(id_manager, name, course, subjects, students_amount);
 
 
-        groups_ids.insert({group.group_id,group});
+        //groups_ids.insert({group.group_id,group});
+        groups.push_back(group);
         //groups_ids[group.group_id] = group;
         //groups.push_back(group);
     }
@@ -31,12 +36,12 @@ public:
                     unsigned int course,
                     std::map<std::string, unsigned int> grades, unsigned int group_id) {
 
-        for (auto &grp: groups_ids) {
-            if (grp.first == group_id) {
+        for (auto &grp: groups) {
+            if (grp.group_id == group_id) {
                 Student student(name, id_manager, middle_name, last_name, course, grades);
                 students_ids.insert({student.getID(), student});
 
-                grp.second.addStudent(students_ids.rbegin()->second);
+                grp.addStudent(students_ids.rbegin()->second);
 
 
                 // grp.second = students_ids.rbegin->second;
@@ -70,8 +75,8 @@ public:
     */
 
 Group &getGroupUsingID(unsigned int id) {
-    for (auto &group : groups_ids) {
-        if (group.second.group_id == id ) return group.second;
+    for (auto &group : groups) {
+        if (group.group_id == id ) return group;
 
     }
 
@@ -91,25 +96,25 @@ Group &getGroupUsingID(unsigned int id) {
     void saveEverything(std::ostream &out) {
         nlohmann::json jgroup;
 
-        for (auto &group: this->groups_ids) {
-            jgroup[std::to_string(group.second.group_id)]["id"] = group.second.group_id;
-            jgroup[std::to_string(group.second.group_id)]["name"] = group.second.getName();
-            jgroup[std::to_string(group.second.group_id)]["course"] = group.second.getCourse();
-            for (size_t x = 0; x < group.second.getSubjects().size(); ++x) {
-                jgroup[std::to_string(group.second.group_id)]["subjects"][x] = group.second.getSubjects()[x];
+        for (auto &group: this->groups) {
+            jgroup[std::to_string(group.group_id)]["id"] = group.group_id;
+            jgroup[std::to_string(group.group_id)]["name"] = group.getName();
+            jgroup[std::to_string(group.group_id)]["course"] = group.getCourse();
+            for (size_t x = 0; x < group.getSubjects().size(); ++x) {
+                jgroup[std::to_string(group.group_id)]["subjects"][x] = group.getSubjects()[x];
             }
 
             size_t x = 0;
-            for (auto student: group.second.getStudents()) {
+            for (auto student: group.getStudents()) {
 
-                jgroup[std::to_string(group.second.group_id)]["students"][x]["ID"] = student.getID();
-                jgroup[std::to_string(group.second.group_id)]["students"][x]["name"] = student.name;
-                jgroup[std::to_string(group.second.group_id)]["students"][x]["middle_name"] = student.middle_name;
-                jgroup[std::to_string(group.second.group_id)]["students"][x]["last_name"] = student.last_name;
-                jgroup[std::to_string(group.second.group_id)]["students"][x]["course"] = student.course;
-                jgroup[std::to_string(group.second.group_id)]["students"][x]["group_name"] = student.group_name;
+                jgroup[std::to_string(group.group_id)]["students"][x]["ID"] = student.getID();
+                jgroup[std::to_string(group.group_id)]["students"][x]["name"] = student.name;
+                jgroup[std::to_string(group.group_id)]["students"][x]["middle_name"] = student.middle_name;
+                jgroup[std::to_string(group.group_id)]["students"][x]["last_name"] = student.last_name;
+                jgroup[std::to_string(group.group_id)]["students"][x]["course"] = student.course;
+                jgroup[std::to_string(group.group_id)]["students"][x]["group_name"] = student.group_name;
                 for (const auto &item: student.getGrades()) {
-                    jgroup[std::to_string(group.second.group_id)]["students"][x]["grades"][item.first] = item.second;
+                    jgroup[std::to_string(group.group_id)]["students"][x]["grades"][item.first] = item.second;
                 }
                 ++x;
             }
@@ -155,10 +160,10 @@ Group &getGroupUsingID(unsigned int id) {
                     this->students_ids.insert({_student.getID(), _student});
                 }
                 this->groups.push_back(group);
-                groups_ids[group.group_id] = group;
+                //groups_ids[group.group_id] = group;
                 groups.push_back(group);
                 std::cout << group.group_id << std::endl;
-                std::cout << groups[0] << std::endl;
+               // std::cout << groups[0] << std::endl;
             }
         }
     };

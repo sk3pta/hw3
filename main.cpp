@@ -15,9 +15,9 @@ int main() {
 
 
     for (;;) {
-        for (const auto&group : dataManager.groups_ids) {
+        for (const auto&group : dataManager.groups) {
             std::cout<< "========================================" << std::endl;
-            std::cout << group.second << std::endl;
+            std::cout << group << std::endl;
             std::cout<< "========================================" << std::endl;
         }
         switch (lobby()) {
@@ -50,7 +50,7 @@ int main() {
                 } while (subject_name != "0");
                 dataManager.addGroup(&id_manager, group_name, course, subjects);
                 std::cout << " WOw Group is created with id!"
-                          << dataManager.groups_ids[dataManager.groups_ids.size() - 1].getGroupbyId() << std::endl;
+                          << dataManager.groups.back().getGroupbyId() << std::endl;
                 break;
             }
             case LOBBY::ADD_STUDENT: {
@@ -100,7 +100,7 @@ int main() {
 
 
                 //if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
-                if (!dataManager.ifExist(id_group))
+                if (dataManager.ifExist(id_group))
                     dataManager.addStudent(name, &id_manager, middle_name, last_name, 0, grades, id_group);
 
                 //std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
@@ -110,8 +110,8 @@ int main() {
 
 
             case LOBBY::PRINT_GROUPS: {
-                for (const auto &group: dataManager.groups_ids) {
-                    std::cout << group.second;
+                for (const auto &group: dataManager.groups) {
+                    std::cout << group;
                 }
                 break;
             }
@@ -135,13 +135,13 @@ int main() {
                         std::cout << "MIDDLE NAME : " << std::endl;
                         std::string new_middle_name = input_string();
                         std::cout <<" Course " << std::endl;
-                        size_t course;
-                        course = input_size_t();
+                        //size_t course;
+                        //course = input_size_t();
 
                         auto group = &(dataManager.getGroupUsingID(group_id));
                         auto student = &(group->getStudentbyId(student_id));
                         student->editname(new_name, new_middle_name, new_last_name);
-                        student->editcourse(course);
+                        //student->editcourse(course);
 
 
                         std::cout << "Student with id " << student_id << " has successfule changed his name "
