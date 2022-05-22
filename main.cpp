@@ -99,10 +99,10 @@ int main() {
 
 
 
-                if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
-
+                //if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
+                if (!dataManager.ifExist(id_group))
                     dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
-                }
+
                 //std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
                  //         << std::endl;
                 break;

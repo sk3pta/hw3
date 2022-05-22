@@ -71,10 +71,10 @@ public:
 
 Group &getGroupUsingID(unsigned int id) {
     for (auto &group : groups_ids) {
-        if (group.second.group_id == id ) return group.second
-         ;
+        if (group.second.group_id == id ) return group.second;
 
     }
+
 }
 
 
