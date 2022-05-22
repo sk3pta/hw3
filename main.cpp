@@ -50,7 +50,7 @@ int main() {
                 } while (subject_name != "0");
                 dataManager.addGroup(&id_manager, group_name, course, subjects);
                 std::cout << " WOw Group is created with id!"
-                          << dataManager.groups[dataManager.groups.size() - 1].getGroupbyId() << std::endl;
+                          << dataManager.groups_ids[dataManager.groups_ids.size() - 1].getGroupbyId() << std::endl;
                 break;
             }
             case LOBBY::ADD_STUDENT: {
@@ -103,8 +103,8 @@ int main() {
 
                     dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
                 }
-                std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
-                          << std::endl;
+                //std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
+                 //         << std::endl;
                 break;
             }
 

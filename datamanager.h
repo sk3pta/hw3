@@ -16,20 +16,31 @@ public:
 
     void addGroup(ID *id_manager, std::string name, unsigned int course,
                   const std::vector<std::string> &subjects = {}, size_t students_amount = 0) {
+
+
+
         Group group(id_manager, name, course, subjects, students_amount);
-        //groups_ids[group.getGroupbyId()] = group;
-        groups.push_back(group);
+
+
+        groups_ids.insert({group.group_id,group});
+        //groups_ids[group.group_id] = group;
+        //groups.push_back(group);
     }
 
     void addStudent(std::string name, ID *id_manager, std::string middle_name, std::string last_name,
                     unsigned int course,
                     std::map<std::string, unsigned int> grades, unsigned int group_id) {
 
-        for (auto &grp: groups) {
-            if (grp.group_id == group_id) {
+        for (auto &grp: groups_ids) {
+            if (grp.first == group_id) {
                 Student student(name, id_manager, middle_name, last_name, course, grades);
                 students_ids.insert({student.getID(), student});
-                grp.addStudent(students_ids.rbegin()->second);
+
+                grp.second.addStudent(students_ids.rbegin()->second);
+
+
+                // grp.second = students_ids.rbegin->second;
+
             }
         }
     }
