@@ -23,9 +23,24 @@ enum class LOBBY {
     EXIT = 8,
     EDIT_GROUPS = 9,
     EDIT_STUDENTS = 10,
-    PRINT_GROUPS = 99,
-    CONDITION = 177
+    FIND_STUDENT = 11,
+    FIND_GROUP = 12,
+    PRINT_GROUPS = 99
 };
+
+
+
+enum class FIND_STUDENT{
+    BY_NAME = 1,
+    BY_MNAME = 2,
+    BY_LNAME = 3,
+    BY_COURSE = 4,
+    BY_GROUPNAME = 5,
+    BY_ID
+};
+
+
+
 enum class STUDENT_PROFILE{
     ST_EDIT_ALL =0,
     ST_EDIT_NAME = 2,
@@ -45,6 +60,7 @@ enum class SORT{
 LOBBY lobby();
 STUDENT_PROFILE editing_students();
 GROUP_PROFILE editing_groups();
+FIND_STUDENT find_student();
 SORT sorting();
 std::string input_string();
 unsigned int input_size_t();

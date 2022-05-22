@@ -16,10 +16,13 @@ LOBBY lobby() {
             std::cout << " 8 to sort students" << std::endl;
             std::cout << " 9 to edit groups" << std::endl;
             std::cout << " 10 to edit students" << std::endl;
+            std::cout << " 11 to find students" << std::endl;
+            std::cout << " 12 to find groups" << std::endl;
+
             std::cout << " 99 to exit" << std::endl;
 
             std::cout << "CURRENT DATABASE : " << std::endl;
-            LOBBY::CONDITION;
+
 
 
 
@@ -49,6 +52,10 @@ LOBBY lobby() {
                     return LOBBY::EDIT_GROUPS;
                 case 10:
                     return LOBBY::EDIT_STUDENTS;
+                case 11:
+                    return LOBBY::FIND_STUDENT;
+                case 12:
+                    return LOBBY::FIND_GROUP;
                 case 99:
                     return LOBBY::EXIT;
                 default:
@@ -60,6 +67,44 @@ LOBBY lobby() {
         }
     }
 }
+
+FIND_STUDENT find_student() {
+    for(;;) {
+        try {
+            std::cout << "Find student by : " << std::endl;
+            std::cout << "1 to find it by  name " << std::endl;
+            std::cout << "2 to find it by midde name " << std::endl;
+            std::cout << "3 to find it by last name " << std::endl;
+            std::cout << "4 to find it by course " << std::endl;
+            std::cout << "5 to find it by group name " << std::endl;
+            std::cout << "6 to find it by student id " << std::endl;
+            auto input = input_size_t();
+            switch(input){
+                case 1:{
+                    return FIND_STUDENT::BY_NAME;
+                }
+                case 2:
+                    return FIND_STUDENT::BY_MNAME;
+                case 3:
+                    return FIND_STUDENT::BY_LNAME;
+                case 4:
+                    return FIND_STUDENT::BY_COURSE;
+                case 5:
+                    return FIND_STUDENT::BY_GROUPNAME;
+                case 6:
+                    return FIND_STUDENT::BY_ID;
+            }
+        }
+
+        catch(std::exception& ex){
+            std::cout << "Repeat input" << std::endl;
+        }
+    }
+}
+
+
+
+
 STUDENT_PROFILE editing_students(){
     for(;;){
         try{

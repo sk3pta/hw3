@@ -161,7 +161,7 @@ Group &getGroupUsingID(unsigned int id) {
                 }
                 this->groups.push_back(group);
                 //groups_ids[group.group_id] = group;
-                groups.push_back(group);
+                //groups.push_back(group);
                 std::cout << group.group_id << std::endl;
                // std::cout << groups[0] << std::endl;
             }
