@@ -23,7 +23,8 @@ enum class LOBBY {
     EXIT = 8,
     EDIT_GROUPS = 9,
     EDIT_STUDENTS = 10,
-    PRINT_GROUPS = 99
+    PRINT_GROUPS = 99,
+    CONDITION = 177
 };
 enum class STUDENT_PROFILE{
     ST_EDIT_ALL =0,
@@ -46,7 +47,7 @@ STUDENT_PROFILE editing_students();
 GROUP_PROFILE editing_groups();
 SORT sorting();
 std::string input_string();
-std::size_t input_size_t();
+unsigned int input_size_t();
 
 
 

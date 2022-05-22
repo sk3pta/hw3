@@ -253,13 +253,13 @@ Group &operator++(Group &group) {
 //==========================================================
 
 std::ostream &operator<<(std::ostream &out, const Group &group) {
-    out << "Group: " << group.name << " with ID : " << group.group_id << std::endl;
-    out << "Subjects in this group" << std::endl;
+    out << "" << group.name << " with ID : " << group.group_id <<  " course " << group.course << std::endl;
+    out << " Subjects : " << std::endl;
     for(auto i: group.subjects){
-        out << i << std::endl;
+        out <<"     " << i << std::endl;
     }
     for (const auto &student: group.students) {
-        std::cout << student;
+        std::cout << " " << student << std::endl;
     }
     return out;
 }

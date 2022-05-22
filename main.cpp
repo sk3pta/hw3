@@ -15,7 +15,19 @@ int main() {
 
 
     for (;;) {
+        for (const auto&group : dataManager.groups_ids) {
+            std::cout<< "========================================" << std::endl;
+            std::cout << group.second << std::endl;
+            std::cout<< "========================================" << std::endl;
+        }
         switch (lobby()) {
+
+
+
+
+
+
+
             case LOBBY::ADD_GROUP: {
                 std::cout << "\n>>Add Group : \n" << std::endl;
                 std::string group_name;
@@ -57,8 +69,8 @@ int main() {
                 middle_name = input_string();
                 std::cout << "Last name: " << std::endl;
                 last_name = input_string();
-                std::cout << "Course : \n" << std::endl;
-                course = input_size_t();
+                //std::cout << "Course : \n" << std::endl;
+                //course = input_size_t();
 
                 auto group = dataManager.getGroupUsingID(id_group);
                 for (const auto &subj: group.getSubjects()) {
@@ -88,8 +100,8 @@ int main() {
 
 
                 if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
-                    dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
 
+                    dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
                 }
                 std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
                           << std::endl;
@@ -98,8 +110,8 @@ int main() {
 
 
             case LOBBY::PRINT_GROUPS: {
-                for (const auto &group: dataManager.groups) {
-                    std::cout << group;
+                for (const auto &group: dataManager.groups_ids) {
+                    std::cout << group.second;
                 }
                 break;
             }
@@ -163,10 +175,11 @@ int main() {
 
                         break;
                     }
+                    /*
                     case STUDENT_PROFILE::ST_EDIT_COURSE:{
                         std::cout << ">>CHANGE STUDENT COURSE :" << std::endl;
-                        size_t student_id;
-                        size_t group_id;
+                        unsigned int student_id;
+                        unsigned int group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
                         std::cout << ">> ID of a student : " << std::endl;
@@ -175,13 +188,16 @@ int main() {
                         size_t course;
                         course = input_size_t();
                         auto group = &(dataManager.getGroupUsingID(group_id));
-                        auto student = &(group->getStudentbyId(student_id));
-                        student->editcourse(course);
+                        //auto student = &(group->getStudentbyId(student_id));
+
+                        //student->editcourse(course);
+                        group->getStudentbyId(student_id).course = course;
                         std::cout << "Student with id " << student_id << " has successfuly changed his name "
                                   << std::endl;
                         std::cout << student << std::endl;
                         break;
                     }
+                     */
                     case STUDENT_PROFILE::ST_DELETE:{
                         std::cout << ">>CHANGE STUDENT NAME :" << std::endl;
                         size_t student_id;
@@ -210,18 +226,78 @@ int main() {
                 switch(editing_groups()){
                     case GROUP_PROFILE::GR_EDIT_COURSE:{
                         std::cout << "CHANGE GROUP COURSE: " << std::endl;
-                        size_t group_id;
+                        unsigned int group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
                         std::cout <<" Course " << std::endl;
                         size_t course;
                         course = input_size_t();
                         auto group = &(dataManager.getGroupUsingID(group_id));
-                        for(int i = 0; i < course; i++){
-                            group++;
+                        //for(int i = 0; i < course; i++){
+                        //group->setCourse(group->getCourse() +1 );
+                        //}
+                        group->setCourse(course);
+                        for (auto & stud : group->getStudents() ){
+                            stud.course = group->getCourse();
                         }
                         break;
                     }
+
+                    case GROUP_PROFILE::GR_EDIT_NAME:{
+                        std::cout << "CHANGE GROUP NAME : " << std::endl;
+                        std::string _name;
+                        std::cout << ">>ID of a group : " << std::endl;
+                        unsigned int group_id = input_size_t();
+                        std::cout << "NEW NAME : " << std::endl;
+                        _name = input_string();
+                        Group * group = &(dataManager.getGroupUsingID(group_id));
+                        group->setName(_name);
+
+                        for (auto & stud : group->getStudents() ){
+                            stud.group_name = group->getName();
+                        }
+                        break;
+
+                    }
+
+
+                    case GROUP_PROFILE::GR_EDIT_ALL:{
+                        std::cout << "CHANGE GROUP INFO: " << std::endl;
+
+
+                        unsigned int group_id;
+                        std::cout << ">> ID of a group : " << std::endl;
+                        group_id = input_size_t();
+
+                        std::cout <<" Course " << std::endl;
+                        size_t course;
+                        course = input_size_t();
+
+
+                        std::string _name;
+                        std::cout << "NEW NAME : " << std::endl;
+                        _name = input_string();
+
+
+                        Group * group = &(dataManager.getGroupUsingID(group_id));
+                        group->setName(_name);
+                        group->setCourse(course);
+
+                        for (auto & stud : group->getStudents() ){
+                            stud.group_name = group->getName();
+                            stud.course = group->getCourse();
+                        }
+                        break;
+
+
+                        group->setCourse(course);
+                        for (auto & stud : group->getStudents() ){
+                            stud.course = group->getCourse();
+                        }
+                    }
+
+
+
                 }
                 break;
             }
@@ -247,13 +323,14 @@ int main() {
                 std::cout << "Name of the File " << std::endl;
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::string input = input_string();
-                std::ofstream out(str +input,std::ios::app);
+                //std::ofstream out(str +input,std::ios::app);
 
                 //thr = new std::thread(&DataManager::saveEverything,&out);
                 //std::future<void> save = std::async(&dataManager.saveEverything,&out);
 
-
+                std::ofstream out("saved.json");
                 dataManager.saveEverything(out);
+                out.close();
                 std::cout << "Save was done!" << std::endl;
                 break;
             }
@@ -263,10 +340,11 @@ int main() {
             {
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::cout << "Name of the File " << std::endl;
-                std::string input = input_string();
-                std::ifstream inp(str +input);
-
-                dataManager.LoadEverything(inp);
+                //std::string input = input_string();
+                //std::ifstream inp(str +input);
+                std::ifstream inp("saved.json");
+                dataManager.LoadEverything(inp);\
+                inp.close();
                 std::cout << "Download was done!" << std::endl;
                 break;
             }

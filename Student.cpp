@@ -143,14 +143,14 @@ Student &Student::operator=(Student &&student) {
 
 //======================================
 std::ostream &operator<<(std::ostream &out, const Student &student) {
-   
-    out << "StudentID : " << student.student_id << std::endl;
-    out << "Student : " << student.name << " " << student.middle_name << " " << student.last_name << std::endl;
-    out << "Group : " << student.group_name << "\nCourse : " << student.course << std::endl;
-    out << "Grades : \n";
+    out << std::endl;
+    out << "     StudentID : " << student.student_id << std::endl;
+    out << "     Student : " << student.name << " " << student.middle_name << " " << student.last_name << std::endl;
+    out << "     Group : " << student.group_name << "\n     Course : " << student.course << std::endl;
+    out << "     Grades : \n";
 
     for (const auto &element: student.grades) {
-        out << element.first << " " << element.second << std::endl;
+        out << "          "<<element.first << " " << element.second << std::endl;
     }
     out << std::endl;
     return out;  
