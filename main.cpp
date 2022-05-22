@@ -349,7 +349,13 @@ int main() {
                 break;
             }
 
+
+            case LOBBY::EXIT:
+                return 0;
         }
+
+
+
 
     }
 
