@@ -35,6 +35,12 @@ public:
     ~Group() = default;
     //===================================================================//
 
+    std::ostream &Nice_Grades(std::ostream &out);
+
+    std::ostream &Bad_Grades(std::ostream &out);
+
+
+
     void addStudent( Student &student);
 
     void deleteStudent(Student &student);
@@ -96,9 +102,7 @@ public:
 
     friend std::ostream &saveToJson(std::ostream &out, const Group &group);
 
-    friend std::ostream &Nice_Grades(std::ostream &out, const Group &group);
 
-    friend std::ostream &Bad_Grades(std::ostream &out, const Group &group);
 
     friend Group &operator+(Group &group, const Student &student);
 

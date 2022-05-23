@@ -5,10 +5,12 @@
 #include "Group.h"
 #include "datamanager.h"
 #include "interface.h"
+#include <mutex>
+
 
 int main() {
 
-
+    std::mutex main;
     std::thread *thr = nullptr;
     ID id_manager;
     DataManager dataManager;
@@ -345,7 +347,13 @@ int main() {
                 unsigned int id_group;
                 id_group = input_size_t();
                 auto group = dataManager.getGroupUsingID(id_group);
-                Nice_Grades(std::cout, group);
+                main.lock();
+                thr = new std::thread(&Group::Nice_Grades,group,std::ref(std::cout));
+                thr->join();
+                main.unlock();
+
+                delete thr;
+                //Nice_Grades(std::cout, group);
                 break;
             }
             case LOBBY::ST_W_B_M: {
@@ -353,7 +361,14 @@ int main() {
                 unsigned int id_group;
                 id_group = input_size_t();
                 auto group = dataManager.getGroupUsingID(id_group);
-                Bad_Grades(std::cout, group);
+                main.lock();
+
+
+                thr = new std::thread(&Group::Bad_Grades,group,std::ref(std::cout));
+                thr->join();
+                main.unlock();
+                delete thr;
+                //Bad_Grades(std::cout, group);
                 break;
             }
 
@@ -361,13 +376,23 @@ int main() {
                 std::cout << "Name of the File " << std::endl;
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::string input = input_string();
-                std::ofstream out(str +input,std::ios::app);
+                //std::ofstream out(str +input,std::ios::app);
 
                 //thr = new std::thread(&DataManager::saveEverything,&out);
                 //std::future<void> save = std::async(&dataManager.saveEverything,&out);
 
-                //std::ofstream out("saved.json");
-                dataManager.saveEverything(out);
+                std::ofstream out("saved.json");
+
+
+                main.lock();
+
+                thr = new std::thread(&DataManager::saveEverything,dataManager,std::ref(out));
+                //dataManager.saveEverything(out);
+                thr->join();
+                main.unlock();
+                delete thr;
+
+
                 out.close();
                 std::cout << "Save was done!" << std::endl;
                 break;
@@ -377,8 +402,8 @@ int main() {
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::cout << "Name of the File " << std::endl;
                 std::string input = input_string();
-                std::ifstream inp(str +input);
-                //std::ifstream inp("saved.json");
+                //std::ifstream inp(str +input);
+                std::ifstream inp("saved.json");
                 dataManager.LoadEverything(inp);\
                 inp.close();
                 std::cout << "Download was done!" << std::endl;
