@@ -65,7 +65,7 @@ int main() {
                 std::cout << "Last name: " << std::endl;
                 last_name = input_string();
                 std::cout << "Course : \n" << std::endl;
-                course = input_size_t();
+                //course = input_size_t();
                 auto group = dataManager.getGroupUsingID(id_group);
                 for (const auto &subj: group.getSubjects()) {
                     grades.insert({subj, 0});
@@ -530,7 +530,7 @@ int main() {
 
                         size_t count = 0;
                         for (auto &group: dataManager.groups) {
-                            if (group.group_id == _id) {
+                            if (group.getGroupbyId() == _id) {
                                 std::cout << group << std::endl;
                                 count += 1;
                             }

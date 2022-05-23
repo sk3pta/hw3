@@ -110,15 +110,15 @@ void Group::Sorted_at_all() {
                     if (student1.name == student2.name) {
                         if (student1.getStudentId() == student2.getStudentId()) {
                         }
-                        return student1.getStudentId() > student2.getStudentId();
+                        return student1.getStudentId() < student2.getStudentId();
                     }
-                    return student1.name > student2.name;
+                    return student1.name < student2.name;
                 }
-                return student1.middle_name > student2.middle_name;
+                return student1.middle_name < student2.middle_name;
             }
-            return student1.last_name > student2.last_name;
+            return student1.last_name < student2.last_name;
         }
-        return student1.averageAll() > student2.averageAll();
+        return student1.averageAll() < student2.averageAll();
     });
 }
 
@@ -145,7 +145,7 @@ Student &Group::getStudentbyId(unsigned int student_id) {
     }
 }
 size_t Group::getGroupbyId() const{
-    return group_id;
+    return this->group_id;
 }
 
 std::ostream &Nice_Grades(std::ostream &out, const Group &group) {
