@@ -22,14 +22,20 @@ public:
                   const std::vector<std::string> &subjects = {}, size_t students_amount = 0) {
 
 
+        try {
+            Group group(id_manager, name, course, subjects, students_amount);
 
-        Group group(id_manager, name, course, subjects, students_amount);
 
+            //groups_ids.insert({group.group_id,group});
+            groups.push_back(group);
+            //groups_ids[group.group_id] = group;
+            //groups.push_back(group);
 
-        //groups_ids.insert({group.group_id,group});
-        groups.push_back(group);
-        //groups_ids[group.group_id] = group;
-        //groups.push_back(group);
+        }
+        catch (std::exception &ex) {
+            std::cout << " Error occured. Perhaps your input was wrong" << std::endl;
+
+        }
     }
 
     void addStudent(std::string name, ID *id_manager, std::string middle_name, std::string last_name,
@@ -73,14 +79,13 @@ public:
     }
     */
 
-Group &getGroupUsingID(unsigned int id) {
-    for (auto &group : groups) {
-        if (group.getGroupbyId() == id ) return group;
+    Group &getGroupUsingID(unsigned int id) {
+        for (auto &group: groups) {
+            if (group.getGroupbyId() == id) return group;
+
+        }
 
     }
-
-}
-
 
 
     bool ifExist(unsigned int id) {
@@ -92,7 +97,22 @@ Group &getGroupUsingID(unsigned int id) {
     }
 
 
-    void saveEverything(std::ostream &out) {
+    bool ifExStud(unsigned int id) {
+        for (auto &st: students) {
+            if (st.getID() == id) return true;
+        }
+        return false;
+    }
+
+
+    void saveEverything(std::ofstream &out) {
+
+
+        if (!out.is_open()) {
+            throw std::exception();
+        }
+
+
         nlohmann::json jgroup;
 
         for (auto &group: this->groups) {
@@ -125,7 +145,15 @@ Group &getGroupUsingID(unsigned int id) {
     }
 
     void LoadEverything(std::ifstream &inp) {
+
+
+        if (!inp.is_open()) {
+            throw std::exception();
+        }
+
+
         nlohmann::json jinp;
+
 
         inp >> jinp;
 
@@ -133,7 +161,7 @@ Group &getGroupUsingID(unsigned int id) {
             Group group;
             group.setID(jgroup["id"]);
 
-            if ( !ifExist(group.getGroupbyId())) {
+            if (!ifExist(group.getGroupbyId())) {
                 group.setName(jgroup["name"]);
                 group.setCourse(jgroup["course"]);
 
@@ -162,7 +190,7 @@ Group &getGroupUsingID(unsigned int id) {
                 //groups_ids[group.group_id] = group;
                 //groups.push_back(group);
                 std::cout << group.getGroupbyId() << std::endl;
-               // std::cout << groups[0] << std::endl;
+                // std::cout << groups[0] << std::endl;
             }
         }
     };

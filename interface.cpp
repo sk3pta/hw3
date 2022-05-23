@@ -63,7 +63,8 @@ LOBBY lobby() {
             }
         }
         catch(std::exception& ex){
-            std::cout << "Repeat input" << std::endl;
+            std::cout << "There is no such option. Try again." << std::endl;
+            break;
         }
     }
 }
@@ -92,6 +93,7 @@ FIND_GROUP find_group() {
                     throw std::exception();
             }
         }
+
 
 
         catch(std::exception& ex){
@@ -211,7 +213,8 @@ SORT sorting(){
             }
         }
         catch(std::exception& ex){
-            std::cout << "Repeat input" << std::endl;
+            std::cout << "Sometheig went wrong" << std::endl;
+            break;
         }
     }
 }
@@ -230,7 +233,8 @@ std::string input_string()
         }
         catch (std::exception& ex)
         {
-            std::cout  << "oops it is empty"<<std::endl;
+            std::cout  << "Something went wrong. Try again"<<std::endl;
+            break;
         }
     }
 }
@@ -238,21 +242,26 @@ unsigned int input_size_t()
 {
     for (;;)
     {
-        try
-        {
-            unsigned int num;
-            if (std::cin >> num && num >= 0)
-            {
+        try {
+            unsigned int num = 0;
+            std::cin >> num;
+            if (num >= 0) {
                 std::cin.ignore(std::numeric_limits<char>::max(), '\n');
+
                 return num;
-            }
-            else
-                throw std::exception();
+            } else
+                throw std::invalid_argument("It's not a number");
+
         }
+
         catch (std::exception& ex)
         {
-            std::cout << ex.what() << "oops, ur input is less than 0";
+            std::cout  << "You made it wrong! " << std::endl;
+
+            break;
         }
+
+
     }
 
 }
