@@ -243,11 +243,16 @@ unsigned int input_size_t()
     for (;;)
     {
         try {
-            unsigned int num = 0;
-            std::cin >> num;
-            if (num >= 0) {
-                std::cin.ignore(std::numeric_limits<char>::max(), '\n');
 
+            std::string line;
+            unsigned int num = 0;
+            //std::cin >> num;
+
+            std::getline(std::cin,line);
+            num = std::stoi(line);
+            if (num > 0) {
+                //std::cin.ignore(std::numeric_limits<char>::max(), '\n');
+                num = std::stoi(line);
                 return num;
             } else
                 throw std::invalid_argument("It's not a number");
@@ -256,9 +261,8 @@ unsigned int input_size_t()
 
         catch (std::exception& ex)
         {
-            std::cout  << "You made it wrong! " << std::endl;
+            std::cout << ex.what() << std::endl;
 
-            break;
         }
 
 

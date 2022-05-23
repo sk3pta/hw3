@@ -40,7 +40,7 @@ int main() {
                     group_name = input_string();
                     std::cout << "Course : \n" << std::endl;
                     course = input_size_t();
-                    if (course <= 0) break;
+
                     std::cout << "Subjects : \n" << std::endl;
                     do {
                         std::cout << "\n Name of the subject \n" << std::endl;
