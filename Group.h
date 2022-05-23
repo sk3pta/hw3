@@ -14,9 +14,10 @@ private:
     std::list<Student> students;
     unsigned int course;
     std::vector<std::string> subjects;
+    unsigned int group_id;
 
 public:
-    unsigned int group_id;
+
     Group();
 
     Group(ID *id_manager, std::string name, unsigned int course,
@@ -58,6 +59,9 @@ public:
     void setName(std::string name) {
         this->name = name;
     };
+    void setID(size_t id){
+        this->group_id = id;
+    }
 
     void setCourse(unsigned int course) {
         this->course = course;

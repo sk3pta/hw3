@@ -1,0 +1,31 @@
+è£8 with ID : 60047308 course 1
+ Subjects : 
+     m
+     n
+
+     StudentID : 31539
+     Student : german german german
+     Group : è£8
+     Course : 1
+     Grades : 
+          m 3
+          n 3
+
+
+     StudentID : 14712
+     Student : jora jora jora
+     Group : è£8
+     Course : 1
+     Grades : 
+          m 4
+          n 4
+
+
+     StudentID : 27559
+     Student : kalik alik dalik
+     Group : è£8
+     Course : 1
+     Grades : 
+          m 5
+          n 5
+
