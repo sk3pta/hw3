@@ -128,7 +128,6 @@ int main() {
                         std::string new_last_name = input_string();
                         std::cout << "MIDDLE NAME : " << std::endl;
                         std::string new_middle_name = input_string();
-                        std::cout << " Course " << std::endl;
                         //size_t course;
                         //course = input_size_t();
 
@@ -169,31 +168,8 @@ int main() {
 
                         break;
                     }
-                        /*
-                        case STUDENT_PROFILE::ST_EDIT_COURSE:{
-                            std::cout << ">>CHANGE STUDENT COURSE :" << std::endl;
-                            unsigned int student_id;
-                            unsigned int group_id;
-                            std::cout << ">> ID of a group : " << std::endl;
-                            group_id = input_size_t();
-                            std::cout << ">> ID of a student : " << std::endl;
-                            student_id = input_size_t();
-                            std::cout <<" Course " << std::endl;
-                            size_t course;
-                            course = input_size_t();
-                            auto group = &(dataManager.getGroupUsingID(group_id));
-                            //auto student = &(group->getStudentbyId(student_id));
-
-                            //student->editcourse(course);
-                            group->getStudentbyId(student_id).course = course;
-                            std::cout << "Student with id " << student_id << " has successfuly changed his name "
-                                      << std::endl;
-                            std::cout << student << std::endl;
-                            break;
-                        }
-                         */
                     case STUDENT_PROFILE::ST_DELETE: {
-                        std::cout << ">>CHANGE STUDENT NAME :" << std::endl;
+                        std::cout << "Delete Student :" << std::endl;
                         size_t student_id;
                         size_t group_id;
                         std::cout << ">> ID of a group : " << std::endl;
@@ -202,18 +178,18 @@ int main() {
                         student_id = input_size_t();
                         auto group = &(dataManager.getGroupUsingID(group_id));
                         auto student = &(group->getStudentbyId(student_id));
+                        auto students = &(group->getStudents());
                         for (auto i = group->getStudents().begin(); i != group->getStudents().end(); i++) {
-                            std::cout << *i << std::endl;
-                            std::cout << i->getStudentId() << std::endl;
-                            if (i->getStudentId() == student_id) {
-                                //grSoup = group - *i;
-                                std::cout << "wow" << std::endl;
+                            if(i->getStudentId()==student_id) {
+                                auto pos = students->erase(i);
+                                i = pos;
+                                if (i == students->end()){
+                                    break;
+                                }
                             }
                         }
                         break;
                     }
-
-
                 }
                 std::cout << "\n    \n" << std::endl;
                 break;
@@ -285,10 +261,18 @@ int main() {
                         }
                         break;
 
-
-                        group->setCourse(course);
-                        for (auto &stud: group->getStudents()) {
-                            stud.course = group->getCourse();
+                    }
+                    case GROUP_PROFILE::GR_DELETE:{
+                        std::cout << "Delete Group :" << std::endl;
+                        size_t group_id;
+                        for(auto i = dataManager.groups.begin(); i!= dataManager.groups.begin(); i++){
+                            if (i->getGroupbyId() == group_id){
+                                auto pos = dataManager.groups.erase(i);
+                                i = pos;
+                                if(i == dataManager.groups.end()){
+                                    break;
+                                }
+                            }
                         }
                     }
 
@@ -307,16 +291,20 @@ int main() {
                         std::cout << "1 in file " << std::endl;
                         size_t inputt;
                         inputt = input_size_t();
-                        auto group = dataManager.getGroupUsingID(group_id);
-                        group.Sorted_at_all();
+                        auto group = &(dataManager.getGroupUsingID(group_id));
+                        group->Sorted_at_all();
                         if(inputt == 0){
-                            std::cout << group << std::endl;
+                            std::cout << *group << std::endl;
                         }
                         else if(inputt == 1){
                             std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                             std::string input = input_string();
                             std::ofstream out(str +input,std::ios::app);
-                            out<<group;
+                            out<<*group;
+                            auto students = group->getStudents();
+                            for(auto i = students.begin(); i!= students.end(); i++){
+                                out<<*i;
+                            }
                             out.close();
                             std::cout << "Save was done!" << std::endl;
                         }
@@ -331,16 +319,20 @@ int main() {
                         std::cout << "1 in file " << std::endl;
                         size_t inputt;
                         inputt = input_size_t();
-                        auto group = dataManager.getGroupUsingID(group_id);
-                        group.Sorted_by_name();
+                        auto group = &(dataManager.getGroupUsingID(group_id));
+                        group->Sorted_by_name();
                         if(inputt == 0){
-                            std::cout << group << std::endl;
+                            std::cout << *group << std::endl;
                         }
                         else if(inputt == 1){
                             std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                             std::string input = input_string();
                             std::ofstream out(str +input,std::ios::app);
-                            out<<group;
+                            out<<*group;
+                            auto students = group->getStudents();
+                            for(auto i = students.begin(); i!= students.end(); i++){
+                                out<<*i;
+                            }
                             out.close();
                             std::cout << "Save was done!" << std::endl;
                         }
@@ -400,9 +392,9 @@ int main() {
                         std::cout << "Name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto &stud: dataManager.students_ids) {
-                            if (stud.second.name == _name) {
-                                std::cout << stud.second << std::endl;
+                        for (const auto &stud: dataManager.students) {
+                            if (stud.name == _name) {
+                                std::cout << stud << std::endl;
                                 count += 1;
                             }
                         }
@@ -416,9 +408,9 @@ int main() {
                         std::cout << "Middle name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto &stud: dataManager.students_ids) {
-                            if (stud.second.middle_name == _name) {
-                                std::cout << stud.second << std::endl;
+                        for (const auto &stud: dataManager.students) {
+                            if (stud.middle_name == _name) {
+                                std::cout << stud << std::endl;
                                 count += 1;
                             }
                         }
@@ -432,9 +424,9 @@ int main() {
                         std::cout << "Last name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto &stud: dataManager.students_ids) {
-                            if (stud.second.last_name == _name) {
-                                std::cout << stud.second << std::endl;
+                        for (const auto &stud: dataManager.students) {
+                            if (stud.last_name == _name) {
+                                std::cout << stud << std::endl;
                                 count += 1;
                             }
                         }
@@ -447,9 +439,9 @@ int main() {
                         std::cout << "Course ? " << std::endl;
                         auto _course = input_size_t();
                         size_t count = 0;
-                        for (const auto &stud: dataManager.students_ids) {
-                            if (stud.second.course == _course) {
-                                std::cout << stud.second << std::endl;
+                        for (const auto &stud: dataManager.students) {
+                            if (stud.course == _course) {
+                                std::cout << stud << std::endl;
                                 count += 1;
                             }
                         }
@@ -463,9 +455,9 @@ int main() {
                         std::cout << "Group name ? " << std::endl;
                         auto _name = input_string();
                         size_t count = 0;
-                        for (const auto &stud: dataManager.students_ids) {
-                            if (stud.second.group_name == _name) {
-                                std::cout << stud.second << std::endl;
+                        for (const auto &stud: dataManager.students) {
+                            if (stud.group_name == _name) {
+                                std::cout << stud << std::endl;
                                 count += 1;
                             }
                         }
@@ -478,9 +470,9 @@ int main() {
                         std::cout << "ID ? " << std::endl;
                         auto _id = input_size_t();
                         size_t count = 0;
-                        for (const auto &stud: dataManager.students_ids) {
-                            if (stud.second.getID() == _id) {
-                                std::cout << stud.second << std::endl;
+                        for (const auto &stud: dataManager.students) {
+                            if (stud.getID() == _id) {
+                                std::cout << stud << std::endl;
                                 count += 1;
                             }
                         }

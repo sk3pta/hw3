@@ -11,7 +11,7 @@ public:
     std::map<unsigned int, Student> students_ids;
 
     std::list<Group> groups;
-
+    std::list<Student> students;
 
     DataManager() { groups = {}; };
 
@@ -39,9 +39,8 @@ public:
         for (auto &grp: groups) {
             if (grp.getGroupbyId() == group_id) {
                 Student student(name, id_manager, middle_name, last_name, course, grades);
-                students_ids.insert({student.getID(), student});
-
-                grp.addStudent(students_ids.rbegin()->second);
+                students.push_back(student);
+                grp.addStudent(student);
 
 
                 // grp.second = students_ids.rbegin->second;
@@ -157,7 +156,7 @@ Group &getGroupUsingID(unsigned int id) {
                     _student.addGrades(_grades);
                     _student.setID(student["ID"]);
                     group.addStudent(_student);
-                    this->students_ids.insert({_student.getID(), _student});
+                    this->students.push_back(_student);
                 }
                 this->groups.push_back(group);
                 //groups_ids[group.group_id] = group;

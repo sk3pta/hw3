@@ -1,6 +1,3 @@
-//
-// Created by augustus on 17.05.22.
-//
 
 #ifndef HW3__INTERFACE_H
 #define HW3__INTERFACE_H
@@ -43,15 +40,15 @@ enum class FIND_STUDENT{
     BY_LNAME = 3,
     BY_COURSE = 4,
     BY_GROUPNAME = 5,
-    BY_ID
+    BY_ID = 6
 };
 
 
 
 enum class STUDENT_PROFILE{
     ST_EDIT_ALL =0,
-    ST_EDIT_NAME = 2,
-    ST_DELETE = 4
+    ST_EDIT_NAME = 1,
+    ST_DELETE = 2
 };
 enum class GROUP_PROFILE{
     GR_EDIT_COURSE = 0,

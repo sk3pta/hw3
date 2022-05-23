@@ -99,12 +99,14 @@ void Group::addStudent( Student &student) {
 void deleteStudent(Student &student){
 
 }
+bool com(Student &student1, Student &student2){
 
+    return student1.averageAll() < student2.averageAll();
+}
 void Group::Sorted_at_all() {
+    //students.sort(com);
     students.sort([](Student &student1, Student &student2) {
-        std::cout << "Check " << student1.averageAll() << " " << student2.averageAll() << std::endl;
         if (student1.averageAll() == student2.averageAll()) {
-            std::cout << "wow" << std::endl;
             if (student1.last_name == student2.last_name) {
                 if (student1.middle_name == student2.middle_name) {
                     if (student1.name == student2.name) {
@@ -120,6 +122,7 @@ void Group::Sorted_at_all() {
         }
         return student1.averageAll() < student2.averageAll();
     });
+
 }
 
 void Group::Sorted_by_name() {
@@ -131,11 +134,11 @@ void Group::Sorted_by_name() {
                     }
                     return student1.getStudentId() < student2.getStudentId();
                 }
-                return student1.name > student2.name;
+                return student1.name < student2.name;
             }
-            return student1.middle_name > student2.middle_name;
+            return student1.middle_name < student2.middle_name;
         }
-        return student1.last_name > student2.last_name;
+        return student1.last_name < student2.last_name;
     });
 }
 

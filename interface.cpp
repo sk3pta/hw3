@@ -145,16 +145,16 @@ STUDENT_PROFILE editing_students(){
         try{
             std::cout << "INTERACTION WITH STUDENT PROFILE" << std::endl;
             std::cout << " 0 to edit all parametrs" << std::endl;
-            std::cout << " 2 to edit name" << std::endl;
-            std::cout << " 4 to delete student" << std::endl;
+            std::cout << " 1 to edit name" << std::endl;
+            std::cout << " 2 to delete student" << std::endl;
             size_t input = input_size_t();
             std::cout << std::endl;
             switch(input){
                 case 0:
                     return STUDENT_PROFILE::ST_EDIT_ALL;
-                case 2:
+                case 1:
                     return STUDENT_PROFILE::ST_EDIT_NAME;
-                case 4:
+                case 2:
                     return STUDENT_PROFILE::ST_DELETE;
                 default:
                     throw std::exception();
