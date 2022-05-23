@@ -15,17 +15,12 @@ int main() {
 
 
     for (;;) {
-        for (const auto&group : dataManager.groups_ids) {
-            std::cout<< "========================================" << std::endl;
-            std::cout << group.second << std::endl;
-            std::cout<< "========================================" << std::endl;
+        for (const auto &group: dataManager.groups) {
+            std::cout << "========================================" << std::endl;
+            std::cout << group << std::endl;
+            std::cout << "========================================" << std::endl;
         }
         switch (lobby()) {
-
-
-
-
-
 
 
             case LOBBY::ADD_GROUP: {
@@ -50,7 +45,7 @@ int main() {
                 } while (subject_name != "0");
                 dataManager.addGroup(&id_manager, group_name, course, subjects);
                 std::cout << " WOw Group is created with id!"
-                          << dataManager.groups[dataManager.groups.size() - 1].getGroupbyId() << std::endl;
+                          << dataManager.groups.back().getGroupbyId() << std::endl;
                 break;
             }
             case LOBBY::ADD_STUDENT: {
@@ -61,7 +56,7 @@ int main() {
                 std::string name;
                 std::string middle_name;
                 std::string last_name;
-                unsigned int course;
+                //unsigned int course;
                 std::map<std::string, unsigned int> grades;
                 std::cout << "First name: " << std::endl;
                 name = input_string();
@@ -98,19 +93,19 @@ int main() {
 
 
 
-                if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
+                //if (dataManager.groups_ids.find(id_group) == dataManager.groups_ids.end()) {
+                if (dataManager.ifExist(id_group))
+                    dataManager.addStudent(name, &id_manager, middle_name, last_name, 0, grades, id_group);
 
-                    dataManager.addStudent(name, &id_manager, middle_name, last_name, course, grades, id_group);
-                }
-                std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
-                          << std::endl;
+                //std::cout << " Created a student with id " << dataManager.students_ids.rbegin()->second.getID()
+                //         << std::endl;
                 break;
             }
 
 
             case LOBBY::PRINT_GROUPS: {
-                for (const auto &group: dataManager.groups_ids) {
-                    std::cout << group.second;
+                for (const auto &group: dataManager.groups) {
+                    std::cout << group;
                 }
                 break;
             }
@@ -133,14 +128,14 @@ int main() {
                         std::string new_last_name = input_string();
                         std::cout << "MIDDLE NAME : " << std::endl;
                         std::string new_middle_name = input_string();
-                        std::cout <<" Course " << std::endl;
-                        size_t course;
-                        course = input_size_t();
+                        std::cout << " Course " << std::endl;
+                        //size_t course;
+                        //course = input_size_t();
 
                         auto group = &(dataManager.getGroupUsingID(group_id));
                         auto student = &(group->getStudentbyId(student_id));
                         student->editname(new_name, new_middle_name, new_last_name);
-                        student->editcourse(course);
+                        //student->editcourse(course);
 
 
                         std::cout << "Student with id " << student_id << " has successfule changed his name "
@@ -174,30 +169,30 @@ int main() {
 
                         break;
                     }
-                    /*
-                    case STUDENT_PROFILE::ST_EDIT_COURSE:{
-                        std::cout << ">>CHANGE STUDENT COURSE :" << std::endl;
-                        unsigned int student_id;
-                        unsigned int group_id;
-                        std::cout << ">> ID of a group : " << std::endl;
-                        group_id = input_size_t();
-                        std::cout << ">> ID of a student : " << std::endl;
-                        student_id = input_size_t();
-                        std::cout <<" Course " << std::endl;
-                        size_t course;
-                        course = input_size_t();
-                        auto group = &(dataManager.getGroupUsingID(group_id));
-                        //auto student = &(group->getStudentbyId(student_id));
+                        /*
+                        case STUDENT_PROFILE::ST_EDIT_COURSE:{
+                            std::cout << ">>CHANGE STUDENT COURSE :" << std::endl;
+                            unsigned int student_id;
+                            unsigned int group_id;
+                            std::cout << ">> ID of a group : " << std::endl;
+                            group_id = input_size_t();
+                            std::cout << ">> ID of a student : " << std::endl;
+                            student_id = input_size_t();
+                            std::cout <<" Course " << std::endl;
+                            size_t course;
+                            course = input_size_t();
+                            auto group = &(dataManager.getGroupUsingID(group_id));
+                            //auto student = &(group->getStudentbyId(student_id));
 
-                        //student->editcourse(course);
-                        group->getStudentbyId(student_id).course = course;
-                        std::cout << "Student with id " << student_id << " has successfuly changed his name "
-                                  << std::endl;
-                        std::cout << student << std::endl;
-                        break;
-                    }
-                     */
-                    case STUDENT_PROFILE::ST_DELETE:{
+                            //student->editcourse(course);
+                            group->getStudentbyId(student_id).course = course;
+                            std::cout << "Student with id " << student_id << " has successfuly changed his name "
+                                      << std::endl;
+                            std::cout << student << std::endl;
+                            break;
+                        }
+                         */
+                    case STUDENT_PROFILE::ST_DELETE: {
                         std::cout << ">>CHANGE STUDENT NAME :" << std::endl;
                         size_t student_id;
                         size_t group_id;
@@ -207,28 +202,30 @@ int main() {
                         student_id = input_size_t();
                         auto group = &(dataManager.getGroupUsingID(group_id));
                         auto student = &(group->getStudentbyId(student_id));
-                        for(auto i = group->getStudents().begin(); i != group->getStudents().end(); i++){
+                        for (auto i = group->getStudents().begin(); i != group->getStudents().end(); i++) {
                             std::cout << *i << std::endl;
                             std::cout << i->getStudentId() << std::endl;
-                            if (i->getStudentId() == student_id ){
+                            if (i->getStudentId() == student_id) {
                                 //grSoup = group - *i;
                                 std::cout << "wow" << std::endl;
                             }
                         }
                         break;
                     }
+
+
                 }
-                std::cout << "\n    \n" <<std::endl;
+                std::cout << "\n    \n" << std::endl;
                 break;
             }
             case LOBBY::EDIT_GROUPS: {
-                switch(editing_groups()){
-                    case GROUP_PROFILE::GR_EDIT_COURSE:{
+                switch (editing_groups()) {
+                    case GROUP_PROFILE::GR_EDIT_COURSE: {
                         std::cout << "CHANGE GROUP COURSE: " << std::endl;
                         unsigned int group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
-                        std::cout <<" Course " << std::endl;
+                        std::cout << " Course " << std::endl;
                         size_t course;
                         course = input_size_t();
                         auto group = &(dataManager.getGroupUsingID(group_id));
@@ -236,23 +233,23 @@ int main() {
                         //group->setCourse(group->getCourse() +1 );
                         //}
                         group->setCourse(course);
-                        for (auto & stud : group->getStudents() ){
+                        for (auto &stud: group->getStudents()) {
                             stud.course = group->getCourse();
                         }
                         break;
                     }
 
-                    case GROUP_PROFILE::GR_EDIT_NAME:{
+                    case GROUP_PROFILE::GR_EDIT_NAME: {
                         std::cout << "CHANGE GROUP NAME : " << std::endl;
                         std::string _name;
                         std::cout << ">>ID of a group : " << std::endl;
                         unsigned int group_id = input_size_t();
                         std::cout << "NEW NAME : " << std::endl;
                         _name = input_string();
-                        Group * group = &(dataManager.getGroupUsingID(group_id));
+                        Group *group = &(dataManager.getGroupUsingID(group_id));
                         group->setName(_name);
 
-                        for (auto & stud : group->getStudents() ){
+                        for (auto &stud: group->getStudents()) {
                             stud.group_name = group->getName();
                         }
                         break;
@@ -260,7 +257,7 @@ int main() {
                     }
 
 
-                    case GROUP_PROFILE::GR_EDIT_ALL:{
+                    case GROUP_PROFILE::GR_EDIT_ALL: {
                         std::cout << "CHANGE GROUP INFO: " << std::endl;
 
 
@@ -268,7 +265,7 @@ int main() {
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
 
-                        std::cout <<" Course " << std::endl;
+                        std::cout << " Course " << std::endl;
                         size_t course;
                         course = input_size_t();
 
@@ -278,11 +275,11 @@ int main() {
                         _name = input_string();
 
 
-                        Group * group = &(dataManager.getGroupUsingID(group_id));
+                        Group *group = &(dataManager.getGroupUsingID(group_id));
                         group->setName(_name);
                         group->setCourse(course);
 
-                        for (auto & stud : group->getStudents() ){
+                        for (auto &stud: group->getStudents()) {
                             stud.group_name = group->getName();
                             stud.course = group->getCourse();
                         }
@@ -290,11 +287,10 @@ int main() {
 
 
                         group->setCourse(course);
-                        for (auto & stud : group->getStudents() ){
+                        for (auto &stud: group->getStudents()) {
                             stud.course = group->getCourse();
                         }
                     }
-
 
 
                 }
@@ -369,8 +365,7 @@ int main() {
                 break;
             }
 
-            case LOBBY::SAVE:
-            {
+            case LOBBY::SAVE: {
                 std::cout << "Name of the File " << std::endl;
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::string input = input_string();
@@ -386,9 +381,7 @@ int main() {
                 break;
             }
 
-            case LOBBY::DOWNLOAD:
-
-            {
+            case LOBBY::DOWNLOAD: {
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::cout << "Name of the File " << std::endl;
                 std::string input = input_string();
@@ -400,7 +393,161 @@ int main() {
                 break;
             }
 
+
+            case LOBBY::FIND_STUDENT: {
+                switch (find_student()) {
+                    case FIND_STUDENT::BY_NAME: {
+                        std::cout << "Name ? " << std::endl;
+                        auto _name = input_string();
+                        size_t count = 0;
+                        for (const auto &stud: dataManager.students_ids) {
+                            if (stud.second.name == _name) {
+                                std::cout << stud.second << std::endl;
+                                count += 1;
+                            }
+                        }
+
+
+                        std::cout << count << " students were found " << std::endl;
+                        break;
+                    }
+
+                    case FIND_STUDENT::BY_MNAME: {
+                        std::cout << "Middle name ? " << std::endl;
+                        auto _name = input_string();
+                        size_t count = 0;
+                        for (const auto &stud: dataManager.students_ids) {
+                            if (stud.second.middle_name == _name) {
+                                std::cout << stud.second << std::endl;
+                                count += 1;
+                            }
+                        }
+
+                        std::cout << count << " students were found " << std::endl;
+                        break;
+                    }
+
+
+                    case FIND_STUDENT::BY_LNAME: {
+                        std::cout << "Last name ? " << std::endl;
+                        auto _name = input_string();
+                        size_t count = 0;
+                        for (const auto &stud: dataManager.students_ids) {
+                            if (stud.second.last_name == _name) {
+                                std::cout << stud.second << std::endl;
+                                count += 1;
+                            }
+                        }
+
+                        std::cout << count << " students were found " << std::endl;
+                        break;
+                    }
+
+                    case FIND_STUDENT::BY_COURSE: {
+                        std::cout << "Course ? " << std::endl;
+                        auto _course = input_size_t();
+                        size_t count = 0;
+                        for (const auto &stud: dataManager.students_ids) {
+                            if (stud.second.course == _course) {
+                                std::cout << stud.second << std::endl;
+                                count += 1;
+                            }
+                        }
+
+                        std::cout << count << " students were found " << std::endl;
+                        break;
+                    }
+
+
+                    case FIND_STUDENT::BY_GROUPNAME: {
+                        std::cout << "Group name ? " << std::endl;
+                        auto _name = input_string();
+                        size_t count = 0;
+                        for (const auto &stud: dataManager.students_ids) {
+                            if (stud.second.group_name == _name) {
+                                std::cout << stud.second << std::endl;
+                                count += 1;
+                            }
+                        }
+
+                        std::cout << count << " students were found " << std::endl;
+                        break;
+                    }
+
+                    case FIND_STUDENT::BY_ID: {
+                        std::cout << "ID ? " << std::endl;
+                        auto _id = input_size_t();
+                        size_t count = 0;
+                        for (const auto &stud: dataManager.students_ids) {
+                            if (stud.second.getID() == _id) {
+                                std::cout << stud.second << std::endl;
+                                count += 1;
+                            }
+                        }
+
+                        std::cout << count << " students were found " << std::endl;
+                        break;
+                    }
+
+                }
+                break;
+            }
+
+
+            case LOBBY::FIND_GROUP: {
+                switch (find_group()) {
+                    case FIND_GROUP::BY_NAME: {
+                        std::cout << "Name ? " << std::endl;
+                        auto _name = input_string();
+
+                        size_t count = 0;
+                        for (auto &group: dataManager.groups) {
+                            if (group.getName() == _name) {
+                                std::cout << group << std::endl;
+                                count += 1;
+                            }
+                        }
+                        break;
+                    }
+
+                    case FIND_GROUP::BY_COURSE: {
+                        std::cout << "Course ? " << std::endl;
+                        auto _course = input_size_t();
+
+                        size_t count = 0;
+                        for (auto &group: dataManager.groups) {
+                            if (group.getCourse() == _course) {
+                                std::cout << group << std::endl;
+                                count += 1;
+                            }
+                        }
+                        break;
+                    }
+
+                    case FIND_GROUP::BY_ID: {
+                        std::cout << "ID ? " << std::endl;
+                        auto _id = input_size_t();
+
+                        size_t count = 0;
+                        for (auto &group: dataManager.groups) {
+                            if (group.group_id == _id) {
+                                std::cout << group << std::endl;
+                                count += 1;
+                            }
+                        }
+                        break;
+                    }
+
+                }
+
+                break;
+            }
+
+            case LOBBY::EXIT:
+                return 0;
+
         }
+
 
     }
 
