@@ -151,29 +151,29 @@ size_t Group::getGroupbyId() const{
     return this->group_id;
 }
 
-std::ostream &Nice_Grades(std::ostream &out, const Group &group) {
-    out << "Students wtih good marks in  " << group.name << std::endl;
-    for (auto student: group.students) {
+std::ostream &Group::Nice_Grades(std::ostream &out) {
+    out << "Students wtih good marks in  " << this->name << std::endl;
+    for (auto student: this->students) {
         std::map<std::string, unsigned int> grades = student.get_grades();
         int good_grades = 0;
-        for (const auto &subject: group.subjects) {
+        for (const auto &subject: this->subjects) {
             if (grades[subject] > 3) {
                 good_grades += 1;
             }
         }
-        if (good_grades == group.subjects.size()) {
+        if (good_grades == this->subjects.size()) {
             out << student << std::endl;
         }
     }
     return out;
 }
 
-std::ostream &Bad_Grades(std::ostream &out, const Group &group) {
-    out << "Students wtih bad marks in  " << group.name << std::endl;
-    for (auto student: group.students) {
+std::ostream &Group::Bad_Grades(std::ostream &out) {
+    out << "Students wtih bad marks in  " << this->name << std::endl;
+    for (auto student: this->students) {
         std::map<std::string, unsigned int> grades = student.get_grades();
         int good_grades = 0;
-        for (const auto &subject: group.subjects) {
+        for (const auto &subject: this->subjects) {
             if (grades[subject] <= 3) {
                 good_grades += 1;
             }
@@ -332,6 +332,7 @@ void loadFromJson(std::ifstream &inp, Group &group) {
 
 std::vector<std::string> Group::getSubjects() {
     return this->subjects;}
+
 
 
 

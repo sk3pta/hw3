@@ -5,10 +5,12 @@
 #include "Group.h"
 #include "datamanager.h"
 #include "interface.h"
+#include <mutex>
+
 
 int main() {
 
-
+    std::mutex main;
     std::thread *thr = nullptr;
     ID id_manager;
     DataManager dataManager;
@@ -24,35 +26,42 @@ int main() {
 
 
             case LOBBY::ADD_GROUP: {
-                std::cout << "\n>>Add Group : \n" << std::endl;
-                std::string group_name;
-                unsigned int course;
-                std::vector<std::string> subjects;
-                std::list<Student> students;
-                std::string subject_name;
 
-                std::cout << "Name of the group : " << std::endl;
-                group_name = input_string();
-                std::cout << "Course : \n" << std::endl;
-                course = input_size_t();
-                std::cout << "Subjects : \n" << std::endl;
-                do {
-                    std::cout << "\n Name of the subject \n" << std::endl;
-                    subject_name = input_string();
-                    if (subject_name != "0") {
-                        subjects.push_back(subject_name);
-                    }
-                } while (subject_name != "0");
-                dataManager.addGroup(&id_manager, group_name, course, subjects);
-                std::cout << " WOw Group is created with id!"
-                          << dataManager.groups.back().getGroupbyId() << std::endl;
-                break;
+
+
+                    std::cout << "\n>>Add Group : \n" << std::endl;
+                    std::string group_name;
+                    unsigned int course;
+                    std::vector<std::string> subjects;
+                    std::list<Student> students;
+                    std::string subject_name;
+
+                    std::cout << "Name of the group : " << std::endl;
+                    group_name = input_string();
+                    std::cout << "Course : \n" << std::endl;
+                    course = input_size_t();
+
+                    std::cout << "Subjects : \n" << std::endl;
+                    do {
+                        std::cout << "\n Name of the subject \n" << std::endl;
+                        subject_name = input_string();
+                        if (subject_name != "0") {
+                            subjects.push_back(subject_name);
+                        }
+                    } while (subject_name != "0");
+                    dataManager.addGroup(&id_manager, group_name, course, subjects);
+                    std::cout << " WOw Group is created with id!"
+                              << dataManager.groups.back().getGroupbyId() << std::endl;
+                    break;
+
             }
             case LOBBY::ADD_STUDENT: {
                 std::cout << "\n >> Add Student : \n" << std::endl;
                 std::cout << "\n >> Enter id of the group: \n" << std::endl;
                 unsigned int id_group;
                 id_group = input_size_t();
+                if (!dataManager.ifExist(id_group)) {std::cout << "No such group"; break;}
+
                 std::string name;
                 std::string middle_name;
                 std::string last_name;
@@ -73,6 +82,8 @@ int main() {
                 }
                 for (auto &subj: grades) {
                     std::cout << "Your mark for the subject : " << subj.first << std::endl;
+
+
                     std::size_t mark = input_size_t();
                     subj.second = mark;
                 }
@@ -119,8 +130,11 @@ int main() {
                         size_t group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
+
                         std::cout << ">> ID of a student : " << std::endl;
                         student_id = input_size_t();
+                        if (!dataManager.ifExStud(student_id)) {std::cout << "No such group"; break;}
 
                         std::cout << "NAME : " << std::endl;
                         std::string new_name = input_string();
@@ -148,9 +162,10 @@ int main() {
                         size_t group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
                         std::cout << ">> ID of a student : " << std::endl;
                         student_id = input_size_t();
-
+                        if (!dataManager.ifExStud(student_id)) {std::cout << "No such group"; break;}
                         std::cout << "NAME : " << std::endl;
                         std::string new_name = input_string();
                         std::cout << "LAST NAME : " << std::endl;
@@ -174,8 +189,10 @@ int main() {
                         size_t group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
                         std::cout << ">> ID of a student : " << std::endl;
                         student_id = input_size_t();
+                        if (!dataManager.ifExStud(student_id)) {std::cout << "No such group"; break;}
                         auto group = &(dataManager.getGroupUsingID(group_id));
                         auto student = &(group->getStudentbyId(student_id));
                         auto students = &(group->getStudents());
@@ -201,9 +218,11 @@ int main() {
                         unsigned int group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
                         std::cout << " Course " << std::endl;
                         size_t course;
                         course = input_size_t();
+
                         auto group = &(dataManager.getGroupUsingID(group_id));
                         //for(int i = 0; i < course; i++){
                         //group->setCourse(group->getCourse() +1 );
@@ -220,6 +239,7 @@ int main() {
                         std::string _name;
                         std::cout << ">>ID of a group : " << std::endl;
                         unsigned int group_id = input_size_t();
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
                         std::cout << "NEW NAME : " << std::endl;
                         _name = input_string();
                         Group *group = &(dataManager.getGroupUsingID(group_id));
@@ -240,7 +260,7 @@ int main() {
                         unsigned int group_id;
                         std::cout << ">> ID of a group : " << std::endl;
                         group_id = input_size_t();
-
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
                         std::cout << " Course " << std::endl;
                         size_t course;
                         course = input_size_t();
@@ -286,6 +306,7 @@ int main() {
                         std::cout << "Enter id of the group" << std::endl;
                         unsigned int group_id;
                         group_id = input_size_t();
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
                         std::cout << "How u want to see sorted students? :" << std::endl;
                         std::cout << "0 in console" << std::endl;
                         std::cout << "1 in file " << std::endl;
@@ -314,6 +335,7 @@ int main() {
                         std::cout << "Enter id of the group" << std::endl;
                         unsigned int group_id;
                         group_id = input_size_t();
+                        if (!dataManager.ifExist(group_id)) {std::cout << "No such group"; break;}
                         std::cout << "How u want to see sorted students? :" << std::endl;
                         std::cout << "0 in console" << std::endl;
                         std::cout << "1 in file " << std::endl;
@@ -344,16 +366,31 @@ int main() {
                 std::cout << "Enter id of the group" << std::endl;
                 unsigned int id_group;
                 id_group = input_size_t();
+                if (!dataManager.ifExist(id_group)) {std::cout << "No such group"; break;}
                 auto group = dataManager.getGroupUsingID(id_group);
-                Nice_Grades(std::cout, group);
+                main.lock();
+                thr = new std::thread(&Group::Nice_Grades,group,std::ref(std::cout));
+                thr->join();
+                main.unlock();
+
+                delete thr;
+                //Nice_Grades(std::cout, group);
                 break;
             }
             case LOBBY::ST_W_B_M: {
                 std::cout << "Enter id of the group" << std::endl;
                 unsigned int id_group;
                 id_group = input_size_t();
+                if (!dataManager.ifExist(id_group)) {std::cout << "No such group"; break;}
                 auto group = dataManager.getGroupUsingID(id_group);
-                Bad_Grades(std::cout, group);
+                main.lock();
+
+
+                thr = new std::thread(&Group::Bad_Grades,group,std::ref(std::cout));
+                thr->join();
+                main.unlock();
+                delete thr;
+                //Bad_Grades(std::cout, group);
                 break;
             }
 
@@ -361,13 +398,23 @@ int main() {
                 std::cout << "Name of the File " << std::endl;
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::string input = input_string();
-                std::ofstream out(str +input,std::ios::app);
+                //std::ofstream out(str +input,std::ios::app);
 
                 //thr = new std::thread(&DataManager::saveEverything,&out);
                 //std::future<void> save = std::async(&dataManager.saveEverything,&out);
 
-                //std::ofstream out("saved.json");
-                dataManager.saveEverything(out);
+                std::ofstream out("saved.json");
+
+
+                main.lock();
+
+                thr = new std::thread(&DataManager::saveEverything,dataManager,std::ref(out));
+                //dataManager.saveEverything(out);
+                thr->join();
+                main.unlock();
+                delete thr;
+
+
                 out.close();
                 std::cout << "Save was done!" << std::endl;
                 break;
@@ -377,8 +424,8 @@ int main() {
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::cout << "Name of the File " << std::endl;
                 std::string input = input_string();
-                std::ifstream inp(str +input);
-                //std::ifstream inp("saved.json");
+                //std::ifstream inp(str +input);
+                std::ifstream inp("saved.json");
                 dataManager.LoadEverything(inp);\
                 inp.close();
                 std::cout << "Download was done!" << std::endl;
@@ -469,6 +516,7 @@ int main() {
                     case FIND_STUDENT::BY_ID: {
                         std::cout << "ID ? " << std::endl;
                         auto _id = input_size_t();
+                        if (!dataManager.ifExStud(_id)) {std::cout << "No such group"; break;}
                         size_t count = 0;
                         for (const auto &stud: dataManager.students) {
                             if (stud.getID() == _id) {
@@ -519,7 +567,7 @@ int main() {
                     case FIND_GROUP::BY_ID: {
                         std::cout << "ID ? " << std::endl;
                         auto _id = input_size_t();
-
+                        if (!dataManager.ifExist(_id)) {std::cout << "No such group"; break;}
                         size_t count = 0;
                         for (auto &group: dataManager.groups) {
                             if (group.getGroupbyId() == _id) {

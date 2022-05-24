@@ -35,6 +35,12 @@ public:
     ~Group() = default;
     //===================================================================//
 
+    std::ostream &Nice_Grades(std::ostream &out);
+
+    std::ostream &Bad_Grades(std::ostream &out);
+
+
+
     void addStudent( Student &student);
 
     void deleteStudent(Student &student);
@@ -57,6 +63,10 @@ public:
     }
 
     void setName(std::string name) {
+        if (name.empty()) {
+            throw std::invalid_argument("Name can not be empy");
+        }
+
         this->name = name;
     };
     void setID(size_t id){
@@ -64,6 +74,9 @@ public:
     }
 
     void setCourse(unsigned int course) {
+        if (course == 0) {
+            throw std::invalid_argument("Course can not be empy");
+        }
         this->course = course;
     }
 
@@ -96,9 +109,7 @@ public:
 
     friend std::ostream &saveToJson(std::ostream &out, const Group &group);
 
-    friend std::ostream &Nice_Grades(std::ostream &out, const Group &group);
 
-    friend std::ostream &Bad_Grades(std::ostream &out, const Group &group);
 
     friend Group &operator+(Group &group, const Student &student);
 
