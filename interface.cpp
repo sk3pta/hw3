@@ -249,10 +249,9 @@ unsigned int input_size_t()
             //std::cin >> num;
 
             std::getline(std::cin,line);
-            num = std::stoi(line);
-            if (num > 0) {
+            num = std::stoul(line);
+            if (num >= 0) {
                 //std::cin.ignore(std::numeric_limits<char>::max(), '\n');
-                num = std::stoi(line);
                 return num;
             } else
                 throw std::invalid_argument("It's not a number");

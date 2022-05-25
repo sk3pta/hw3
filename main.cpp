@@ -65,7 +65,7 @@ int main() {
                 std::string name;
                 std::string middle_name;
                 std::string last_name;
-                //unsigned int course;
+
                 std::map<std::string, unsigned int> grades;
                 std::cout << "First name: " << std::endl;
                 name = input_string();
@@ -74,7 +74,7 @@ int main() {
                 std::cout << "Last name: " << std::endl;
                 last_name = input_string();
                 std::cout << "Course : \n" << std::endl;
-                //course = input_size_t();
+
                 auto group = dataManager.getGroupUsingID(id_group);
                 for (const auto &subj: group.getSubjects()) {
                     grades.insert({subj, 0});
@@ -374,7 +374,7 @@ int main() {
                 main.unlock();
 
                 delete thr;
-                //Nice_Grades(std::cout, group);
+
                 break;
             }
             case LOBBY::ST_W_B_M: {
@@ -390,7 +390,7 @@ int main() {
                 thr->join();
                 main.unlock();
                 delete thr;
-                //Bad_Grades(std::cout, group);
+
                 break;
             }
 
@@ -398,18 +398,16 @@ int main() {
                 std::cout << "Name of the File " << std::endl;
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::string input = input_string();
-                //std::ofstream out(str +input,std::ios::app);
+                std::ofstream out(str +input,std::ios::app);
 
-                //thr = new std::thread(&DataManager::saveEverything,&out);
-                //std::future<void> save = std::async(&dataManager.saveEverything,&out);
 
-                std::ofstream out("saved.json");
+
 
 
                 main.lock();
 
                 thr = new std::thread(&DataManager::saveEverything,dataManager,std::ref(out));
-                //dataManager.saveEverything(out);
+
                 thr->join();
                 main.unlock();
                 delete thr;
@@ -424,8 +422,8 @@ int main() {
                 std::string str = "C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/";
                 std::cout << "Name of the File " << std::endl;
                 std::string input = input_string();
-                //std::ifstream inp(str +input);
-                std::ifstream inp("saved.json");
+                std::ifstream inp(str +input);
+
                 dataManager.LoadEverything(inp);\
                 inp.close();
                 std::cout << "Download was done!" << std::endl;
