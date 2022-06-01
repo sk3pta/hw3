@@ -1,3 +1,0 @@
-C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/CMakeFiles/hw3_.dir
-C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/92065/Documents/plusses/labs_alg_1_n_2/2_sem/hw3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

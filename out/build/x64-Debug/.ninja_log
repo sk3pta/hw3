@@ -1,9 +1,0 @@
-# ninja log v5
-8	1660	6745164755692603	CMakeFiles/hw3_.dir/Group.cpp.obj	be378b8b290c3cd8
-3	1154	6745164750662908	CMakeFiles/hw3_.dir/ID.cpp.obj	145182b8ef016940
-1	1072	6745172555561358	CMakeFiles/hw3_.dir/tests.cpp.obj	75a3c26becd1c3db
-11	1123	6745164750341578	CMakeFiles/hw3_.dir/interface.cpp.obj	b1bb24d29511797e
-6	1635	6745164755462607	CMakeFiles/hw3_.dir/Student.cpp.obj	f7198dc0f49e8dac
-992	1182	6745174475521214	hw3_.exe	f75cb5f761c74ba7
-0	98	6745224163012672	build.ninja	89d1a567ebd9c031
-0	991	6745174474005312	CMakeFiles/hw3_.dir/main.cpp.obj	a934ee2b6fff6283

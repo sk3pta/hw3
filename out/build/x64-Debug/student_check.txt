@@ -1,9 +1,0 @@
-StudentID : 16272
-Student : Alik Ab AArname
-Group : 
-Course : 1
-Grades : 
-AL 5
-Mathematics 5
-Physics 3
-
