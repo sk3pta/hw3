@@ -1,3 +1,5 @@
+[![Test](https://github.com/sk3pta/hw3/actions/workflows/test.yml/badge.svg?branch=marginoon_new)](https://github.com/sk3pta/hw3/actions/workflows/test.yml)
+
 Некоторые особенности выполнения ДЗ
 При выполнении задания должны быть учтены следующие требования.
 1. Для классов объектов явно определяются и разрабатываются: конструкторы (не менее двух для каждого класса) и деструкторы (для каждого класса);
