@@ -1,14 +1,16 @@
-name: CMake
-
+name: Test
 on:
   push:
-
+  
 jobs:
-  build:
-  runs-on: ubuntu-latest
+  Build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
 
-    steps:
-    - uses: actions/checkout@v3
-
-    - name: Build
-      run: cmake -H. -B_build && cmake --build _build
+        - name: build
+          shell: bash
+          run: |
+            cmake -H. -B_build
+            cmake --build _build
+          
